@@ -14,6 +14,36 @@
     <Filter Include="KamataEngine\Adapter">
       <UniqueIdentifier>{c6468eb4-788b-4a83-b207-a5f4804e56c5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="include">
+      <UniqueIdentifier>{48e38d90-6ce3-4f8d-a117-ba4916bb9f44}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{0b42e0f8-4058-4b17-b199-9fb98ccaa02a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\Asset">
+      <UniqueIdentifier>{8b3086bf-46a6-47cc-9a8a-97b7e3c0e651}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\Component">
+      <UniqueIdentifier>{c60d9d75-b0cd-4f2b-9359-211afe32db44}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\Core">
+      <UniqueIdentifier>{afa14691-1e57-42a0-947a-28cfd678d3bb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\Entity">
+      <UniqueIdentifier>{f9b0f9ab-339a-4cb5-9fa1-6e5c12be3e5f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\Game">
+      <UniqueIdentifier>{059e3ce1-c3e2-4037-82f1-9a445e53239c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Asset">
+      <UniqueIdentifier>{8b8a015a-ead8-453b-a5bf-09da1ec61f5d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Game">
+      <UniqueIdentifier>{46604171-62f3-480a-8966-a76e9995eb32}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Core">
+      <UniqueIdentifier>{1f653de4-b493-426f-be2a-1b9e5288a525}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
