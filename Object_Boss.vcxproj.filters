@@ -44,6 +44,12 @@
     <Filter Include="src\Core">
       <UniqueIdentifier>{1f653de4-b493-426f-be2a-1b9e5288a525}</UniqueIdentifier>
     </Filter>
+    <Filter Include="include\Input">
+      <UniqueIdentifier>{a8b1ed17-b654-4012-890e-e74d7a8e44fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Input">
+      <UniqueIdentifier>{50b7fb1b-4f80-4ccf-8053-0ba79639cb02}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
@@ -132,6 +138,48 @@
     </ClInclude>
     <ClInclude Include="%KAMATA_ENGINE%\DirectXGame\2d\ImGuiManager.h">
       <Filter>KamataEngine\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Component\Button.hpp">
+      <Filter>include\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Component\Image.hpp">
+      <Filter>include\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Component\Text.hpp">
+      <Filter>include\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Asset\AnimationData.hpp">
+      <Filter>include\Asset</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Asset\AssetCatalog.hpp">
+      <Filter>include\Asset</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Asset\AssetsManager.hpp">
+      <Filter>include\Asset</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Asset\IAssetLoader.hpp">
+      <Filter>include\Asset</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Asset\JsonLoader.hpp">
+      <Filter>include\Asset</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Asset\ResourceHandle.hpp">
+      <Filter>include\Asset</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Asset\SoundLoader.hpp">
+      <Filter>include\Asset</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Asset\TextureLoader.hpp">
+      <Filter>include\Asset</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Asset\TileSetData.hpp">
+      <Filter>include\Asset</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Core\Math.hpp">
+      <Filter>include\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Entity\Player.hpp">
+      <Filter>include\Entity</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

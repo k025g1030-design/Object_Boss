@@ -139,6 +139,20 @@ xcopy %KAMATA_ENGINE%\DirectXGame\Resources "$(OutDirFullPath)NoviceResources" /
     <ClInclude Include="%KAMATA_ENGINE%\DirectXGame\input\Input.h" />
     <ClInclude Include="%KAMATA_ENGINE%\DirectXGame\scene\GameScene.h" />
     <ClInclude Include="%KAMATA_ENGINE%\Adapter\Novice.h" />
+    <ClInclude Include="include\Asset\AnimationData.hpp" />
+    <ClInclude Include="include\Asset\AssetCatalog.hpp" />
+    <ClInclude Include="include\Asset\AssetsManager.hpp" />
+    <ClInclude Include="include\Asset\IAssetLoader.hpp" />
+    <ClInclude Include="include\Asset\JsonLoader.hpp" />
+    <ClInclude Include="include\Asset\ResourceHandle.hpp" />
+    <ClInclude Include="include\Asset\SoundLoader.hpp" />
+    <ClInclude Include="include\Asset\TextureLoader.hpp" />
+    <ClInclude Include="include\Asset\TileSetData.hpp" />
+    <ClInclude Include="include\Component\Button.hpp" />
+    <ClInclude Include="include\Component\Image.hpp" />
+    <ClInclude Include="include\Component\Text.hpp" />
+    <ClInclude Include="include\Core\Math.hpp" />
+    <ClInclude Include="include\Entity\Player.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

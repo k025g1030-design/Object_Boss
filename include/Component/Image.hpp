@@ -1,6 +1,6 @@
 ﻿#pragma once
 #include "Core/Math.hpp"
-#include "Core/ResourceManager.hpp"
+#include "Asset/ResourceHandle.hpp"
 #include <Novice.h>
 
 

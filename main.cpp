@@ -3,6 +3,7 @@
 const char kWindowTitle[] = "Object_Boss";
 
 
+
 // Windowsアプリでのエントリーポイント(main関数)
 int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 
