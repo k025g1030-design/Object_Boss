@@ -56,6 +56,12 @@
     <Filter Include="include\Asset\Loader">
       <UniqueIdentifier>{519cd982-693c-4346-b65b-ff97e7ffdfe6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="include\Asset\Audio">
+      <UniqueIdentifier>{64afa6a3-6a5e-4a11-b5e9-fe762d13dda4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\Asset\Graphics">
+      <UniqueIdentifier>{764e964f-e597-4e1a-9224-cc4c7ea5d3d3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
@@ -178,14 +184,29 @@
     <ClInclude Include="include\Asset\Loader\IAssetLoader.hpp">
       <Filter>include\Asset\Loader</Filter>
     </ClInclude>
-    <ClInclude Include="include\Asset\Loader\JsonLoader.hpp">
-      <Filter>include\Asset\Loader</Filter>
-    </ClInclude>
     <ClInclude Include="include\Asset\Loader\SoundLoader.hpp">
       <Filter>include\Asset\Loader</Filter>
     </ClInclude>
     <ClInclude Include="include\Asset\Loader\TextureLoader.hpp">
       <Filter>include\Asset\Loader</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Asset\Loader\AnimationLoader.hpp">
+      <Filter>include\Asset\Loader</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Asset\Loader\MapLoader.hpp">
+      <Filter>include\Asset\Loader</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Asset\Loader\TileSetLoader.hpp">
+      <Filter>include\Asset\Loader</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Asset\Audio\Sound.hpp">
+      <Filter>include\Asset\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Asset\Graphics\Sprite.hpp">
+      <Filter>include\Asset\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Asset\Graphics\Texture.hpp">
+      <Filter>include\Asset\Graphics</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

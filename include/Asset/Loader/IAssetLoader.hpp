@@ -1,6 +1,8 @@
 ﻿#pragma once
-#include <string>
 
+/**
+
+**/
 namespace Asset {
     template<typename T>
     class IAssetLoader {
