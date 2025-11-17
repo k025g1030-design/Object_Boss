@@ -149,10 +149,10 @@ $(ProjectDir)include;
 ### AssetManager
 ```
 ┌──────── GameApp / Game Systems ─────────┐
-│   - Handle<AnimationData>               │
-│   - Handle<Texture>                     │
-│   - Handle<Sound>                       │
-│   - Handle<TileSet>                     │
+│   Handle<AnimationData> ...             │
+│   Handle<Texture> ...                   │
+│   Handle<Sound> ...                     │
+│   Handle<TileSet> ...                   │
 └────────────────────┬────────────────────┘
                      │ A)
        ┌─────────────▼──────────────┐
