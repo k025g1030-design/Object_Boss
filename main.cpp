@@ -1,6 +1,10 @@
 ﻿#include <Novice.h>
+#include <nlohmann/json.hpp>
+#include <fstream> 
 
 const char kWindowTitle[] = "Object_Boss";
+
+using json = nlohmann::json;
 
 
 
@@ -14,6 +18,12 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
     char keys[256] = {0};
     char preKeys[256] = {0};
 
+    std::ifstream f("./Assets/Data/example.json");
+    json data = json::parse(f);
+    
+
+
+
     // ウィンドウの×ボタンが押されるまでループ
     while (Novice::ProcessMessage() == 0) {
         // フレームの開始
@@ -23,6 +33,8 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
         // キー入力を受け取る
         memcpy(preKeys, keys, 256);
         Novice::GetHitKeyStateAll(keys);
+
+        Novice::ScreenPrintf(0, 0, "%s", data["name"].get<std::string>().c_str());
 
         // フレームの終了
         Novice::EndFrame();

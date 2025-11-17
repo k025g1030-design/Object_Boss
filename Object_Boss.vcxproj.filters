@@ -50,6 +50,12 @@
     <Filter Include="src\Input">
       <UniqueIdentifier>{50b7fb1b-4f80-4ccf-8053-0ba79639cb02}</UniqueIdentifier>
     </Filter>
+    <Filter Include="include\Asset\Data">
+      <UniqueIdentifier>{324b0d19-f6d6-4ea1-88d0-f49400598b71}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\Asset\Loader">
+      <UniqueIdentifier>{519cd982-693c-4346-b65b-ff97e7ffdfe6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
@@ -148,8 +154,11 @@
     <ClInclude Include="include\Component\Text.hpp">
       <Filter>include\Component</Filter>
     </ClInclude>
-    <ClInclude Include="include\Asset\AnimationData.hpp">
-      <Filter>include\Asset</Filter>
+    <ClInclude Include="include\Core\Math.hpp">
+      <Filter>include\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Entity\Player.hpp">
+      <Filter>include\Entity</Filter>
     </ClInclude>
     <ClInclude Include="include\Asset\AssetCatalog.hpp">
       <Filter>include\Asset</Filter>
@@ -157,29 +166,26 @@
     <ClInclude Include="include\Asset\AssetsManager.hpp">
       <Filter>include\Asset</Filter>
     </ClInclude>
-    <ClInclude Include="include\Asset\IAssetLoader.hpp">
-      <Filter>include\Asset</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Asset\JsonLoader.hpp">
-      <Filter>include\Asset</Filter>
-    </ClInclude>
     <ClInclude Include="include\Asset\ResourceHandle.hpp">
       <Filter>include\Asset</Filter>
     </ClInclude>
-    <ClInclude Include="include\Asset\SoundLoader.hpp">
-      <Filter>include\Asset</Filter>
+    <ClInclude Include="include\Asset\Data\AnimationData.hpp">
+      <Filter>include\Asset\Data</Filter>
     </ClInclude>
-    <ClInclude Include="include\Asset\TextureLoader.hpp">
-      <Filter>include\Asset</Filter>
+    <ClInclude Include="include\Asset\Data\TileSetData.hpp">
+      <Filter>include\Asset\Data</Filter>
     </ClInclude>
-    <ClInclude Include="include\Asset\TileSetData.hpp">
-      <Filter>include\Asset</Filter>
+    <ClInclude Include="include\Asset\Loader\IAssetLoader.hpp">
+      <Filter>include\Asset\Loader</Filter>
     </ClInclude>
-    <ClInclude Include="include\Core\Math.hpp">
-      <Filter>include\Core</Filter>
+    <ClInclude Include="include\Asset\Loader\JsonLoader.hpp">
+      <Filter>include\Asset\Loader</Filter>
     </ClInclude>
-    <ClInclude Include="include\Entity\Player.hpp">
-      <Filter>include\Entity</Filter>
+    <ClInclude Include="include\Asset\Loader\SoundLoader.hpp">
+      <Filter>include\Asset\Loader</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Asset\Loader\TextureLoader.hpp">
+      <Filter>include\Asset\Loader</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
