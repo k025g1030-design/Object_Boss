@@ -1,5 +1,7 @@
 ﻿#pragma once
 #include <string>
+#include <memory>
+#include "Asset/Loader/IAssetLoader.hpp"
 
 namespace Asset {
     class AssetManager {
@@ -13,8 +15,11 @@ namespace Asset {
         void Unload(const std::string& id);
         void UnloadAll();
 
+        template<typename T>
+        void RegisterLoader(std::unique_ptr<IAssetLoader<T>> loader);
+
     private:
-        std::string assetId_;
+        
 
     };
 }

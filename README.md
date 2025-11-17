@@ -7,6 +7,9 @@
   - [素材処理](#素材処理)
 - [ストーリー](#ストーリー)
 - [まとめ](#まとめ)
+- [ゲームアーキテクチャ設計](#ゲームアーキテクチャ設計)
+  - [AssetManager](#AssetManager)
+  - []()
 - [作者](#作者)
 
 ## ゲームについて
@@ -139,6 +142,45 @@ $(ProjectDir)include;
 
 
 ## まとめ：
+
+
+## ゲームアーキテクチャ設計
+
+### AssetManager
+```
+┌──────── GameApp / Game Systems ─────────┐
+│   - Handle<AnimationData>               │
+│   - Handle<Texture>                     │
+│   - Handle<Sound>                       │
+│   - Handle<TileSet>                     │
+└────────────────────┬────────────────────┘
+                     │ A)
+       ┌─────────────▼──────────────┐
+       │       AssetManager         │
+       │  - AssetCatalog catalog    │
+       │  - map<id, resource> cache │
+       │  - map<type, IAssetLoader> │
+       └──────┬─────────┬───────────┘
+              │         │
+           B) │         │ C)
+              │         │
+   ┌──────────▼────┐  ┌─▼────────────────┐
+   │ AssetCatalog  │  │ IAssetLoader<T>  │
+   │ id→{type,path}│  │  ↑   ↑   ↑   ↑   │
+   └───────────────┘  │  │   │   │   │   │
+                      └──│───│───│───│───┘
+    TextureLoader   ◄────┘   │   │   │
+    SoundLoader     ◄────────┘   │   │
+    AnimationLoader ◄────────────┘   │
+    TileSetLoader   ◄────────────────┘
+
+A）Game Systems が AssetManager を使用してリソースを取得する
+
+B）AssetManager は AssetCatalog を参照してリソースパスを取得し、対応する IAssetLoader を呼び出して読み込み処理を行う。
+
+C）AssetManager は各リソース種類に対応した IAssetLoader の具体的な実装を用いて、異なるタイプのリソースを読み込む。
+
+```
 
 
 ## 作者
