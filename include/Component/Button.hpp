@@ -12,10 +12,7 @@ namespace Component {
     class Button {
     public:
         explicit Button(Core::Vector2 size, Core::Vector2 position, std::string name) : size_(size), position_(position), name_(name) {}
-        explicit Button( Core::Vector2 position, std::string name, Core::AnimeHandle cursorHandle) : size_(cursorHandle.size), position_(position), name_(name), cursorHandle_(cursorHandle) {}
         explicit Button() {}
-
-
 
         bool Contains(Core::Vector2 p, Core::Vector2 sz, int mx, int my) {
             return mx >= p.x && mx <= p.x + sz.x && my >= p.y && my <= p.y + sz.y;

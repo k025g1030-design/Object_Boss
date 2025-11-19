@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|x64">
@@ -113,6 +113,8 @@ xcopy %KAMATA_ENGINE%\DirectXGame\Resources "$(OutDirFullPath)NoviceResources" /
     <ClCompile Include="src\Entity\Enemy.cpp" />
     <ClCompile Include="src\Entity\Player.cpp" />
     <ClCompile Include="src\Game\GameApp.cpp" />
+    <ClCompile Include="src\Asset\AssetManager.cpp" />
+    <ClCompile Include="src\Core\EngineAPI.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\DirectXGame\3d\Camera.h" />
@@ -144,25 +146,29 @@ xcopy %KAMATA_ENGINE%\DirectXGame\Resources "$(OutDirFullPath)NoviceResources" /
     <ClInclude Include="%KAMATA_ENGINE%\Adapter\Novice.h" />
     <ClInclude Include="include\Asset\AssetCatalog.hpp" />
     <ClInclude Include="include\Asset\AssetsManager.hpp" />
-    <ClInclude Include="include\Asset\Audio\Sound.hpp" />
     <ClInclude Include="include\Asset\Data\AnimationData.hpp" />
+    <ClInclude Include="include\Asset\Data\SoundData.hpp" />
     <ClInclude Include="include\Asset\Data\TileSetData.hpp" />
     <ClInclude Include="include\Asset\Graphics\Sprite.hpp" />
-    <ClInclude Include="include\Asset\Graphics\Texture.hpp" />
     <ClInclude Include="include\Asset\Loader\AnimationLoader.hpp" />
-    <ClInclude Include="include\Asset\Loader\IAssetLoader.hpp" />
     <ClInclude Include="include\Asset\Loader\MapLoader.hpp" />
-    <ClInclude Include="include\Asset\Loader\SoundLoader.hpp" />
-    <ClInclude Include="include\Asset\Loader\TextureLoader.hpp" />
+    <ClInclude Include="include\Asset\Loader\Meta\IAssetLoader.hpp" />
+    <ClInclude Include="include\Asset\Loader\Meta\SoundLoader.hpp" />
+    <ClInclude Include="include\Asset\Loader\Meta\TextureLoader.hpp" />
     <ClInclude Include="include\Asset\Loader\TileSetLoader.hpp" />
+    <ClInclude Include="include\Asset\MetaData\Sound.hpp" />
+    <ClInclude Include="include\Asset\MetaData\Texture.hpp" />
     <ClInclude Include="include\Asset\ResourceHandle.hpp" />
     <ClInclude Include="include\Component\Button.hpp" />
     <ClInclude Include="include\Component\Image.hpp" />
     <ClInclude Include="include\Component\Text.hpp" />
+    <ClInclude Include="include\Core\EngineAPI.hpp" />
     <ClInclude Include="include\Core\Math.hpp" />
     <ClInclude Include="include\Entity\Enemy.hpp" />
     <ClInclude Include="include\Entity\Player.hpp" />
     <ClInclude Include="include\Game\GameApp.hpp" />
+    <ClInclude Include="include\Utils\CSVParser.hpp" />
+    <ClInclude Include="include\Utils\JSONParser.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

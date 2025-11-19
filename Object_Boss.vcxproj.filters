@@ -56,20 +56,32 @@
     <Filter Include="include\Asset\Loader">
       <UniqueIdentifier>{519cd982-693c-4346-b65b-ff97e7ffdfe6}</UniqueIdentifier>
     </Filter>
-    <Filter Include="include\Asset\Audio">
-      <UniqueIdentifier>{64afa6a3-6a5e-4a11-b5e9-fe762d13dda4}</UniqueIdentifier>
-    </Filter>
     <Filter Include="include\Asset\Graphics">
       <UniqueIdentifier>{764e964f-e597-4e1a-9224-cc4c7ea5d3d3}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\Entity">
       <UniqueIdentifier>{b05706cb-b7cf-4b6b-8316-ad02bcf7c1ed}</UniqueIdentifier>
     </Filter>
+    <Filter Include="include\Asset\MetaData">
+      <UniqueIdentifier>{cefced2c-6ac7-4ea7-9cc1-278b79abe77d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\Utils">
+      <UniqueIdentifier>{bd301868-3e5e-41dc-9ba6-cf238ca8f064}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\Asset\Loader\Meta">
+      <UniqueIdentifier>{b96d7980-03b1-4ec5-b69d-b9f765e4ac1c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="%KAMATA_ENGINE%\Adapter\Novice.cpp">
       <Filter>KamataEngine\Adapter</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Asset\AssetManager.cpp">
+      <Filter>src\Asset</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\EngineAPI.cpp">
+      <Filter>src\Core</Filter>
     </ClCompile>
     <ClCompile Include="src\Game\GameApp.cpp">
       <Filter>src\Game</Filter>
@@ -193,15 +205,6 @@
     <ClInclude Include="include\Asset\Data\TileSetData.hpp">
       <Filter>include\Asset\Data</Filter>
     </ClInclude>
-    <ClInclude Include="include\Asset\Loader\IAssetLoader.hpp">
-      <Filter>include\Asset\Loader</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Asset\Loader\SoundLoader.hpp">
-      <Filter>include\Asset\Loader</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Asset\Loader\TextureLoader.hpp">
-      <Filter>include\Asset\Loader</Filter>
-    </ClInclude>
     <ClInclude Include="include\Asset\Loader\AnimationLoader.hpp">
       <Filter>include\Asset\Loader</Filter>
     </ClInclude>
@@ -211,14 +214,35 @@
     <ClInclude Include="include\Asset\Loader\TileSetLoader.hpp">
       <Filter>include\Asset\Loader</Filter>
     </ClInclude>
-    <ClInclude Include="include\Asset\Audio\Sound.hpp">
-      <Filter>include\Asset\Audio</Filter>
-    </ClInclude>
     <ClInclude Include="include\Asset\Graphics\Sprite.hpp">
       <Filter>include\Asset\Graphics</Filter>
     </ClInclude>
-    <ClInclude Include="include\Asset\Graphics\Texture.hpp">
-      <Filter>include\Asset\Graphics</Filter>
+    <ClInclude Include="include\Asset\MetaData\Sound.hpp">
+      <Filter>include\Asset\MetaData</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Asset\MetaData\Texture.hpp">
+      <Filter>include\Asset\MetaData</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Asset\Loader\Meta\IAssetLoader.hpp">
+      <Filter>include\Asset\Loader\Meta</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Asset\Loader\Meta\SoundLoader.hpp">
+      <Filter>include\Asset\Loader\Meta</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Asset\Loader\Meta\TextureLoader.hpp">
+      <Filter>include\Asset\Loader\Meta</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Utils\CSVParser.hpp">
+      <Filter>include\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Utils\JSONParser.hpp">
+      <Filter>include\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Core\EngineAPI.hpp">
+      <Filter>include\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Asset\Data\SoundData.hpp">
+      <Filter>include\Asset\Data</Filter>
     </ClInclude>
     <ClInclude Include="include\Game\GameApp.hpp">
       <Filter>include\Game</Filter>

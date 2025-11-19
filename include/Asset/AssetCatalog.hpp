@@ -6,7 +6,7 @@ namespace Asset {
     enum class AssetType {
         Texture,
         Sound,
-        Map,
+        MapTiled,
         Skill,
         Unknown
     };
@@ -17,6 +17,8 @@ namespace Asset {
     };
     class AssetCatalog {
     public:
+        //
+        void Load(const std::string& catalogPath);
         //
         void Add(const AssetInfo& assetInfo);
         //
