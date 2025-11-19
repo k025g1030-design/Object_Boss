@@ -2,12 +2,14 @@
 #include <string>
 #include <memory>
 #include <unordered_map>
-#include "Asset/Loader/IAssetLoader.hpp"
+#include "Asset/Loader/Meta/IAssetLoader.hpp"
 #include "Asset/AssetCatalog.hpp"
 
 namespace Asset {
     class AssetManager {
     public:
+        void Initialize();
+
         template<typename T>
         T* Load(const std::string& id);   
 
@@ -18,14 +20,14 @@ namespace Asset {
         void UnloadAll();
 
         template<typename T>
-        void RegisterLoader(std::unique_ptr<IAssetLoader<T>> loader);
+        void RegisterLoader(const std::string& id, std::unique_ptr<IAssetLoader<T>> loader);
 
     private:
         //
-        AssetCatalog catalog;
+        AssetCatalog catalog_;
         //
-        std::unordered_map<std::string, std::shared_ptr<void>> cache;
+        std::unordered_map<std::string, std::shared_ptr<void>> cache_;
         //
-        std::unordered_map<std::string, std::unique_ptr<IAssetLoader<void>>> loaders;
+        std::unordered_map<std::string, std::unique_ptr<IAssetLoader<void>>> loaders_;
     };
 }
