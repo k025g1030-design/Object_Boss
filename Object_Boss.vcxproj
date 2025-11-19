@@ -110,6 +110,9 @@ xcopy %KAMATA_ENGINE%\DirectXGame\Resources "$(OutDirFullPath)NoviceResources" /
   <ItemGroup>
     <ClCompile Include="%KAMATA_ENGINE%\Adapter\Novice.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="src\Entity\Enemy.cpp" />
+    <ClCompile Include="src\Entity\Player.cpp" />
+    <ClCompile Include="src\Game\GameApp.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\DirectXGame\3d\Camera.h" />
@@ -157,7 +160,9 @@ xcopy %KAMATA_ENGINE%\DirectXGame\Resources "$(OutDirFullPath)NoviceResources" /
     <ClInclude Include="include\Component\Image.hpp" />
     <ClInclude Include="include\Component\Text.hpp" />
     <ClInclude Include="include\Core\Math.hpp" />
+    <ClInclude Include="include\Entity\Enemy.hpp" />
     <ClInclude Include="include\Entity\Player.hpp" />
+    <ClInclude Include="include\Game\GameApp.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -62,11 +62,23 @@
     <Filter Include="include\Asset\Graphics">
       <UniqueIdentifier>{764e964f-e597-4e1a-9224-cc4c7ea5d3d3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Entity">
+      <UniqueIdentifier>{b05706cb-b7cf-4b6b-8316-ad02bcf7c1ed}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="%KAMATA_ENGINE%\Adapter\Novice.cpp">
       <Filter>KamataEngine\Adapter</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Game\GameApp.cpp">
+      <Filter>src\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Entity\Enemy.cpp">
+      <Filter>src\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Entity\Player.cpp">
+      <Filter>src\Entity</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -207,6 +219,12 @@
     </ClInclude>
     <ClInclude Include="include\Asset\Graphics\Texture.hpp">
       <Filter>include\Asset\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Game\GameApp.hpp">
+      <Filter>include\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Entity\Enemy.hpp">
+      <Filter>include\Entity</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
