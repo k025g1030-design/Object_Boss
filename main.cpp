@@ -1,9 +1,10 @@
-﻿#include <Novice.h>
+﻿#include <Windows.h>
 #include <nlohmann/json.hpp>
 #include <fstream> 
 #include "Game/GameApp.hpp"
+#include "Core/Backend.hpp"
 
-const char kWindowTitle[] = "Object_Boss";
+const char* kWindowTitle = "Object_Boss";
 
 using json = nlohmann::json;
 
@@ -14,7 +15,8 @@ const int kWindowHeight = 720;
 int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 
     // ライブラリの初期化
-    Novice::Initialize(kWindowTitle, kWindowWidth, kWindowHeight);
+    //Novice::Initialize(kWindowTitle, kWindowWidth, kWindowHeight);
+    Engine::Backend::Initialize(kWindowTitle, kWindowWidth, kWindowHeight);
 
     // キー入力結果を受け取る箱
     char keys[256] = {0};
@@ -28,14 +30,14 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 
 
     // ウィンドウの×ボタンが押されるまでループ
-    while (Novice::ProcessMessage() == 0) {
+    while (Engine::Backend::ProcessStatus() == 0) {
         // フレームの開始
-        Novice::BeginFrame();
+        Engine::Backend::StartFrame();
 
         
         // キー入力を受け取る
         memcpy(preKeys, keys, 256);
-        Novice::GetHitKeyStateAll(keys);
+        Engine::Backend::GetHitKeyStateAll(keys);
 
         //Novice::ScreenPrintf(0, 0, "%s", data["name"].get<std::string>().c_str());
 
@@ -47,7 +49,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 
 
         // フレームの終了
-        Novice::EndFrame();
+        Engine::Backend::EndFrame();
 
         // ESCキーが押されたらループを抜ける
         if (preKeys[DIK_ESCAPE] == 0 && keys[DIK_ESCAPE] != 0) {
@@ -56,7 +58,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
     }
 
     // ライブラリの終了
-    Novice::Finalize();
+    Engine::Backend::Finalize();
     return 0;
 }
 

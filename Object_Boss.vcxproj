@@ -61,7 +61,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_WINDOWS;%(PreprocessorDefinitions);%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)third_party\nlohmann_json-3.12.0\single_include;$(ProjectDir)include;$(ProjectDir)include;%KAMATA_ENGINE%\Adapter;%KAMATA_ENGINE%\External\imgui;%KAMATA_ENGINE%\External\KamataEngine\include;%KAMATA_ENGINE%\External\DirectXTex\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)third_party\stb;$(ProjectDir)include;$(ProjectDir)third_party\nlohmann_json-3.12.0\single_include;$(ProjectDir)include;%KAMATA_ENGINE%\Adapter;%KAMATA_ENGINE%\External\imgui;%KAMATA_ENGINE%\External\KamataEngine\include;%KAMATA_ENGINE%\External\DirectXTex\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
       <TreatWarningAsError>true</TreatWarningAsError>
@@ -86,7 +86,7 @@ xcopy %KAMATA_ENGINE%\DirectXGame\Resources "$(OutDirFullPath)NoviceResources" /
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_WINDOWS;%(PreprocessorDefinitions);%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)third_party\nlohmann_json-3.12.0\single_include;$(ProjectDir)include;%KAMATA_ENGINE%\Adapter;%KAMATA_ENGINE%\External\KamataEngine\include;%KAMATA_ENGINE%\External\DirectXTex\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)third_party\stb;$(ProjectDir)include;$(ProjectDir)third_party\nlohmann_json-3.12.0\single_include;%KAMATA_ENGINE%\Adapter;%KAMATA_ENGINE%\External\KamataEngine\include;%KAMATA_ENGINE%\External\DirectXTex\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <Optimization>MinSpace</Optimization>
       <LanguageStandard>stdcpp20</LanguageStandard>
@@ -110,6 +110,12 @@ xcopy %KAMATA_ENGINE%\DirectXGame\Resources "$(OutDirFullPath)NoviceResources" /
   <ItemGroup>
     <ClCompile Include="%KAMATA_ENGINE%\Adapter\Novice.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="src\Asset\AssetCatalog.cpp" />
+    <ClCompile Include="src\Asset\Loader\AnimationLoader.cpp" />
+    <ClCompile Include="src\Asset\Loader\Meta\SoundLoader.cpp" />
+    <ClCompile Include="src\Asset\Loader\Meta\TextureLoader.cpp" />
+    <ClCompile Include="src\Asset\Loader\TileSetLoader.cpp" />
+    <ClCompile Include="src\Core\Backend.cpp" />
     <ClCompile Include="src\Entity\Enemy.cpp" />
     <ClCompile Include="src\Entity\Player.cpp" />
     <ClCompile Include="src\Game\GameApp.cpp" />
@@ -163,6 +169,7 @@ xcopy %KAMATA_ENGINE%\DirectXGame\Resources "$(OutDirFullPath)NoviceResources" /
     <ClInclude Include="include\Component\Image.hpp" />
     <ClInclude Include="include\Component\Text.hpp" />
     <ClInclude Include="include\Core\EngineAPI.hpp" />
+    <ClInclude Include="include\Core\Backend.hpp" />
     <ClInclude Include="include\Core\Math.hpp" />
     <ClInclude Include="include\Entity\Enemy.hpp" />
     <ClInclude Include="include\Entity\Player.hpp" />

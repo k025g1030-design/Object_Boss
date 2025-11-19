@@ -9,8 +9,6 @@
 namespace Asset {
     class TextureLoader : public IAssetLoader<Texture> {
     public:
-        Texture* LoadFromFile(const std::string& path) override {
-            
-        }
+        std::shared_ptr<Texture> LoadFromFile(const std::string& path, AssetManager& /*assets*/) override;
     };
 }

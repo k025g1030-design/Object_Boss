@@ -9,8 +9,6 @@
 namespace Asset {
     class SoundLoader : public IAssetLoader<Sound> {
     public:
-        Sound* LoadFromFile(const std::string& path) override {
-            
-        }
+        std::shared_ptr<Sound> LoadFromFile(const std::string& path, AssetManager& /*assets*/) override;
     };
 }

@@ -56,9 +56,6 @@
     <Filter Include="include\Asset\Loader">
       <UniqueIdentifier>{519cd982-693c-4346-b65b-ff97e7ffdfe6}</UniqueIdentifier>
     </Filter>
-    <Filter Include="include\Asset\Graphics">
-      <UniqueIdentifier>{764e964f-e597-4e1a-9224-cc4c7ea5d3d3}</UniqueIdentifier>
-    </Filter>
     <Filter Include="src\Entity">
       <UniqueIdentifier>{b05706cb-b7cf-4b6b-8316-ad02bcf7c1ed}</UniqueIdentifier>
     </Filter>
@@ -70,6 +67,15 @@
     </Filter>
     <Filter Include="include\Asset\Loader\Meta">
       <UniqueIdentifier>{b96d7980-03b1-4ec5-b69d-b9f765e4ac1c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\Asset\Data\Graphics">
+      <UniqueIdentifier>{764e964f-e597-4e1a-9224-cc4c7ea5d3d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Asset\Loader">
+      <UniqueIdentifier>{fdc57abb-5ed5-48eb-8670-66353763244e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Asset\Loader\Meta">
+      <UniqueIdentifier>{55d3fe0c-7860-49dd-9701-87d7840ce0ce}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -91,6 +97,24 @@
     </ClCompile>
     <ClCompile Include="src\Entity\Player.cpp">
       <Filter>src\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Backend.cpp">
+      <Filter>src\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Asset\Loader\Meta\SoundLoader.cpp">
+      <Filter>src\Asset\Loader\Meta</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Asset\Loader\Meta\TextureLoader.cpp">
+      <Filter>src\Asset\Loader\Meta</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Asset\AssetCatalog.cpp">
+      <Filter>src\Asset</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Asset\Loader\AnimationLoader.cpp">
+      <Filter>src\Asset\Loader</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Asset\Loader\TileSetLoader.cpp">
+      <Filter>src\Asset\Loader</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -215,7 +239,7 @@
       <Filter>include\Asset\Loader</Filter>
     </ClInclude>
     <ClInclude Include="include\Asset\Graphics\Sprite.hpp">
-      <Filter>include\Asset\Graphics</Filter>
+      <Filter>include\Asset\Data\Graphics</Filter>
     </ClInclude>
     <ClInclude Include="include\Asset\MetaData\Sound.hpp">
       <Filter>include\Asset\MetaData</Filter>
@@ -249,6 +273,9 @@
     </ClInclude>
     <ClInclude Include="include\Entity\Enemy.hpp">
       <Filter>include\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Core\Backend.hpp">
+      <Filter>include\Core</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

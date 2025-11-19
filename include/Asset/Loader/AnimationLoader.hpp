@@ -9,8 +9,6 @@
 namespace Asset {
     class AnimationLoader : public IAssetLoader<AnimationData> {
     public:
-        AnimationData* LoadFromFile(const std::string& path) override {
-
-        }
+        std::shared_ptr<AnimationData> LoadFromFile(const std::string& path, AssetManager& assets) override;
     };
 }

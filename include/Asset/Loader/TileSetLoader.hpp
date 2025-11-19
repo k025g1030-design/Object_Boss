@@ -9,8 +9,6 @@
 namespace Asset {
     class TileSetLoader : public IAssetLoader<TileSetData> {
     public:
-        TileSetData* LoadFromFile(const std::string& path) override {
-
-        }
+        std::shared_ptr<TileSetData> LoadFromFile(const std::string& path, AssetManager& assets) override;
     };
 }
