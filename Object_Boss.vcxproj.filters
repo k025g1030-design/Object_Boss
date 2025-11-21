@@ -20,9 +20,6 @@
     <Filter Include="src">
       <UniqueIdentifier>{0b42e0f8-4058-4b17-b199-9fb98ccaa02a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="include\Asset">
-      <UniqueIdentifier>{8b3086bf-46a6-47cc-9a8a-97b7e3c0e651}</UniqueIdentifier>
-    </Filter>
     <Filter Include="include\Component">
       <UniqueIdentifier>{c60d9d75-b0cd-4f2b-9359-211afe32db44}</UniqueIdentifier>
     </Filter>
@@ -34,9 +31,6 @@
     </Filter>
     <Filter Include="include\Game">
       <UniqueIdentifier>{059e3ce1-c3e2-4037-82f1-9a445e53239c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\Asset">
-      <UniqueIdentifier>{8b8a015a-ead8-453b-a5bf-09da1ec61f5d}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\Game">
       <UniqueIdentifier>{46604171-62f3-480a-8966-a76e9995eb32}</UniqueIdentifier>
@@ -50,31 +44,43 @@
     <Filter Include="src\Input">
       <UniqueIdentifier>{50b7fb1b-4f80-4ccf-8053-0ba79639cb02}</UniqueIdentifier>
     </Filter>
-    <Filter Include="include\Asset\Data">
-      <UniqueIdentifier>{324b0d19-f6d6-4ea1-88d0-f49400598b71}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="include\Asset\Loader">
-      <UniqueIdentifier>{519cd982-693c-4346-b65b-ff97e7ffdfe6}</UniqueIdentifier>
-    </Filter>
     <Filter Include="src\Entity">
       <UniqueIdentifier>{b05706cb-b7cf-4b6b-8316-ad02bcf7c1ed}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="include\Asset\MetaData">
-      <UniqueIdentifier>{cefced2c-6ac7-4ea7-9cc1-278b79abe77d}</UniqueIdentifier>
     </Filter>
     <Filter Include="include\Utils">
       <UniqueIdentifier>{bd301868-3e5e-41dc-9ba6-cf238ca8f064}</UniqueIdentifier>
     </Filter>
-    <Filter Include="include\Asset\Loader\Meta">
-      <UniqueIdentifier>{b96d7980-03b1-4ec5-b69d-b9f765e4ac1c}</UniqueIdentifier>
+    <Filter Include="include\Engine">
+      <UniqueIdentifier>{c78148d6-c923-4e4e-b0c4-b6f7a5fab1aa}</UniqueIdentifier>
     </Filter>
-    <Filter Include="include\Asset\Data\Graphics">
+    <Filter Include="include\Engine\Asset">
+      <UniqueIdentifier>{8b3086bf-46a6-47cc-9a8a-97b7e3c0e651}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\Engine\Asset\Data">
+      <UniqueIdentifier>{324b0d19-f6d6-4ea1-88d0-f49400598b71}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\Engine\Asset\Data\Graphics">
       <UniqueIdentifier>{764e964f-e597-4e1a-9224-cc4c7ea5d3d3}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\Asset\Loader">
+    <Filter Include="include\Engine\Asset\Loader">
+      <UniqueIdentifier>{519cd982-693c-4346-b65b-ff97e7ffdfe6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\Engine\Asset\Loader\Meta">
+      <UniqueIdentifier>{b96d7980-03b1-4ec5-b69d-b9f765e4ac1c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\Engine\Asset\MetaData">
+      <UniqueIdentifier>{cefced2c-6ac7-4ea7-9cc1-278b79abe77d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Engine">
+      <UniqueIdentifier>{4f40e4c5-0038-439c-ab56-bb09f337f27d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Engine\Asset">
+      <UniqueIdentifier>{8b8a015a-ead8-453b-a5bf-09da1ec61f5d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Engine\Asset\Loader">
       <UniqueIdentifier>{fdc57abb-5ed5-48eb-8670-66353763244e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\Asset\Loader\Meta">
+    <Filter Include="src\Engine\Asset\Loader\Meta">
       <UniqueIdentifier>{55d3fe0c-7860-49dd-9701-87d7840ce0ce}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -82,9 +88,6 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="%KAMATA_ENGINE%\Adapter\Novice.cpp">
       <Filter>KamataEngine\Adapter</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Asset\AssetManager.cpp">
-      <Filter>src\Asset</Filter>
     </ClCompile>
     <ClCompile Include="src\Core\EngineAPI.cpp">
       <Filter>src\Core</Filter>
@@ -101,20 +104,29 @@
     <ClCompile Include="src\Core\Backend.cpp">
       <Filter>src\Core</Filter>
     </ClCompile>
-    <ClCompile Include="src\Asset\Loader\Meta\SoundLoader.cpp">
-      <Filter>src\Asset\Loader\Meta</Filter>
+    <ClCompile Include="src\Engine\Asset\Loader\Meta\SoundLoader.cpp">
+      <Filter>src\Engine\Asset\Loader\Meta</Filter>
     </ClCompile>
-    <ClCompile Include="src\Asset\Loader\Meta\TextureLoader.cpp">
-      <Filter>src\Asset\Loader\Meta</Filter>
+    <ClCompile Include="src\Engine\Asset\Loader\Meta\TextureLoader.cpp">
+      <Filter>src\Engine\Asset\Loader\Meta</Filter>
     </ClCompile>
-    <ClCompile Include="src\Asset\AssetCatalog.cpp">
-      <Filter>src\Asset</Filter>
+    <ClCompile Include="src\Engine\Asset\AssetCatalog.cpp">
+      <Filter>src\Engine\Asset</Filter>
     </ClCompile>
-    <ClCompile Include="src\Asset\Loader\AnimationLoader.cpp">
-      <Filter>src\Asset\Loader</Filter>
+    <ClCompile Include="src\Engine\Asset\Loader\AnimationLoader.cpp">
+      <Filter>src\Engine\Asset\Loader</Filter>
     </ClCompile>
-    <ClCompile Include="src\Asset\Loader\TileSetLoader.cpp">
-      <Filter>src\Asset\Loader</Filter>
+    <ClCompile Include="src\Engine\Asset\Loader\TileSetLoader.cpp">
+      <Filter>src\Engine\Asset\Loader</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\EngineCore.cpp">
+      <Filter>src\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Asset\AssetManager.cpp">
+      <Filter>KamataEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engine\Asset\AssetManager.cpp">
+      <Filter>src\Engine\Asset</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -214,47 +226,41 @@
     <ClInclude Include="include\Entity\Player.hpp">
       <Filter>include\Entity</Filter>
     </ClInclude>
-    <ClInclude Include="include\Asset\AssetCatalog.hpp">
-      <Filter>include\Asset</Filter>
+    <ClInclude Include="include\Engine\Asset\AssetCatalog.hpp">
+      <Filter>include\Engine\Asset</Filter>
     </ClInclude>
-    <ClInclude Include="include\Asset\AssetsManager.hpp">
-      <Filter>include\Asset</Filter>
+    <ClInclude Include="include\Engine\Asset\AssetsManager.hpp">
+      <Filter>include\Engine\Asset</Filter>
     </ClInclude>
-    <ClInclude Include="include\Asset\ResourceHandle.hpp">
-      <Filter>include\Asset</Filter>
+    <ClInclude Include="include\Engine\Asset\ResourceHandle.hpp">
+      <Filter>include\Engine\Asset</Filter>
     </ClInclude>
-    <ClInclude Include="include\Asset\Data\AnimationData.hpp">
-      <Filter>include\Asset\Data</Filter>
+    <ClInclude Include="include\Engine\Asset\Data\AnimationData.hpp">
+      <Filter>include\Engine\Asset\Data</Filter>
     </ClInclude>
-    <ClInclude Include="include\Asset\Data\TileSetData.hpp">
-      <Filter>include\Asset\Data</Filter>
+    <ClInclude Include="include\Engine\Asset\Data\TileSetData.hpp">
+      <Filter>include\Engine\Asset\Data</Filter>
     </ClInclude>
-    <ClInclude Include="include\Asset\Loader\AnimationLoader.hpp">
-      <Filter>include\Asset\Loader</Filter>
+    <ClInclude Include="include\Engine\Asset\Loader\AnimationLoader.hpp">
+      <Filter>include\Engine\Asset\Loader</Filter>
     </ClInclude>
-    <ClInclude Include="include\Asset\Loader\MapLoader.hpp">
-      <Filter>include\Asset\Loader</Filter>
+    <ClInclude Include="include\Engine\Asset\Loader\TileSetLoader.hpp">
+      <Filter>include\Engine\Asset\Loader</Filter>
     </ClInclude>
-    <ClInclude Include="include\Asset\Loader\TileSetLoader.hpp">
-      <Filter>include\Asset\Loader</Filter>
+    <ClInclude Include="include\Engine\Asset\MetaData\Sound.hpp">
+      <Filter>include\Engine\Asset\MetaData</Filter>
     </ClInclude>
-    <ClInclude Include="include\Asset\Graphics\Sprite.hpp">
-      <Filter>include\Asset\Data\Graphics</Filter>
+    <ClInclude Include="include\Engine\Asset\MetaData\Texture.hpp">
+      <Filter>include\Engine\Asset\MetaData</Filter>
     </ClInclude>
-    <ClInclude Include="include\Asset\MetaData\Sound.hpp">
-      <Filter>include\Asset\MetaData</Filter>
+    <ClInclude Include="include\Engine\Asset\Loader\Meta\IAssetLoader.hpp">
+      <Filter>include\Engine\Asset\Loader\Meta</Filter>
     </ClInclude>
-    <ClInclude Include="include\Asset\MetaData\Texture.hpp">
-      <Filter>include\Asset\MetaData</Filter>
+    <ClInclude Include="include\Engine\Asset\Loader\Meta\SoundLoader.hpp">
+      <Filter>include\Engine\Asset\Loader\Meta</Filter>
     </ClInclude>
-    <ClInclude Include="include\Asset\Loader\Meta\IAssetLoader.hpp">
-      <Filter>include\Asset\Loader\Meta</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Asset\Loader\Meta\SoundLoader.hpp">
-      <Filter>include\Asset\Loader\Meta</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Asset\Loader\Meta\TextureLoader.hpp">
-      <Filter>include\Asset\Loader\Meta</Filter>
+    <ClInclude Include="include\Engine\Asset\Loader\Meta\TextureLoader.hpp">
+      <Filter>include\Engine\Asset\Loader\Meta</Filter>
     </ClInclude>
     <ClInclude Include="include\Utils\CSVParser.hpp">
       <Filter>include\Utils</Filter>
@@ -265,8 +271,8 @@
     <ClInclude Include="include\Core\EngineAPI.hpp">
       <Filter>include\Core</Filter>
     </ClInclude>
-    <ClInclude Include="include\Asset\Data\SoundData.hpp">
-      <Filter>include\Asset\Data</Filter>
+    <ClInclude Include="include\Engine\Asset\Data\SoundData.hpp">
+      <Filter>include\Engine\Asset\Data</Filter>
     </ClInclude>
     <ClInclude Include="include\Game\GameApp.hpp">
       <Filter>include\Game</Filter>
@@ -275,6 +281,12 @@
       <Filter>include\Entity</Filter>
     </ClInclude>
     <ClInclude Include="include\Core\Backend.hpp">
+      <Filter>include\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Engine\Asset\Data\Graphics\Sprite.hpp">
+      <Filter>include\Engine\Asset\Data\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Core\EngineCore.hpp">
       <Filter>include\Core</Filter>
     </ClInclude>
   </ItemGroup>

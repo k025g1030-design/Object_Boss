@@ -1,7 +1,7 @@
 ﻿#pragma once
 #include <string>
-#include "Asset/Loader/Meta/IAssetLoader.hpp"
-#include "Asset/Data/AnimationData.hpp"
+#include "Engine/Asset/Loader/Meta/IAssetLoader.hpp"
+#include "Engine/Asset/Data/AnimationData.hpp"
 
 /**
 

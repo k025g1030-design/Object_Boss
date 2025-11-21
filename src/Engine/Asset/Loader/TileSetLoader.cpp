@@ -1,13 +1,13 @@
-﻿#include "Asset/Loader/AnimationLoader.hpp"
-#include "Asset/AssetsManager.hpp"
-#include "Asset/Data/AnimationData.hpp"
-#include "Asset/MetaData/Texture.hpp"
+﻿#include "Engine/Asset/Loader/TileSetLoader.hpp"
+#include "Engine/Asset/AssetsManager.hpp"
+#include "Engine/Asset/Data/TileSetData.hpp"
+#include "Engine/Asset/MetaData/Texture.hpp"
 #include <memory>
 #include <string>
 #include "Utils/JSONParser.hpp"
 
 namespace Asset {
-    std::shared_ptr<AnimationData> AnimationLoader::LoadFromFile(const std::string& path, AssetManager& assets) {
+    std::shared_ptr<TileSetData> TileSetLoader::LoadFromFile(const std::string& path, AssetManager& assets) {
         path;
         assets;
         // 1. 讀 json / csv：這裡用 pseudo-code
@@ -16,7 +16,7 @@ namespace Asset {
          meta.frames = {...};
          meta.clips  = {...};*/
 
-        auto anim = std::make_shared<AnimationData>();
+        auto tileSet = std::make_shared<TileSetData>();
 
         // 2. 透過 AssetManager 再去 load 對應的 Texture
         /*Texture* tex = assets.Load<Texture>(meta.textureId);
@@ -24,7 +24,8 @@ namespace Asset {
         anim->sheet.frames = meta.frames;
         anim->clips = meta.clips;*/
 
-        return anim;
+        return tileSet;
     }
 }
+
 

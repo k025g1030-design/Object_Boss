@@ -1,5 +1,5 @@
 ﻿#pragma once
-#include "Asset/MetaData/Texture.hpp"
+#include "Engine/Asset/MetaData/Texture.hpp"
 #include <unordered_map>
 
 /**
@@ -8,10 +8,10 @@
 namespace Asset {
 
     enum TileType {
-        Empty,
-        BlackMist,  // 壁
-        Torii,      // 入口
-        Barrier,    // スキル
+        Empty,      // 
+        BlackMist,  // 壁 「黒霧」
+        Torii,      // 入口 「鳥居」
+        Barrier,    // スキル 「結界」
         Count,
     };
 

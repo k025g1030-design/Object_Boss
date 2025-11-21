@@ -1,7 +1,7 @@
 ﻿#include <memory>
 #define STB_IMAGE_IMPLEMENTATION
 #include <stb_image.h>
-#include "Asset/Loader/Meta/TextureLoader.hpp"
+#include "Engine/Asset/Loader/Meta/TextureLoader.hpp"
 #include "Core/Backend.hpp"
 
 namespace Asset {

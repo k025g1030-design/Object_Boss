@@ -3,8 +3,9 @@
 #include <memory>
 #include <functional>
 #include <unordered_map>
-#include "Asset/Loader/Meta/IAssetLoader.hpp"
-#include "Asset/AssetCatalog.hpp"
+#include "Engine/Asset/Loader/Meta/IAssetLoader.hpp"
+#include "Engine/Asset/AssetCatalog.hpp"
+#include "Engine/Asset/ResourceHandle.hpp"
 
 namespace Asset {
     class AssetManager {
@@ -23,16 +24,21 @@ namespace Asset {
         template<typename T>
         void RegisterLoader(const std::string& id, std::shared_ptr<IAssetLoader<T>> loader);
 
+        // ③ ハンドルを取得（内部で一度 Load<T> する）
+        template<typename T>
+        ResourceHandle<T> GetHandle(const std::string& assetId);
+
     private:
+        // 
+        using LoaderFunc = std::function<std::shared_ptr<void>(const std::string& path, AssetManager& assets)>;
         //
         AssetCatalog catalog_;
         //
         std::unordered_map<std::string, std::shared_ptr<void>> cache_;
-
-        using LoaderFunc = std::function<std::shared_ptr<void>(const std::string& path,
-            AssetManager& assets)>;
         //
         std::unordered_map<std::string, LoaderFunc> loaders_;
+
+        template<typename T> friend class ResourceHandle; 
     };
 
     /*
@@ -84,5 +90,27 @@ namespace Asset {
 
         // 5)  T* を返す（元の T 型への再キャスト）
         return static_cast<T*>(anyRes.get());
+    }
+
+    template<typename T>
+    T* AssetManager::Get(const std::string& assetId) {
+        auto it = cache_.find(assetId);
+        if (it != cache_.end()) {
+            return static_cast<T*>(it->second.get());
+        }
+        return nullptr; // キャッシュに存在しない場合
+    }
+
+    template<typename T>
+    ResourceHandle<T> AssetManager::GetHandle(const std::string& assetId) {
+        Load<T>(assetId); // Load しておく
+        return ResourceHandle<T>(this, assetId);
+    }
+
+    // ResourceHandle<T>::Get() を実装のはこちら
+    template<typename T>
+    T* ResourceHandle<T>::Get() const {
+        if (!manager_) return nullptr;
+        return manager_->Get<T>(id_);
     }
 }

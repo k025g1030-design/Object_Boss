@@ -1,6 +1,9 @@
 ﻿#pragma once
 #include <Novice.h>
 
+/**
+ エンジンの低レベル API 群 （今はAPIの変換だけ）
+**/
 namespace Engine {
     class Backend {
     public:

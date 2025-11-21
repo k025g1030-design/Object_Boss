@@ -1,6 +1,10 @@
 ﻿#include "Core/EngineAPI.hpp"
 
 namespace Engine {
+    void Initialize(const std::string& assetCatalogPath) {
+        gEngine.Init(assetCatalogPath);
+    }
+
     void RenderSprite(const Core::Vector2 position, const Asset::Sprite& sprite) {
         position;
         sprite;

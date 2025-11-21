@@ -1,12 +1,12 @@
 ﻿#include <Windows.h>
-#include <nlohmann/json.hpp>
-#include <fstream> 
+
+
 #include "Game/GameApp.hpp"
 #include "Core/Backend.hpp"
 
 const char* kWindowTitle = "Object_Boss";
 
-using json = nlohmann::json;
+
 
 const int kWindowWidth = 1280;
 const int kWindowHeight = 720;
@@ -22,8 +22,6 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
     char keys[256] = {0};
     char preKeys[256] = {0};
 
-    /*std::ifstream f("./Assets/Data/example.json");
-    json data = json::parse(f);*/
     
 	Game::GameApp gameApp;
 	gameApp.Init();
