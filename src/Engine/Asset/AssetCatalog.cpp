@@ -8,7 +8,9 @@ namespace Asset {
         // Implementation to load asset catalog from a file
         // This is a placeholder implementation
         auto csv = CSVParser::Parse(catalogPath);
-        for (const auto& row : csv) {
+        //for (const auto& row : csv) {
+        for (int i = 1; i < static_cast<int>(csv.size()); ++i) {
+            const auto& row = csv[i];
             // Example: parse row to AssetInfo and add to catalog
             // Assuming row[0]=assetId, row[1]=type, row[2]=group, row[3]=path
             std::string assetId = "";

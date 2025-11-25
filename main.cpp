@@ -1,22 +1,17 @@
 ﻿#include <Windows.h>
-
-
 #include "Game/GameApp.hpp"
 #include "Core/Backend.hpp"
+#include "Core/Config.hpp"
+#include "Core/EngineAPI.hpp"
 
-const char* kWindowTitle = "Object_Boss";
 
-
-
-const int kWindowWidth = 1280;
-const int kWindowHeight = 720;
 
 // Windowsアプリでのエントリーポイント(main関数)
 int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 
     // ライブラリの初期化
     //Novice::Initialize(kWindowTitle, kWindowWidth, kWindowHeight);
-    Engine::Backend::Initialize(kWindowTitle, kWindowWidth, kWindowHeight);
+    Engine::Initialize("./Assets/Data/catalog.csv");
 
     // キー入力結果を受け取る箱
     char keys[256] = {0};

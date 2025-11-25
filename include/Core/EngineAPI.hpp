@@ -57,6 +57,7 @@ namespace Engine {
     const Asset::AnimationData* GetAnimationData(AnimHandle handle);
     const Asset::TileSetData* GetTileSetData(TileSetHandle handle);
 
+    // --- エンジン初期化 ---
     void Initialize(const std::string& assetCatalogPath);
 
 

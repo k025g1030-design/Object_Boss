@@ -151,6 +151,7 @@ xcopy %KAMATA_ENGINE%\DirectXGame\Resources "$(OutDirFullPath)NoviceResources" /
     <ClInclude Include="%KAMATA_ENGINE%\DirectXGame\input\Input.h" />
     <ClInclude Include="%KAMATA_ENGINE%\DirectXGame\scene\GameScene.h" />
     <ClInclude Include="%KAMATA_ENGINE%\Adapter\Novice.h" />
+    <ClInclude Include="include\Core\Config.hpp" />
     <ClInclude Include="include\Engine\Asset\AssetCatalog.hpp" />
     <ClInclude Include="include\Engine\Asset\AssetsManager.hpp" />
     <ClInclude Include="include\Engine\Asset\Data\AnimationData.hpp" />

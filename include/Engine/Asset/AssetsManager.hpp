@@ -31,7 +31,7 @@ namespace Asset {
     private:
         // 
         using LoaderFunc = std::function<std::shared_ptr<void>(const std::string& path, AssetManager& assets)>;
-        //
+        // 
         AssetCatalog catalog_;
         //
         std::unordered_map<std::string, std::shared_ptr<void>> cache_;

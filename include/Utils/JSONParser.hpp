@@ -7,7 +7,7 @@ namespace Utils {
 
     class JSONParser {
     public:
-        static json ParseFromFile(const std::string& filePath) {
+        static json Parse(const std::string& filePath) {
             std::ifstream file(filePath);
             if (!file.is_open()) {
                 throw std::runtime_error("Could not open JSON file: " + filePath);
