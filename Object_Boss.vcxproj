@@ -152,6 +152,7 @@ xcopy %KAMATA_ENGINE%\DirectXGame\Resources "$(OutDirFullPath)NoviceResources" /
     <ClInclude Include="include\Component\Image.hpp" />
     <ClInclude Include="include\Component\Text.hpp" />
     <ClInclude Include="include\Core\Math.hpp" />
+    <ClInclude Include="include\Entity\Boss.hpp" />
     <ClInclude Include="include\Entity\Player.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
