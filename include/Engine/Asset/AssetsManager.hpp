@@ -111,6 +111,6 @@ namespace Asset {
     template<typename T>
     T* ResourceHandle<T>::Get() const {
         if (!manager_) return nullptr;
-        return manager_->Get<T>(id_);
+        return manager_->Get<T>(assetId_);
     }
 }
