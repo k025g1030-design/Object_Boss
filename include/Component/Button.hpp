@@ -3,7 +3,6 @@ https://sites.google.com/g.neec.ac.jp/kamata-engine/novice/reference/%E3%83%96%E
 */
 #pragma once
 #include "Core/Math.hpp"
-#include "Asset/ResourceHandle.hpp"
 #include <string>
 #include <Novice.h>
 

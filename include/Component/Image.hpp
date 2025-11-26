@@ -1,6 +1,5 @@
 ﻿#pragma once
 #include "Core/Math.hpp"
-#include "Asset/ResourceHandle.hpp"
 #include <Novice.h>
 
 
