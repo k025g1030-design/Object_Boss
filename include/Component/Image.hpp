@@ -8,7 +8,6 @@ namespace Component {
     class ImageSpan {
     public:
         explicit ImageSpan(Core::Vector2 size, Core::Vector2 position) : size_(size), position_(position){}
-        explicit ImageSpan(Core::Vector2 position, Core::AnimeHandle cursorHandle) : size_(cursorHandle.size), position_(position), cursorHandle_(cursorHandle) {}
         explicit ImageSpan() {}
 
         void Render() const {
@@ -17,24 +16,12 @@ namespace Component {
             int y = static_cast<int>(position_.y);
             int w = static_cast<int>(size_.x);
             int h = static_cast<int>(size_.y);
-            if (cursorHandle_.resource.textureHandle == -1) {
-                Novice::DrawBox(x, y, w, h, 0, 0x404040FF, kFillModeSolid);
-                Novice::DrawBox(x, y, w, h, 0, 0xFFFFFFFF, kFillModeWireFrame);
-            } else {
-                Novice::DrawSpriteRect(
-                    x, y,
-                    (int)cursorHandle_.posi.x, (int)cursorHandle_.posi.y,
-                    (int)cursorHandle_.size.x, (int)cursorHandle_.size.y,
-                    cursorHandle_.resource.textureHandle,
-                    (cursorHandle_.size.x / cursorHandle_.resource.size.x * cursorHandle_.resource.scale), 
-                    (cursorHandle_.size.y / cursorHandle_.resource.size.y * cursorHandle_.resource.scale), 
-                    0.0f, WHITE
-                );
-            }
+
+            Novice::DrawBox(x, y, w, h, 0, 0x404040FF, kFillModeSolid);
+            Novice::DrawBox(x, y, w, h, 0, 0xFFFFFFFF, kFillModeWireFrame);
+            
         }
-        void SetCursorHandle(Core::AnimeHandle handle) {
-            cursorHandle_ = handle;
-        }
+
         void SetSize(Core::Vector2 size) {
             size_ = size;
         }
@@ -67,7 +54,6 @@ namespace Component {
         Core::Vector2 size_;
         Core::Vector2 position_;
         bool isVisible_{ true };
-        Core::AnimeHandle cursorHandle_;
     };
 }
 

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|x64">
@@ -61,7 +61,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_WINDOWS;%(PreprocessorDefinitions);%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)include;$(ProjectDir)include;%KAMATA_ENGINE%\Adapter;%KAMATA_ENGINE%\External\imgui;%KAMATA_ENGINE%\External\KamataEngine\include;%KAMATA_ENGINE%\External\DirectXTex\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)third_party\stb;$(ProjectDir)include;$(ProjectDir)third_party\nlohmann_json-3.12.0\single_include;$(ProjectDir)include;%KAMATA_ENGINE%\Adapter;%KAMATA_ENGINE%\External\imgui;%KAMATA_ENGINE%\External\KamataEngine\include;%KAMATA_ENGINE%\External\DirectXTex\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
       <TreatWarningAsError>true</TreatWarningAsError>
@@ -86,7 +86,7 @@ xcopy %KAMATA_ENGINE%\DirectXGame\Resources "$(OutDirFullPath)NoviceResources" /
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_WINDOWS;%(PreprocessorDefinitions);%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)include;%KAMATA_ENGINE%\Adapter;%KAMATA_ENGINE%\External\KamataEngine\include;%KAMATA_ENGINE%\External\DirectXTex\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)third_party\stb;$(ProjectDir)include;$(ProjectDir)third_party\nlohmann_json-3.12.0\single_include;%KAMATA_ENGINE%\Adapter;%KAMATA_ENGINE%\External\KamataEngine\include;%KAMATA_ENGINE%\External\DirectXTex\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <Optimization>MinSpace</Optimization>
       <LanguageStandard>stdcpp20</LanguageStandard>
@@ -110,6 +110,18 @@ xcopy %KAMATA_ENGINE%\DirectXGame\Resources "$(OutDirFullPath)NoviceResources" /
   <ItemGroup>
     <ClCompile Include="%KAMATA_ENGINE%\Adapter\Novice.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="src\Engine\Asset\AssetCatalog.cpp" />
+    <ClCompile Include="src\Engine\Asset\AssetManager.cpp" />
+    <ClCompile Include="src\Engine\Asset\Loader\AnimationLoader.cpp" />
+    <ClCompile Include="src\Engine\Asset\Loader\Meta\SoundLoader.cpp" />
+    <ClCompile Include="src\Engine\Asset\Loader\Meta\TextureLoader.cpp" />
+    <ClCompile Include="src\Engine\Asset\Loader\TileSetLoader.cpp" />
+    <ClCompile Include="src\Core\Backend.cpp" />
+    <ClCompile Include="src\Engine\EngineCore.cpp" />
+    <ClCompile Include="src\Entity\Enemy.cpp" />
+    <ClCompile Include="src\Entity\Player.cpp" />
+    <ClCompile Include="src\Game\GameApp.cpp" />
+    <ClCompile Include="src\Core\EngineAPI.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\DirectXGame\3d\Camera.h" />
@@ -139,21 +151,34 @@ xcopy %KAMATA_ENGINE%\DirectXGame\Resources "$(OutDirFullPath)NoviceResources" /
     <ClInclude Include="%KAMATA_ENGINE%\DirectXGame\input\Input.h" />
     <ClInclude Include="%KAMATA_ENGINE%\DirectXGame\scene\GameScene.h" />
     <ClInclude Include="%KAMATA_ENGINE%\Adapter\Novice.h" />
-    <ClInclude Include="include\Asset\AnimationData.hpp" />
-    <ClInclude Include="include\Asset\AssetCatalog.hpp" />
-    <ClInclude Include="include\Asset\AssetsManager.hpp" />
-    <ClInclude Include="include\Asset\IAssetLoader.hpp" />
-    <ClInclude Include="include\Asset\JsonLoader.hpp" />
-    <ClInclude Include="include\Asset\ResourceHandle.hpp" />
-    <ClInclude Include="include\Asset\SoundLoader.hpp" />
-    <ClInclude Include="include\Asset\TextureLoader.hpp" />
-    <ClInclude Include="include\Asset\TileSetData.hpp" />
+    <ClInclude Include="include\Core\Config.hpp" />
+    <ClInclude Include="include\Engine\Asset\AssetCatalog.hpp" />
+    <ClInclude Include="include\Engine\Asset\AssetsManager.hpp" />
+    <ClInclude Include="include\Engine\Asset\Data\AnimationData.hpp" />
+    <ClInclude Include="include\Engine\Asset\Data\Graphics\Sprite.hpp" />
+    <ClInclude Include="include\Engine\Asset\Data\SoundData.hpp" />
+    <ClInclude Include="include\Engine\Asset\Data\TileSetData.hpp" />
+    <ClInclude Include="include\Engine\Asset\Loader\AnimationLoader.hpp" />
+    <ClInclude Include="include\Engine\Asset\Loader\Meta\IAssetLoader.hpp" />
+    <ClInclude Include="include\Engine\Asset\Loader\Meta\SoundLoader.hpp" />
+    <ClInclude Include="include\Engine\Asset\Loader\Meta\TextureLoader.hpp" />
+    <ClInclude Include="include\Engine\Asset\Loader\TileSetLoader.hpp" />
+    <ClInclude Include="include\Engine\Asset\MetaData\Sound.hpp" />
+    <ClInclude Include="include\Engine\Asset\MetaData\Texture.hpp" />
+    <ClInclude Include="include\Engine\Asset\ResourceHandle.hpp" />
     <ClInclude Include="include\Component\Button.hpp" />
     <ClInclude Include="include\Component\Image.hpp" />
     <ClInclude Include="include\Component\Text.hpp" />
+    <ClInclude Include="include\Core\EngineAPI.hpp" />
+    <ClInclude Include="include\Core\Backend.hpp" />
     <ClInclude Include="include\Core\Math.hpp" />
     <ClInclude Include="include\Entity\Boss.hpp" />
+    <ClInclude Include="include\Engine\EngineCore.hpp" />
+    <ClInclude Include="include\Entity\Enemy.hpp" />
     <ClInclude Include="include\Entity\Player.hpp" />
+    <ClInclude Include="include\Game\GameApp.hpp" />
+    <ClInclude Include="include\Utils\CSVParser.hpp" />
+    <ClInclude Include="include\Utils\JSONParser.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -12,10 +12,7 @@ namespace Component {
     class Button {
     public:
         explicit Button(Core::Vector2 size, Core::Vector2 position, std::string name) : size_(size), position_(position), name_(name) {}
-        explicit Button( Core::Vector2 position, std::string name, Core::AnimeHandle cursorHandle) : size_(cursorHandle.size), position_(position), name_(name), cursorHandle_(cursorHandle) {}
         explicit Button() {}
-
-
 
         bool Contains(Core::Vector2 p, Core::Vector2 sz, int mx, int my) {
             return mx >= p.x && mx <= p.x + sz.x && my >= p.y && my <= p.y + sz.y;
@@ -98,13 +95,6 @@ namespace Component {
             return value_;
         }
 
-        Core::AnimeHandle GetCursorHandle() {
-            return cursorHandle_;
-        }
-
-        void SetCursorHandle(Core::AnimeHandle handle) {
-            cursorHandle_ = handle;
-        }
 
         void Render() const {
             if (!isVisible_) return;
@@ -113,26 +103,13 @@ namespace Component {
             int w = static_cast<int>(size_.x);
             int h = static_cast<int>(size_.y);
 
-            if (cursorHandle_.resource.textureHandle == -1) {
-                Novice::DrawBox(x, y, w, h, 0, 0x404040FF, kFillModeSolid);
-                Novice::DrawBox(x, y, w, h, 0, 0xFFFFFFFF, kFillModeWireFrame);
-                Novice::ScreenPrintf(x + 10, y + h / 2 - 8, "%s", name_.c_str());
-                if (isSelected_) {
-                    Novice::DrawBox(x, y, w, h, 0, RED, kFillModeWireFrame);
-                }
-            } else {
-                Novice::DrawBox(x, y, (int)cursorHandle_.size.x, (int)cursorHandle_.size.y, 0, 0x40404066, kFillModeSolid);
-                Novice::DrawSpriteRect(
-                    x, y,
-                    (int)cursorHandle_.posi.x, (int)cursorHandle_.posi.y,
-                    (int)cursorHandle_.size.x, (int)cursorHandle_.size.y,
-                    cursorHandle_.resource.textureHandle,
-                    cursorHandle_.size.x / cursorHandle_.resource.size.x, 1, 0.0f, WHITE
-                );
-                if (isSelected_) {
-                    Novice::DrawBox(x, y, (int)cursorHandle_.size.x, (int)cursorHandle_.size.y, 0, 0x00000099, kFillModeSolid);
-                }
+            Novice::DrawBox(x, y, w, h, 0, 0x404040FF, kFillModeSolid);
+            Novice::DrawBox(x, y, w, h, 0, 0xFFFFFFFF, kFillModeWireFrame);
+            Novice::ScreenPrintf(x + 10, y + h / 2 - 8, "%s", name_.c_str());
+            if (isSelected_) {
+                Novice::DrawBox(x, y, w, h, 0, RED, kFillModeWireFrame);
             }
+           
 
         }
 
@@ -147,6 +124,5 @@ namespace Component {
 
         int value_{ -1 };
         std::string name_;
-        Core::AnimeHandle cursorHandle_;
     };
 }

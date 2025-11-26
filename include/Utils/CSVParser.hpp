@@ -1,0 +1,103 @@
+﻿#pragma once
+#include <string>
+#include <vector>
+#include <fstream>
+#include <sstream>
+
+
+namespace Utils {
+    class CSVParser {
+    public:
+        // CSVファイルを読み込み、2次元ベクトルとしてデータを返す
+        static std::vector<std::vector<std::string>> Parse(const std::string& filePath) {
+            std::vector<std::vector<std::string>> matrix;
+            std::ifstream file(filePath);
+            if (!file.is_open()) {
+                throw std::runtime_error("Could not open file: " + filePath);
+            }
+            std::string line;
+            while (std::getline(file, line)) {
+                std::vector<std::string> row;
+                std::stringstream lineStream(line);
+                std::string cell;
+                while (std::getline(lineStream, cell, ',')) {
+                    row.push_back(cell);
+                }
+                matrix.push_back(row);
+            }
+            file.close();
+            return matrix;
+        }
+
+        // CSVファイルを読み込み、2次元ベクトルとして整数データを返す
+        static std::vector<std::vector<int>> ParseByInt(const std::string& filePath) {
+            std::vector<std::vector<int>> matrix;
+            std::ifstream file(filePath);
+
+            if (!file.is_open()) {
+                throw std::runtime_error("Could not open file: " + filePath);
+            }
+            std::string line;
+            if (std::getline(file, line)) {
+                if (line.size() >= 3 &&
+                    (unsigned char)line[0] == 0xEF &&
+                    (unsigned char)line[1] == 0xBB &&
+                    (unsigned char)line[2] == 0xBF) {
+                    line = line.substr(3); // remove BOM
+                }
+            } else {
+                file.close();
+                return matrix; // is null
+            }
+            auto processLine = [&](const std::string& ln) {
+                std::vector<int> row;
+                std::stringstream ss(ln);
+                std::string cell;
+                while (std::getline(ss, cell, ',')) {
+                    cell = Trim_(cell);
+                    if (cell.empty()) continue;             // 
+                    if (IsInteger_(cell)) {
+                        row.push_back(std::stoi(cell));
+                    }
+                }
+                if (!row.empty()) matrix.push_back(row);
+            };
+
+            processLine(line);
+
+            while (std::getline(file, line)) {
+                processLine(line);
+            }
+            file.close();
+            return matrix;
+        }
+
+
+    private:
+        static std::string Trim_(const std::string& s) {
+            size_t start = 0;
+            while (start < s.size() && std::isspace((unsigned char)s[start])) start++;
+
+            size_t end = s.size();
+            while (end > start && std::isspace((unsigned char)s[end - 1])) end--;
+
+            return s.substr(start, end - start);
+        }
+
+        static bool IsInteger_(const std::string& s) {
+            if (s.empty()) return false;
+
+            size_t i = 0;
+            if (s[0] == '-' || s[0] == '+') i++;
+
+            if (i == s.size()) return false;
+
+            for (; i < s.size(); i++) {
+                if (!std::isdigit((unsigned char)s[i])) return false;
+            }
+
+            return true;
+        }
+
+    };
+}

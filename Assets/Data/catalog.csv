@@ -1,0 +1,4 @@
+id,type,group,path
+test_texture,Texture,default,assets/textures/test_texture.png
+test_sound,Sound,default,assets/sounds/test_sound.wav
+test_animation,AnimationData,default,assets/animations/test_animation.json

@@ -1,6 +1,8 @@
-﻿#include <Novice.h>
-
-const char kWindowTitle[] = "Object_Boss";
+﻿#include <Windows.h>
+#include "Game/GameApp.hpp"
+#include "Core/Backend.hpp"
+#include "Core/Config.hpp"
+#include "Core/EngineAPI.hpp"
 
 
 
@@ -8,24 +10,39 @@ const char kWindowTitle[] = "Object_Boss";
 int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 
     // ライブラリの初期化
-    Novice::Initialize(kWindowTitle, 1280, 720);
+    //Novice::Initialize(kWindowTitle, kWindowWidth, kWindowHeight);
+    Engine::Initialize("./Assets/Data/catalog.csv");
 
     // キー入力結果を受け取る箱
     char keys[256] = {0};
     char preKeys[256] = {0};
 
+    
+	Game::GameApp gameApp;
+	gameApp.Init();
+
+
     // ウィンドウの×ボタンが押されるまでループ
-    while (Novice::ProcessMessage() == 0) {
+    while (Engine::Backend::ProcessStatus() == 0) {
         // フレームの開始
-        Novice::BeginFrame();
+        Engine::Backend::StartFrame();
 
         
         // キー入力を受け取る
         memcpy(preKeys, keys, 256);
-        Novice::GetHitKeyStateAll(keys);
+        Engine::Backend::GetHitKeyStateAll(keys);
+
+        //Novice::ScreenPrintf(0, 0, "%s", data["name"].get<std::string>().c_str());
+
+		gameApp.Input();
+
+		gameApp.Update();
+		
+        gameApp.Render();
+
 
         // フレームの終了
-        Novice::EndFrame();
+        Engine::Backend::EndFrame();
 
         // ESCキーが押されたらループを抜ける
         if (preKeys[DIK_ESCAPE] == 0 && keys[DIK_ESCAPE] != 0) {
@@ -34,7 +51,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
     }
 
     // ライブラリの終了
-    Novice::Finalize();
+    Engine::Backend::Finalize();
     return 0;
 }
 

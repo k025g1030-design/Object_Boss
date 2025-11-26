@@ -3,10 +3,14 @@
 - [ゲームについて](#ゲームについて)
   - [開発計画](#開発計画) 
   - [ゲーム説明](#ゲーム説明) 
-  - [素材](#素材)
+  - [スキル設定](#スキル設定)
+- [リソースの参考](#リソースの参考)
+  - [美術参考](#美術参考)
   - [素材処理](#素材処理)
 - [ストーリー](#ストーリー)
 - [まとめ](#まとめ)
+- [ゲームアーキテクチャ設計](#ゲームアーキテクチャ設計)
+  - [AssetManager](#AssetManager)
 - [作者](#作者)
 
 ## ゲームについて
@@ -77,18 +81,32 @@
 光輪斬
 光の刃が周囲を周回し、当たるたびに小ダメージ。
 
-### 素材
-#### 画像
+## 美術参考
+### プレイヤーのHP
+![プレイヤーのHP](./Doc/Images/HP_Player.jpg)
+
+### ボスのHP
+![ボスのHP](./Doc/Images/HP_Boss.jpg)
+
+### プレイヤーのアニメーション「Sheet」
+![プレイヤーのアニメーション01](./Doc/Images/Player_Anime_01.jpg)
+![プレイヤーのアニメーション02](./Doc/Images/Player_Anime_02.jpg)
+![プレイヤーのアニメーション03](./Doc/Images/Player_Anime_03.jpg)
+![プレイヤーのアニメーション04](./Doc/Images/Player_Anime_04.jpg)
+
+### スキル
+![スキル01](./Doc/Images/Skill_Icon_01.jpg)
+![スキル02](./Doc/Images/Skill_Icon_02.jpg)
+
+### 鳥居
+![鳥居01](./Doc/Images/Torii_01.jpg)
+![鳥居02](./Doc/Images/Torii_02.jpg)
 
 
 #### 音
 ##### 音_1
 
 
-
-### 素材処理
-#### 画像編集ソフト
-##### 時限爆弾
 
 
 ## プログラムについて
@@ -108,8 +126,7 @@
 ![環境変数](./Doc/Images/EnvEdit_02.png)
 
 ![環境変数](./Doc/Images/EnvEdit_03.png)
- 
-  - **KAMATA_ENGINE** : ``<KamataEngineのパス>``
+ - **KAMATA_ENGINE** : ``<KamataEngineのパス>``
  - **<KamataEngineのパス>** : ``C:\path\to\KamataEngine`` のように、**KamataEngine** フォルダの絶対パスを指定。
 
 #### テストする
@@ -139,6 +156,45 @@ $(ProjectDir)include;
 
 
 ## まとめ：
+
+
+## ゲームアーキテクチャ設計
+
+### AssetManager
+```
+┌──────── GameApp / Game Systems ─────────┐
+│   Handle<AnimationData> ...             │
+│   Handle<Texture> ...                   │
+│   Handle<Sound> ...                     │
+│   Handle<TileSet> ...                   │
+└────────────────────┬────────────────────┘
+                     │ A)
+       ┌─────────────▼──────────────┐
+       │       AssetManager         │
+       │  - AssetCatalog catalog    │
+       │  - map<id, resource> cache │
+       │  - map<type, IAssetLoader> │
+       └──────┬─────────┬───────────┘
+              │         │
+           B) │         │ C)
+              │         │
+   ┌──────────▼────┐  ┌─▼────────────────┐
+   │ AssetCatalog  │  │ IAssetLoader<T>  │
+   │ id→{type,path}│  │  ↑   ↑   ↑   ↑   │
+   └───────────────┘  │  │   │   │   │   │
+                      └──│───│───│───│───┘
+    TextureLoader   ◄────┘   │   │   │
+    SoundLoader     ◄────────┘   │   │
+    AnimationLoader ◄────────────┘   │
+    TileSetLoader   ◄────────────────┘
+
+A）Game Systems が AssetManager を使用してリソースを取得する
+
+B）AssetManager は AssetCatalog を参照してリソースパスを取得し、対応する IAssetLoader を呼び出して読み込み処理を行う。
+
+C）AssetManager は各リソース種類に対応した IAssetLoader の具体的な実装を用いて、異なるタイプのリソースを読み込む。
+
+```
 
 
 ## 作者
