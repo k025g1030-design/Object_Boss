@@ -17,8 +17,8 @@ namespace Asset {
     public:
         ResourceHandle() = default;
 
-        ResourceHandle(AssetManager* manager, const std::string& id)
-            : manager_(manager), id_(id) {}
+        ResourceHandle(AssetManager* manager, const std::string& assetId)
+            : manager_(manager), assetId_(assetId) {}
 
         // 資源を取得（ロード済み前提）
         T* Get() const;
@@ -28,11 +28,11 @@ namespace Asset {
 
         bool IsValid() const { return Get() != nullptr; }
 
-        const std::string& GetId() const { return id_; }
+        const std::string& GetAssetId() const { return assetId_; }
 
     private:
         AssetManager* manager_ = nullptr; // 所有しない、ただのポインタ
-        std::string   id_;
+        std::string   assetId_;
     };
 }
 

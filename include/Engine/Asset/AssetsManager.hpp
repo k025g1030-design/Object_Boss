@@ -24,7 +24,7 @@ namespace Asset {
         template<typename T>
         void RegisterLoader(const std::string& id, std::shared_ptr<IAssetLoader<T>> loader);
 
-        // ③ ハンドルを取得（内部で一度 Load<T> する）
+        // ハンドルを取得（内部で一度 Load<T> する）
         template<typename T>
         ResourceHandle<T> GetHandle(const std::string& assetId);
 
