@@ -1,4 +1,5 @@
 {
+    "assetId":"player.sheet",
     "textureId": "tex.sheet.player",
     "path":"./Assets/Images/player_sheet.png",
     "remark" : "",

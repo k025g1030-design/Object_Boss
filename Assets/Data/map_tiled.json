@@ -1,4 +1,5 @@
 {
+    "assetId":"",
     "textureId": "tex.tileset.map",
     "path":"./Assets/Images/Map_Tiled.png",
     "remark" : "",
@@ -8,8 +9,8 @@
     },
 
     "grid": {
-        "cellWidth":64,
-        "cellHeight":64,
+        "cellw":64,
+        "cellh":64,
         "marginX":0,
         "marginY":0,
         "spacingX":0,
@@ -17,40 +18,168 @@
     },
 
     "tiles": {
-        "0": {"gridRow":0, "gridCol":1},
-        "1": {"gridRow":0, "gridCol":0},
+        "0": {
+            "gridIndex": {
+                "row":0,
+                "col":1
+            },
+            "collision": {
+                "solid": false
+            },
+            "flags":["floor"]
+        },
+        "1": {
+            "gridIndex": {
+                "row":0,
+                "col":0
+            },
+             "collision": {
+                "solid": true
+            },
+            "flags":["wall"]
+        },
         "3": {
-            "rect": {"x":0, "y":192, "width":256, "height":192}
+            "rect": {
+                "x":0, 
+                "y":192, 
+                "w":256, 
+                "h":192
+            },
+            "collision": {
+                "solid": false,
+                "eventId": "portal.entrance"
+            },
+            "flags":["portal", "event"]
         },
         "4": {
-            "rect": {"x":128, "y":0, "width":128, "height":128}
+            "rect": {
+                "x":128, 
+                "y":0, 
+                "w":128, 
+                "h":128
+            },
+            "collision": {
+                "solid": false,
+                "eventId": "skill.0"
+            },
+            "flags":["skill", "event"]
         },
         "41": {
-            "rect": {"x":128, "y":0, "width":128, "height":128}
+            "rect": {
+                "x":128, 
+                "y":0, 
+                "w":128, 
+                "h":128
+            },
+            "collision": {
+                "solid": false,
+                "eventId": "skill.1"
+            },
+            "flags":["skill", "event"]
         },
         "42": {
-            "rect": {"x":256, "y":0, "width":128, "height":128}
+            "rect": {
+                "x":256, 
+                "y":0, 
+                "w":128, 
+                "h":128
+            },
+            "collision": {
+                "solid": false,
+                "eventId": "skill.2"
+            },
+            "flags":["skill", "event"]
         },
         "43": {
-            "rect": {"x":384, "y":0, "width":128, "height":128}
+            "rect": {
+                "x":384, 
+                "y":0, 
+                "w":128, 
+                "h":128
+            },
+            "collision": {
+                "solid": false,
+                "eventId": "skill.3"
+            },
+            "flags":["skill", "event"]
         },
         "44": {
-            "rect": {"x":512, "y":0, "width":128, "height":128}
+            "rect": {
+                "x":512, 
+                "y":0, 
+                "w":128, 
+                "h":128
+            },
+            "collision": {
+                "solid": false,
+                "eventId": "skill.4"
+            },
+            "flags":["skill", "event"]
         },
         "45": {
-            "rect": {"x":640, "y":0, "width":128, "height":128}
+            "rect": {
+                "x":640, 
+                "y":0, 
+                "w":128, 
+                "h":128
+            },
+            "collision": {
+                "solid": false,
+                "eventId": "skill.5"
+            },
+            "flags":["skill", "event"]
         },
         "46": {
-            "rect": {"x":256, "y":128, "width":128, "height":128}
+            "rect": {
+                "x":256, 
+                "y":128, 
+                "w":128, 
+                "h":128
+            },
+            "collision": {
+                "solid": false,
+                "eventId": "skill.6"
+            },
+            "flags":["skill", "event"]
         },
         "47": {
-            "rect": {"x":384, "y":128, "width":128, "height":128}
+            "rect": {
+                "x":384, 
+                "y":128, 
+                "w":128, 
+                "h":128
+            },
+            "collision": {
+                "solid": false,
+                "eventId": "skill.7"
+            },
+            "flags":["skill", "event"]
         },
         "48": {
-            "rect": {"x":512, "y":128, "width":128, "height":128}
+            "rect": {
+                "x":512, 
+                "y":128, 
+                "w":128, 
+                "h":128
+            },
+            "collision": {
+                "solid": false,
+                "eventId": "skill.8"
+            },
+            "flags":["skill", "event"]
         },
         "49": {
-            "rect": {"x":640, "y":128, "width":128, "height":128}
+            "rect": {
+                "x":640, 
+                "y":128, 
+                "w":128, 
+                "h":128
+            },
+            "collision": {
+                "solid": false,
+                "eventId": "skill.9"
+            },
+            "flags":["skill", "event"]
         }
     }
 

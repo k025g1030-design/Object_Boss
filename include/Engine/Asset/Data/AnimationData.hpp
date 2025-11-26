@@ -18,7 +18,7 @@ namespace Asset {
     struct AnimationClip {
         std::vector<int> frameIndices;  // SpriteSheet.frames の index
         float fps = 0.0f;
-        bool loop = true;
+        int speed = 10;
     };
 
     // SpriteSheet + 複数の Clip をまとめた「1キャラ分のアニメデータ」
