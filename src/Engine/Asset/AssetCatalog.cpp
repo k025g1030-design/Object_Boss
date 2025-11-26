@@ -22,12 +22,13 @@ namespace Asset {
                 if (row.size() > 1) {
                     if (row[1] == "Texture") type = AssetType::Texture;
                     else if (row[1] == "Sound") type = AssetType::Sound;
+                    else if (row[1] == "MapSourceData") type = AssetType::MapSourceData;
                     else if (row[1] == "MapTiledData") type = AssetType::MapTiledData;
                     else if (row[1] == "ClipData") type = AssetType::ClipData;
                     else if (row[1] == "TextData") type = AssetType::TextData;
                 }
                 group = row.size() > 2 ? row[2] : "";
-                group = row.size() > 3 ? row[3] : "";
+                path = row.size() > 3 ? row[3] : "";
                 Add(assetId, {
                     type,
                     group,

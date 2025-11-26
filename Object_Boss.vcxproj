@@ -116,11 +116,11 @@ xcopy %KAMATA_ENGINE%\DirectXGame\Resources "$(OutDirFullPath)NoviceResources" /
     <ClCompile Include="src\Engine\Asset\Loader\Meta\SoundLoader.cpp" />
     <ClCompile Include="src\Engine\Asset\Loader\Meta\TextureLoader.cpp" />
     <ClCompile Include="src\Engine\Asset\Loader\TileSetLoader.cpp" />
-    <ClCompile Include="src\Core\Backend.cpp" />
     <ClCompile Include="src\Engine\EngineCore.cpp" />
     <ClCompile Include="src\Entity\Enemy.cpp" />
     <ClCompile Include="src\Entity\Player.cpp" />
     <ClCompile Include="src\Game\GameApp.cpp" />
+    <ClCompile Include="src\Core\Backend.cpp" />
     <ClCompile Include="src\Core\EngineAPI.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -151,7 +151,6 @@ xcopy %KAMATA_ENGINE%\DirectXGame\Resources "$(OutDirFullPath)NoviceResources" /
     <ClInclude Include="%KAMATA_ENGINE%\DirectXGame\input\Input.h" />
     <ClInclude Include="%KAMATA_ENGINE%\DirectXGame\scene\GameScene.h" />
     <ClInclude Include="%KAMATA_ENGINE%\Adapter\Novice.h" />
-    <ClInclude Include="include\Core\Config.hpp" />
     <ClInclude Include="include\Engine\Asset\AssetCatalog.hpp" />
     <ClInclude Include="include\Engine\Asset\AssetsManager.hpp" />
     <ClInclude Include="include\Engine\Asset\Data\AnimationData.hpp" />
@@ -169,6 +168,7 @@ xcopy %KAMATA_ENGINE%\DirectXGame\Resources "$(OutDirFullPath)NoviceResources" /
     <ClInclude Include="include\Component\Button.hpp" />
     <ClInclude Include="include\Component\Image.hpp" />
     <ClInclude Include="include\Component\Text.hpp" />
+    <ClInclude Include="include\Core\Config.hpp" />
     <ClInclude Include="include\Core\EngineAPI.hpp" />
     <ClInclude Include="include\Core\Backend.hpp" />
     <ClInclude Include="include\Core\Math.hpp" />

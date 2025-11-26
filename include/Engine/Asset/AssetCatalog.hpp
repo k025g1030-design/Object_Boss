@@ -7,6 +7,7 @@ namespace Asset {
     enum class AssetType {
         Texture,      // PNG, JPG などの画像
         Sound,        // WAV, OGG などの音声
+        MapSourceData,     // マップデータ (独自フォーマット)
         MapTiledData,      // Tiled で作成したマップデータ (JSON) 
         ClipData,     // アニメーションと絵の切り取りデータ (JSON)
         TextData,     // 文字表示用のフォントデータ (JSON)

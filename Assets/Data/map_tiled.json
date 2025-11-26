@@ -1,7 +1,6 @@
 {
-    "assetId":"",
+    "assetId":"map.tiled",
     "textureId": "tex.tileset.map",
-    "path":"./Assets/Images/Map_Tiled.png",
     "remark" : "",
 
     "scale": {

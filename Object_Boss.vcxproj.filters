@@ -92,6 +92,10 @@
     <ClCompile Include="src\Core\EngineAPI.cpp">
       <Filter>src\Core</Filter>
     </ClCompile>
+    <ClCompile Include="src\Core\Backend.cpp">
+      <Filter>src\Core</Filter>
+    </ClCompile>
+   
     <ClCompile Include="src\Game\GameApp.cpp">
       <Filter>src\Game</Filter>
     </ClCompile>
@@ -101,8 +105,8 @@
     <ClCompile Include="src\Entity\Player.cpp">
       <Filter>src\Entity</Filter>
     </ClCompile>
-    <ClCompile Include="src\Core\Backend.cpp">
-      <Filter>src\Core</Filter>
+    <ClCompile Include="src\Entity\Boss.cpp">
+      <Filter>src\Entity</Filter>
     </ClCompile>
     <ClCompile Include="src\Engine\Asset\Loader\Meta\SoundLoader.cpp">
       <Filter>src\Engine\Asset\Loader\Meta</Filter>
@@ -119,11 +123,8 @@
     <ClCompile Include="src\Engine\Asset\Loader\TileSetLoader.cpp">
       <Filter>src\Engine\Asset\Loader</Filter>
     </ClCompile>
-    <ClCompile Include="src\Core\EngineCore.cpp">
-      <Filter>src\Core</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Asset\AssetManager.cpp">
-      <Filter>KamataEngine</Filter>
+     <ClCompile Include="src\Engine\EngineCore.cpp">
+      <Filter>src\Engine</Filter>
     </ClCompile>
     <ClCompile Include="src\Engine\Asset\AssetManager.cpp">
       <Filter>src\Engine\Asset</Filter>
@@ -223,7 +224,19 @@
     <ClInclude Include="include\Core\Math.hpp">
       <Filter>include\Core</Filter>
     </ClInclude>
+     <ClInclude Include="include\Core\EngineAPI.hpp">
+      <Filter>include\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Core\Backend.hpp">
+      <Filter>include\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Core\Config.hpp">
+      <Filter>include\Core</Filter>
+    </ClInclude>
     <ClInclude Include="include\Entity\Player.hpp">
+      <Filter>include\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Entity\Boss.hpp">
       <Filter>include\Entity</Filter>
     </ClInclude>
     <ClInclude Include="include\Engine\Asset\AssetCatalog.hpp">
@@ -262,15 +275,16 @@
     <ClInclude Include="include\Engine\Asset\Loader\Meta\TextureLoader.hpp">
       <Filter>include\Engine\Asset\Loader\Meta</Filter>
     </ClInclude>
+    <ClInclude Include="include\Engine\EngineCore.hpp">
+      <Filter>include\Engine</Filter>
+    </ClInclude>
     <ClInclude Include="include\Utils\CSVParser.hpp">
       <Filter>include\Utils</Filter>
     </ClInclude>
     <ClInclude Include="include\Utils\JSONParser.hpp">
       <Filter>include\Utils</Filter>
     </ClInclude>
-    <ClInclude Include="include\Core\EngineAPI.hpp">
-      <Filter>include\Core</Filter>
-    </ClInclude>
+   
     <ClInclude Include="include\Engine\Asset\Data\SoundData.hpp">
       <Filter>include\Engine\Asset\Data</Filter>
     </ClInclude>
@@ -280,14 +294,10 @@
     <ClInclude Include="include\Entity\Enemy.hpp">
       <Filter>include\Entity</Filter>
     </ClInclude>
-    <ClInclude Include="include\Core\Backend.hpp">
-      <Filter>include\Core</Filter>
-    </ClInclude>
+    
     <ClInclude Include="include\Engine\Asset\Data\Graphics\Sprite.hpp">
       <Filter>include\Engine\Asset\Data\Graphics</Filter>
     </ClInclude>
-    <ClInclude Include="include\Core\EngineCore.hpp">
-      <Filter>include\Core</Filter>
-    </ClInclude>
+    
   </ItemGroup>
 </Project>
