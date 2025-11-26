@@ -14,8 +14,10 @@
         "marginY":0,
         "spacingX":0,
         "spacingY":0,
-        "rows":4,
-        "columns":4
+        "count": {
+            "row":4,
+            "col":4
+        }
     },
 
     "frames" : [

@@ -2,5 +2,5 @@ id,type,group,path
 data.source.map,MapSourceData,MAP,Assets/Data/map_data.csv
 tex.tileset.map,Texture,MAP,Assets/Images/map_tiled.png
 data.tileset.map,MapTiledData,MAP,Assets/Data/map_tiled.json
-data.sheet.player,SpriteSheetData,PLAYER,Assets/Data/player_sheet.json
+data.sheet.player,ClipData,PLAYER,Assets/Data/player_sheet.json
 tex.sheet.player,Texture,PLAYER,Assets/Images/player_sheet.png

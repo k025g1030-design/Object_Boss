@@ -16,13 +16,13 @@ namespace Asset {
         T* Load(const std::string& assetId);
 
         template<typename T>
-        T* Get(const std::string& id);    
+        T* Get(const std::string& assetId);
 
-        void Unload(const std::string& id);
+        void Unload(const std::string& assetId);
         void UnloadAll();
 
         template<typename T>
-        void RegisterLoader(const std::string& id, std::shared_ptr<IAssetLoader<T>> loader);
+        void RegisterLoader(const std::string& type, std::shared_ptr<IAssetLoader<T>> loader);
 
         // ハンドルを取得（内部で一度 Load<T> する）
         template<typename T>
@@ -33,9 +33,9 @@ namespace Asset {
         using LoaderFunc = std::function<std::shared_ptr<void>(const std::string& path, AssetManager& assets)>;
         // 
         AssetCatalog catalog_;
-        //
+        // assetId : 資源
         std::unordered_map<std::string, std::shared_ptr<void>> cache_;
-        //
+        // type : loader
         std::unordered_map<std::string, LoaderFunc> loaders_;
 
         template<typename T> friend class ResourceHandle; 

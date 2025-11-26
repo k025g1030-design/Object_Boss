@@ -10,11 +10,14 @@ namespace Asset {
     std::shared_ptr<TileSetData> TileSetLoader::LoadFromFile(const std::string& path, AssetManager& assets) {
         path;
         assets;
-        // 1. 讀 json / csv：這裡用 pseudo-code
+        // 1. 讀 json / csv
         /*ParsedAnimMeta meta = ParseAnimMeta(path);
          meta.textureId = "tex.player";
          meta.frames = {...};
          meta.clips  = {...};*/
+
+        ParseTileSetMeta meta = ParseTileSetMeta(path);
+
 
         auto tileSet = std::make_shared<TileSetData>();
 

@@ -11,4 +11,9 @@ namespace Asset {
     public:
         std::shared_ptr<TileSetData> LoadFromFile(const std::string& path, AssetManager& assets) override;
     };
+
+    class ParseTileSetMeta {
+    
+
+    };
 }

@@ -1,5 +1,6 @@
 ﻿#pragma once
 #include <string>
+#include "Core/Config.hpp"
 
 /**
 
@@ -7,6 +8,25 @@
 namespace Asset {
     struct Frame {
         int x, y, w, h;
+    };
+
+    struct GridVector {
+        int row;
+        int col;
+    };
+
+    struct Grid{
+        int cellW = Core::PIXELS_PER_UNIT;
+        int cellH = Core::PIXELS_PER_UNIT;
+        int marginX;
+        int marginY;
+        int spacingX;
+        int spacingY;
+        GridVector count;
+    };
+
+    struct Scale {
+        int pixelsPerUnit = Core::PIXELS_PER_UNIT;
     };
 
     class Texture {

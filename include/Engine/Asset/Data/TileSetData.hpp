@@ -15,12 +15,25 @@ namespace Asset {
         Count,
     };
 
+    struct TilePhysicsRule {
+        bool solid = false;
+        int damageOnTouch = 0;
+        std::string eventId;
+    };
+
+    struct TileDef {
+        Frame rect;
+        GridVector gridIndex;
+        TilePhysicsRule collision;
+        std::vector<std::string> flags;
+    };
+
     struct TileSetData {
         Texture* texture{ nullptr };
-        int tileWidth{ 0 };
-        int tileHeight{ 0 };
+        Grid grid;
+        Scale scale;
 
         // tile ID として使う int に対して、対応する Frame 情報を持つ
-        std::unordered_map<int, Frame> map;
+        std::unordered_map<int, TileDef> tiles;
     };
 }
