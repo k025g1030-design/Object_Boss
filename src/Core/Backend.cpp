@@ -1,4 +1,5 @@
 ﻿#include "Core/Backend.hpp"
+#include <string>
 
 namespace Engine {
     void Backend::Initialize(const char* title, int width, int height) {
@@ -21,7 +22,10 @@ namespace Engine {
     }
 
     int Backend::LoadTexture(const char* fileName) {
-        return Novice::LoadTexture(fileName);
+        // Fix: Use std::string to concatenate, then pass c_str() to Novice::LoadTexture
+        std::string path = "./";
+        path += fileName;
+        return Novice::LoadTexture(path.c_str());
     }
 
     void Backend::UnloadTexture(int textureHandle) {
@@ -29,6 +33,8 @@ namespace Engine {
     }
 
     int Backend::LoadAudio(const char* fileName) {
+        std::string path = "./";
+        path += fileName;
         return Novice::LoadAudio(fileName);
     }
 

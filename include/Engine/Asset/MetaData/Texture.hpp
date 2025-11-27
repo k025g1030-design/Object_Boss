@@ -1,4 +1,5 @@
 ﻿#pragma once
+#include <nlohmann/json.hpp>
 #include <string>
 #include "Core/Config.hpp"
 
@@ -28,6 +29,24 @@ namespace Asset {
     struct Scale {
         int pixelsPerUnit = Core::PIXELS_PER_UNIT;
     };
+
+    NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(Scale,
+        pixelsPerUnit
+    )
+
+    NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(Grid,
+        cellW, cellH,
+        marginX, marginY,
+        spacingX, spacingY
+    )
+
+    NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(GridVector,
+        row, col
+    )
+
+    NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(Frame,
+        x, y, w, h
+    )
 
     class Texture {
     public:

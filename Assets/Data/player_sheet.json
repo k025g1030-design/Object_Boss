@@ -8,8 +8,8 @@
     },
 
     "grid": {
-        "cellWidth":64,
-        "cellHeight":64,
+        "cellW":64,
+        "cellH":64,
         "marginX":0,
         "marginY":0,
         "spacingX":0,

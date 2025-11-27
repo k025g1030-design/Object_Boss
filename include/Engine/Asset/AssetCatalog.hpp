@@ -18,6 +18,8 @@ namespace Asset {
         std::string group;
         std::string path;
     };
+
+
     class AssetCatalog {
     public:
         //
@@ -27,6 +29,17 @@ namespace Asset {
         //
         AssetInfo Get(const std::string& assetId) const {
             return assets_.at(assetId);
+        }
+
+        std::string GetTypeStr(const AssetType type) const {
+            std::string result = "Unknown";
+            if (type == AssetType::Texture) result = "Texture";
+            else if (type == AssetType::Sound) result = "Sound";
+            else if (type == AssetType::MapSourceData) result = "MapSourceData";
+            else if (type == AssetType::MapTiledData) result = "MapTiledData";
+            else if (type == AssetType::ClipData) result = "ClipData";
+            else if (type == AssetType::TextData) result = "TextData";
+            return result;
         }
 
     private:

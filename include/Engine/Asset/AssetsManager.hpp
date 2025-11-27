@@ -22,7 +22,7 @@ namespace Asset {
         void UnloadAll();
 
         template<typename T>
-        void RegisterLoader(const std::string& type, std::shared_ptr<IAssetLoader<T>> loader);
+        void RegisterLoader(const AssetType type, std::shared_ptr<IAssetLoader<T>> loader);
 
         // ハンドルを取得（内部で一度 Load<T> する）
         template<typename T>
@@ -36,7 +36,7 @@ namespace Asset {
         // assetId : 資源
         std::unordered_map<std::string, std::shared_ptr<void>> cache_;
         // type : loader
-        std::unordered_map<std::string, LoaderFunc> loaders_;
+        std::unordered_map<AssetType, LoaderFunc> loaders_;
 
         template<typename T> friend class ResourceHandle; 
     };
@@ -45,7 +45,7 @@ namespace Asset {
     * 型消去と、元の T 型への再キャスト
     */
     template<typename T>
-    void AssetManager::RegisterLoader(const std::string& type,
+    void AssetManager::RegisterLoader(const AssetType type,
         std::shared_ptr<IAssetLoader<T>> loader) {
         if (loaders_.find(type) != loaders_.end()) {
             /*std::cerr << "[AssetManager] Loader for type '" << type

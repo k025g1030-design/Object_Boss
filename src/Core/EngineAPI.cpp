@@ -6,6 +6,9 @@ namespace Engine {
     void Initialize(const std::string& assetCatalogPath) {
         gEngine.Init(assetCatalogPath);
         Engine::Backend::Initialize(Core::kWindowTitle, Core::kWindowWidth, Core::kWindowHeight);
+
+        // TEST
+        gEngine.GetAssetManager().Load<Asset::TileSetData>("data.tileset.map");
     }
 
     void RenderSprite(const Core::Vector2 position, const Asset::Sprite& sprite) {

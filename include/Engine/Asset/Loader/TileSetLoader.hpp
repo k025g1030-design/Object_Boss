@@ -2,6 +2,7 @@
 #include <string>
 #include "Engine/Asset/Loader/Meta/IAssetLoader.hpp"
 #include "Engine/Asset/Data/TileSetData.hpp"
+#include "Utils/JSONParser.hpp"
 
 /**
 
@@ -10,10 +11,5 @@ namespace Asset {
     class TileSetLoader : public IAssetLoader<TileSetData> {
     public:
         std::shared_ptr<TileSetData> LoadFromFile(const std::string& path, AssetManager& assets) override;
-    };
-
-    class ParseTileSetMeta {
-    
-
     };
 }
