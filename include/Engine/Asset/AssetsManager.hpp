@@ -33,9 +33,9 @@ namespace Asset {
         using LoaderFunc = std::function<std::shared_ptr<void>(const std::string& path, AssetManager& assets)>;
         // 
         AssetCatalog catalog_;
-        // assetId : 資源
+        // assetId : 資源  (イメージ：弾)
         std::unordered_map<std::string, std::shared_ptr<void>> cache_;
-        // type : loader
+        // type : loader   (イメージ：銃)
         std::unordered_map<AssetType, LoaderFunc> loaders_;
 
         template<typename T> friend class ResourceHandle; 

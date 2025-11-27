@@ -9,6 +9,7 @@ namespace Engine {
 
         // TEST
         gEngine.GetAssetManager().Load<Asset::TileSetData>("data.tileset.map");
+        gEngine.GetAssetManager().Load<Asset::AnimationData>("data.sheet.player");
     }
 
     void RenderSprite(const Core::Vector2 position, const Asset::Sprite& sprite) {
