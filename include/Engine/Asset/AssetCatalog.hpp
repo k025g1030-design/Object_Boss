@@ -5,11 +5,12 @@
 
 namespace Asset {
     enum class AssetType {
-        Texture,      // PNG, JPG などの画像
-        Sound,        // WAV, OGG などの音声
-        MapSourceData,     // マップデータ (独自フォーマット)
-        MapTiledData,      // Tiled で作成したマップデータ (JSON) 
-        ClipData,     // アニメーションと絵の切り取りデータ (JSON)
+        Texture,      // PNG, JPG などの画像 (PNG,JPG) (RenderSystem)
+        Sound,        // WAV, OGG などの音声 (MP3,WAV) (AudioSystem)
+        SpriteSheet,       // 絵の切り取り (JSON) (UI / Item)
+        MapSourceData,     // マップデータ (CSV/JSON) (MapSystem)
+        TileSetData,      // Tiled で作成したマップデータ (JSON) (Map / Collsion / Event)
+        AnimClipData,     // アニメーションと絵の切り取りデータ (JSON) (AnimationSystem)
         TextData,     // 文字表示用のフォントデータ (JSON)
         Unknown
     };
@@ -36,8 +37,8 @@ namespace Asset {
             if (type == AssetType::Texture) result = "Texture";
             else if (type == AssetType::Sound) result = "Sound";
             else if (type == AssetType::MapSourceData) result = "MapSourceData";
-            else if (type == AssetType::MapTiledData) result = "MapTiledData";
-            else if (type == AssetType::ClipData) result = "ClipData";
+            else if (type == AssetType::TileSetData) result = "MapTiledData";
+            else if (type == AssetType::AnimClipData) result = "ClipData";
             else if (type == AssetType::TextData) result = "TextData";
             return result;
         }

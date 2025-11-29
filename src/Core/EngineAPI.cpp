@@ -4,12 +4,8 @@
 
 namespace Engine {
     void Initialize(const std::string& assetCatalogPath) {
-        gEngine.Init(assetCatalogPath);
         Engine::Backend::Initialize(Core::kWindowTitle, Core::kWindowWidth, Core::kWindowHeight);
-
-        // TEST
-        gEngine.GetAssetManager().Load<Asset::TileSetData>("data.tileset.map");
-        gEngine.GetAssetManager().Load<Asset::AnimationData>("data.sheet.player");
+        gEngine.Init(assetCatalogPath);
     }
 
     void RenderSprite(const Core::Vector2 position, const Asset::Sprite& sprite) {
