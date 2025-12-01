@@ -9,7 +9,7 @@ namespace Entity {
 		~Enemy() {}
 		void Draw();
 		void Input();
-		void Update(const Player& player);
+		void Update();
 		
 
 		void SetPosition(const Core::Vector2& position) { position_ = position; }
@@ -17,6 +17,9 @@ namespace Entity {
 		void SetSize(const Core::Vector2& size) { size_ = size; }
 	
 		void SetD(const Core::Vector2& d) { d_ = d; }
+
+		void SetTrack(const Core::Vector2& track) { track_ = track; }
+		void GetTrack(Core::Vector2& track) { track = track_; }
 		
 
 	private:
@@ -26,6 +29,8 @@ namespace Entity {
 		Core::Point point_;      
 		Core::Vector2 vel_; 
 		Core::Vector2 t_;
-		Core::Vector2 size_;     
+		Core::Vector2 size_;  
+
+		Core::Vector2 track_;
 	};
 }

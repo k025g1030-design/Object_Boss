@@ -16,10 +16,10 @@ namespace Entity {
 	}
 	void Enemy::Input() {
 	}
-	void Enemy::Update(const Player& player) {
+	void Enemy::Update() {
 
 		
-		d_ = player.GetPosition() - position_;
+		d_ = track_ - position_;
 
 		float length = sqrtf(d_.x * d_.x + d_.y * d_.y);
 		if (length != 0.0f) {
