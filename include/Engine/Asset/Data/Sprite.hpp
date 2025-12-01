@@ -8,9 +8,11 @@
 namespace Asset {
 
     struct Sprite {
+        std::string assetId;
+        std::string textureId;
         Texture* texture{ nullptr };
         Frame frame;
-        Core::Vector2 scale{ 1.0f, 1.0f };
     };
+
 }
 

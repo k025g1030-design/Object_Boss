@@ -59,9 +59,6 @@
     <Filter Include="include\Engine\Asset\Data">
       <UniqueIdentifier>{324b0d19-f6d6-4ea1-88d0-f49400598b71}</UniqueIdentifier>
     </Filter>
-    <Filter Include="include\Engine\Asset\Data\Graphics">
-      <UniqueIdentifier>{764e964f-e597-4e1a-9224-cc4c7ea5d3d3}</UniqueIdentifier>
-    </Filter>
     <Filter Include="include\Engine\Asset\Loader">
       <UniqueIdentifier>{519cd982-693c-4346-b65b-ff97e7ffdfe6}</UniqueIdentifier>
     </Filter>
@@ -92,6 +89,9 @@
     <ClCompile Include="src\Core\EngineAPI.cpp">
       <Filter>src\Core</Filter>
     </ClCompile>
+    <ClCompile Include="src\Core\Backend.cpp">
+      <Filter>src\Core</Filter>
+    </ClCompile>
     <ClCompile Include="src\Game\GameApp.cpp">
       <Filter>src\Game</Filter>
     </ClCompile>
@@ -100,9 +100,6 @@
     </ClCompile>
     <ClCompile Include="src\Entity\Player.cpp">
       <Filter>src\Entity</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Core\Backend.cpp">
-      <Filter>src\Core</Filter>
     </ClCompile>
     <ClCompile Include="src\Engine\Asset\Loader\Meta\SoundLoader.cpp">
       <Filter>src\Engine\Asset\Loader\Meta</Filter>
@@ -119,14 +116,17 @@
     <ClCompile Include="src\Engine\Asset\Loader\TileSetLoader.cpp">
       <Filter>src\Engine\Asset\Loader</Filter>
     </ClCompile>
-    <ClCompile Include="src\Core\EngineCore.cpp">
-      <Filter>src\Core</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Asset\AssetManager.cpp">
-      <Filter>KamataEngine</Filter>
+    <ClCompile Include="src\Engine\EngineCore.cpp">
+      <Filter>src\Engine</Filter>
     </ClCompile>
     <ClCompile Include="src\Engine\Asset\AssetManager.cpp">
       <Filter>src\Engine\Asset</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engine\Asset\Loader\MapDataLoader.cpp">
+      <Filter>src\Engine\Asset\Loader</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engine\Asset\Loader\SpriteLoader.cpp">
+      <Filter>src\Engine\Asset\Loader</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -223,7 +223,19 @@
     <ClInclude Include="include\Core\Math.hpp">
       <Filter>include\Core</Filter>
     </ClInclude>
+    <ClInclude Include="include\Core\EngineAPI.hpp">
+      <Filter>include\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Core\Backend.hpp">
+      <Filter>include\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Core\Config.hpp">
+      <Filter>include\Core</Filter>
+    </ClInclude>
     <ClInclude Include="include\Entity\Player.hpp">
+      <Filter>include\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Entity\Boss.hpp">
       <Filter>include\Entity</Filter>
     </ClInclude>
     <ClInclude Include="include\Engine\Asset\AssetCatalog.hpp">
@@ -262,14 +274,14 @@
     <ClInclude Include="include\Engine\Asset\Loader\Meta\TextureLoader.hpp">
       <Filter>include\Engine\Asset\Loader\Meta</Filter>
     </ClInclude>
+    <ClInclude Include="include\Engine\EngineCore.hpp">
+      <Filter>include\Engine</Filter>
+    </ClInclude>
     <ClInclude Include="include\Utils\CSVParser.hpp">
       <Filter>include\Utils</Filter>
     </ClInclude>
     <ClInclude Include="include\Utils\JSONParser.hpp">
       <Filter>include\Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Core\EngineAPI.hpp">
-      <Filter>include\Core</Filter>
     </ClInclude>
     <ClInclude Include="include\Engine\Asset\Data\SoundData.hpp">
       <Filter>include\Engine\Asset\Data</Filter>
@@ -280,14 +292,17 @@
     <ClInclude Include="include\Entity\Enemy.hpp">
       <Filter>include\Entity</Filter>
     </ClInclude>
-    <ClInclude Include="include\Core\Backend.hpp">
-      <Filter>include\Core</Filter>
+    <ClInclude Include="include\Engine\Asset\Loader\MapDataLoader.hpp">
+      <Filter>include\Engine\Asset\Loader</Filter>
     </ClInclude>
-    <ClInclude Include="include\Engine\Asset\Data\Graphics\Sprite.hpp">
-      <Filter>include\Engine\Asset\Data\Graphics</Filter>
+    <ClInclude Include="include\Engine\Asset\Loader\SpriteLoader.hpp">
+      <Filter>include\Engine\Asset\Loader</Filter>
     </ClInclude>
-    <ClInclude Include="include\Core\EngineCore.hpp">
-      <Filter>include\Core</Filter>
+    <ClInclude Include="include\Engine\Asset\Data\Sprite.hpp">
+      <Filter>include\Engine\Asset\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Engine\Asset\Data\MapData.hpp">
+      <Filter>include\Engine\Asset\Data</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

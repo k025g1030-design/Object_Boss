@@ -16,15 +16,15 @@ namespace Asset {
         T* Load(const std::string& assetId);
 
         template<typename T>
-        T* Get(const std::string& id);    
+        T* Get(const std::string& assetId);
 
-        void Unload(const std::string& id);
+        void Unload(const std::string& assetId);
         void UnloadAll();
 
         template<typename T>
-        void RegisterLoader(const std::string& id, std::shared_ptr<IAssetLoader<T>> loader);
+        void RegisterLoader(const AssetType type, std::shared_ptr<IAssetLoader<T>> loader);
 
-        // ③ ハンドルを取得（内部で一度 Load<T> する）
+        // ハンドルを取得（内部で一度 Load<T> する）
         template<typename T>
         ResourceHandle<T> GetHandle(const std::string& assetId);
 
@@ -33,10 +33,10 @@ namespace Asset {
         using LoaderFunc = std::function<std::shared_ptr<void>(const std::string& path, AssetManager& assets)>;
         // 
         AssetCatalog catalog_;
-        //
+        // assetId : 資源  (イメージ：弾)
         std::unordered_map<std::string, std::shared_ptr<void>> cache_;
-        //
-        std::unordered_map<std::string, LoaderFunc> loaders_;
+        // type : loader   (イメージ：銃)
+        std::unordered_map<AssetType, LoaderFunc> loaders_;
 
         template<typename T> friend class ResourceHandle; 
     };
@@ -45,7 +45,7 @@ namespace Asset {
     * 型消去と、元の T 型への再キャスト
     */
     template<typename T>
-    void AssetManager::RegisterLoader(const std::string& type,
+    void AssetManager::RegisterLoader(const AssetType type,
         std::shared_ptr<IAssetLoader<T>> loader) {
         if (loaders_.find(type) != loaders_.end()) {
             /*std::cerr << "[AssetManager] Loader for type '" << type
@@ -111,6 +111,6 @@ namespace Asset {
     template<typename T>
     T* ResourceHandle<T>::Get() const {
         if (!manager_) return nullptr;
-        return manager_->Get<T>(id_);
+        return manager_->Get<T>(assetId_);
     }
 }

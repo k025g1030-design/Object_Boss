@@ -8,24 +8,13 @@
 
 namespace Asset {
     std::shared_ptr<AnimationData> AnimationLoader::LoadFromFile(const std::string& path, AssetManager& assets) {
-        path;
-        assets;
+        Utils::json json = Utils::JSONParser::Parse(path);
+        auto clipData = std::make_shared<AnimationData>();
 
-        // 1. 讀 json / csv：這裡用 pseudo-code
-        /*ParsedAnimMeta meta = ParseAnimMeta(path);
-         meta.textureId = "tex.player";
-         meta.frames = {...};
-         meta.clips  = {...};*/
+        *clipData = json.get<AnimationData>();
+        clipData->texture = assets.Load<Texture>(clipData->textureId);
 
-        auto anim = std::make_shared<AnimationData>();
-
-        // 2. 透過 AssetManager 再去 load 對應的 Texture
-        /*Texture* tex = assets.Load<Texture>(meta.textureId);
-        anim->sheet.texture = tex;
-        anim->sheet.frames = meta.frames;
-        anim->clips = meta.clips;*/
-
-        return anim;
+        return clipData;
     }
 }
 

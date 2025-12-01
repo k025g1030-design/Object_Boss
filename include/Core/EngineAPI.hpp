@@ -7,7 +7,7 @@
 
 #include "Engine/Asset/Data/AnimationData.hpp"
 #include "Engine/Asset/Data/TileSetData.hpp"
-#include "Engine/Asset/Data/Graphics/Sprite.hpp"
+#include "Engine/Asset/Data/Sprite.hpp"
 #include "Engine/Asset/Data/SoundData.hpp"
 #include <memory>
 
@@ -33,13 +33,18 @@ namespace Engine {
         std::string id;
     };
 
-    struct AnimHandle {
+    struct TextStoryHandle {
         std::string id;
     };
 
     struct TileSetHandle {
         std::string id;
     };
+
+    struct AnimHandle {
+        std::string id;
+    };
+
 
 
 
@@ -48,14 +53,18 @@ namespace Engine {
     //========================
 
     // --- 資源取得（Catalog 上の ID を指定） ---
-    TextureHandle  GetTextureHandle(const std::string& assetId);   // 例: "tex.player"
-    SoundHandle    GetSoundHandle(const std::string& assetId);   // 例: "se.jump"
-    AnimHandle     GetAnimHandle(const std::string& assetId);   // 例: "anim.player"
-    TileSetHandle  GetTileSetHandle(const std::string& assetId);   // 例: "tileset.stage1"
+    TextureHandle GetTextureHandle(const std::string& assetId);   // 例: "tex.bg.ui"
+    SoundHandle GetSoundHandle(const std::string& assetId);   // 例: "sou.bgm"
+
+
+    TextStoryHandle GetTextStoryHandle(const std::string& assetId);   // 例: "data.tex.story"
+    TileSetHandle GetTileSetHandle(const std::string& assetId); //  例: "data.tileset.map", "data.tileset.ui", "data.tileset.item"
+    AnimHandle GetAnimHandle(const std::string& assetId); //  例: "data.sheet.player"
 
     // --- 高階データへのアクセス（const ポインタで閲覧のみ） ---
     const Asset::AnimationData* GetAnimationData(AnimHandle handle);
     const Asset::TileSetData* GetTileSetData(TileSetHandle handle);
+    const Asset::Sprite* GetSprite(TextureHandle handle);
 
     // --- エンジン初期化 ---
     void Initialize(const std::string& assetCatalogPath);
@@ -65,6 +74,8 @@ namespace Engine {
     void RenderSprite(const Core::Vector2 position, const Asset::Sprite& sprite);
 
     void RenderAnimetion(const Core::Vector2 position, const Asset::AnimationData& animData);
+
+    //void RenderTile
     // もしくは:
     // void DrawFrame(TextureHandle tex, const Frame& src, float x, float y);
 
