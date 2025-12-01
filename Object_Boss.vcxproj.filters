@@ -80,6 +80,18 @@
     <Filter Include="src\Engine\Asset\Loader\Meta">
       <UniqueIdentifier>{55d3fe0c-7860-49dd-9701-87d7840ce0ce}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Engine\Framework">
+      <UniqueIdentifier>{e3caa993-bf7b-480c-a7ab-cf6e98a4d07f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Engine\Framework\Scene">
+      <UniqueIdentifier>{3b0947b3-1565-43d8-bb54-ddddf13b09de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\Engine\Framework">
+      <UniqueIdentifier>{023865fa-bc29-4bb4-8b21-08ed0f814eab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\Engine\Framework\Scene">
+      <UniqueIdentifier>{75c5ff49-6bea-4cf6-8312-17a86e090a11}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
@@ -127,6 +139,18 @@
     </ClCompile>
     <ClCompile Include="src\Engine\Asset\Loader\SpriteLoader.cpp">
       <Filter>src\Engine\Asset\Loader</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engine\Framework\Scene\SceneManager.cpp">
+      <Filter>src\Engine\Framework\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engine\Framework\Scene\GameScene.cpp">
+      <Filter>src\Engine\Framework\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engine\Framework\Scene\MenuScene.cpp">
+      <Filter>src\Engine\Framework\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engine\Framework\Scene\OverScene.cpp">
+      <Filter>src\Engine\Framework\Scene</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -303,6 +327,21 @@
     </ClInclude>
     <ClInclude Include="include\Engine\Asset\Data\MapData.hpp">
       <Filter>include\Engine\Asset\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Engine\Framework\Scene\SceneManager.hpp">
+      <Filter>include\Engine\Framework\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Engine\Framework\Scene\IScene.hpp">
+      <Filter>include\Engine\Framework\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Engine\Framework\Scene\GameScene.hpp">
+      <Filter>include\Engine\Framework\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Engine\Framework\Scene\MenuScene.hpp">
+      <Filter>include\Engine\Framework\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Engine\Framework\Scene\OverScene.hpp">
+      <Filter>include\Engine\Framework\Scene</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
