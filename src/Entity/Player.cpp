@@ -9,16 +9,16 @@ namespace Entity {
 	}
 	void Player::Input() {
 		if (Novice::CheckHitKey(DIK_UP)||Novice::CheckHitKey(DIK_W)) {
-			vel_.y -= 10.0f;
+			vel_.y -= 5.0f;
 		}
 		if (Novice::CheckHitKey(DIK_DOWN) || Novice::CheckHitKey(DIK_S)) {
-			vel_.y += 10.0f;
+			vel_.y += 5.0f;
 		}
 		if (Novice::CheckHitKey(DIK_LEFT) || Novice::CheckHitKey(DIK_A)) {
-			vel_.x -= 10.0f;
+			vel_.x -= 5.0f;
 		}
 		if (Novice::CheckHitKey(DIK_RIGHT) || Novice::CheckHitKey(DIK_D)) {
-			vel_.x += 10.0f;
+			vel_.x += 5.0f;
 		}
 	}
 	void Player::Update() {
