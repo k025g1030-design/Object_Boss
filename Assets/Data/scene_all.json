@@ -1,0 +1,120 @@
+{
+  "assetId":"",
+  "reamrk":"",
+  "scenes": [
+    {
+      "id": "ui.menu",
+      "class": "MenuScene",
+      "type": "ui",
+
+      "defaultLevelId": null,
+      "overlay": false,          
+      "supportsPause": false,
+
+      "usesSystems": [
+        "InputSystem",
+        "UISystem",
+        "AudioSystem"
+      ],
+
+      "stackBehavior": {
+        "mode": "exclusive",        
+        "updateUnderlay": false,  
+        "renderUnderlay": false    
+      }, 
+
+      "transitions": [
+        { "event": "start", "targetScene": "game.main", "levelId": "level_00" },
+        { "event": "continue", "targetScene": "game.main", "levelId": "level_01"},
+        { "event": "readme", "targetScene": "ui.readme" },
+        { "event": "exit", "targetScene": null }
+      ]
+    },
+    {
+      "id": "ui.pause",
+      "class": "PauseScene",
+      "type": "ui",
+
+      "defaultLevelId": null,
+      "supportsPause": false,
+
+      "usesSystems": [
+        "InputSystem",
+        "UISystem",
+        "AudioSystem"
+      ],
+
+      "stackBehavior": {
+        "mode": "overlay",        
+        "updateUnderlay": false,  
+        "renderUnderlay": true    
+      }, 
+
+      "transitions": [
+        { "event": "resume",    "targetScene": "@pop" },       
+        { "event": "toMenu",   "targetScene": "ui.menu" }
+      ]
+    },
+
+    {
+      "id": "ui.over",
+      "class": "OverScene",
+      "type": "ui",
+
+      "defaultLevelId": null,
+      "overlay": false,   
+      "supportsPause": false,
+
+      "usesSystems": [
+        "InputSystem",
+        "UISystem",
+        "AudioSystem"
+      ],
+
+      "stackBehavior": {
+        "mode": "exclusive",        
+        "updateUnderlay": false,  
+        "renderUnderlay": false    
+      }, 
+
+      "transitions": [
+        { "event": "retry",     "targetScene": "game.main", "levelId": "level_01" },
+        { "event": "toMenu",   "targetScene": "ui.menu" }
+      ]
+    },
+
+    {
+      "id": "game.main",
+      "class": "GameScene",
+      "type": "gameplay",
+
+      "defaultLevelId": "level_00",   
+      "supportsPause": true,
+      "pauseSceneId": "ui.pause",
+
+      "usesSystems": [
+        "InputSystem",
+        "MapSystem",
+        "CameraSystem",
+        "CombatSystem",
+        "DialogSystem",
+        "TutorialSystem",
+        "AudioSystem"
+      ],
+
+      "stackBehavior": {
+        "mode": "exclusive",        
+        "updateUnderlay": false,  
+        "renderUnderlay": false    
+      }, 
+
+      "timeScale": 1.0,
+
+      "transitions": [
+        { "event": "gameOver",   "targetScene": "ui.over" },
+        { "event": "toMenu",    "targetScene": "ui.menu" },
+        { "event": "nextScene",  "targetScene": "game.main" }  
+      ]
+    }
+  ]
+}

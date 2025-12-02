@@ -13,6 +13,7 @@ namespace Scene {
     public:
         explicit SceneManager() = default;
         ~SceneManager() = default;
+
         void ChangeScene(const std::string& sceneId);
 
         void Update(float dt);

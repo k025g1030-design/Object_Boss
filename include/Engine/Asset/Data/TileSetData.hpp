@@ -17,16 +17,10 @@ namespace Asset {
         Count,
     };
 
-    struct TilePhysicsRule {
-        bool solid = false;
-        std::string eventId;
-    };
-
     struct TileDef {
         std::optional<Frame> rect;
         std::optional<GridVector> gridIndex;
-        TilePhysicsRule collision;
-        std::vector<std::string> flags;
+        std::string name;
     };
 
     struct TileSetData {
@@ -46,19 +40,6 @@ namespace Asset {
     // ----------------------------
 
     // シンプルな構造体はマクロで一気に
-
-
-    inline void from_json(const json& j, TilePhysicsRule& rule) {
-        j.at("solid").get_to(rule.solid);
-        if (j.contains("eventId")) {
-            j.at("eventId").get_to(rule.eventId);
-        } else {
-            rule.eventId.clear();
-        }
-    }
-
-   
-
     inline void from_json(const json& j, TileDef& tile) {
         tile.gridIndex.reset();
         tile.rect.reset();
@@ -75,17 +56,12 @@ namespace Asset {
             tile.rect = f;
         }
 
-        j.at("collision").get_to(tile.collision);
-
-        if (j.contains("flags")) {
-            j.at("flags").get_to(tile.flags);
-        } else {
-            tile.flags.clear();
+        if (j.contains("name")) {
+            j.at("name").get_to(tile.name);
         }
     }
 
     // ---- TileSetData 全体 ----
-
     inline void from_json(const json& j, TileSetData& data) {
         j.at("assetId").get_to(data.assetId);
         j.at("textureId").get_to(data.textureId);
