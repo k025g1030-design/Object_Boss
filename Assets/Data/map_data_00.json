@@ -83,7 +83,7 @@
         "flags": []
     },
     {
-        "name": "torii",
+        "name": "portal",
         "usage": "visual",
         "data": [  
             0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -201,7 +201,6 @@
             0,0,0,0,0,0,0,0,0,0,0,0,0
          ],
         "triggerTypes": {
-            "0": {},
             "2": { 
                 "triggerId": "skill.to_pyo" 
             },
@@ -255,9 +254,8 @@
         {
             "x": 5,
             "y": 0,
-            "width": 2,
-            "height": 1,
-            "id": "portal.to_boss_room",
+            "size": { "w": 2, "h": 1  },
+            "triggerId": "portal.to_boss_room",
             "once": true
         }
     ]

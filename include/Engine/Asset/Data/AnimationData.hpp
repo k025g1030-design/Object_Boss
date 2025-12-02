@@ -38,6 +38,7 @@ namespace Asset {
         speed
     )
 
+    // ---- AnimationData 全体 ----
     inline void from_json(const json& j, AnimationData& data) {
         j.at("assetId").get_to(data.assetId);
         j.at("textureId").get_to(data.textureId);

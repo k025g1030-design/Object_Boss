@@ -11,5 +11,5 @@ namespace Asset {
     public:
         std::shared_ptr<MapData> LoadFromFile(const std::string& path, AssetManager& assets) override;
     };
-}
+} // namespace Asset
 

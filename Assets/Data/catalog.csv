@@ -1,6 +1,6 @@
 id,type,group,path
 data.map.shrine.tutorial,MapSourceData,MAP,Assets/Data/map_data_00.json
-data.map.shrine.boss_room,MapSourceData,MAP,Assets/Data/map_data_01.csv
+data.map.shrine.boss_room,MapSourceData,MAP,Assets/Data/map_data_01.json
 tex.tileset.map,Texture,MAP,Assets/Images/map_tiled.png
 data.tileset.map,MapTiledData,MAP,Assets/Data/map_tiled.json
 data.sheet.player,ClipData,PLAYER,Assets/Data/player_sheet.json

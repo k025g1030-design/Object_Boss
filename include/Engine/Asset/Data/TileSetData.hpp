@@ -9,7 +9,7 @@ namespace Asset {
 
     using json = nlohmann::json;
 
-    enum TileType {
+    enum class TileType {
         Empty,      // 
         BlackMist,  // 壁 「黒霧」
         Torii,      // 入口 「鳥居」
@@ -31,7 +31,7 @@ namespace Asset {
         Scale scale;
 
         // tile ID として使う int に対して、対応する Frame 情報を持つ
-        std::unordered_map<int, TileDef> tiles;
+        std::unordered_map<std::string, TileDef> tiles;
     };
 
 
@@ -76,9 +76,9 @@ namespace Asset {
         const json& tilesObj = j.at("tiles");
         for (auto it = tilesObj.begin(); it != tilesObj.end(); ++it) {
             const std::string& key = it.key();  // "0", "1", "3", ...
-            int id = std::stoi(key);            // int に変換
+            //int id = std::stoi(key);            // int に変換
             TileDef tile = it.value().get<TileDef>();
-            data.tiles[id] = std::move(tile);
+            data.tiles[key] = std::move(tile);
         }
     }
 }
