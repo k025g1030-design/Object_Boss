@@ -1,6 +1,6 @@
 ﻿#include "Engine/Scene/SceneManager.hpp"
 
-namespace Scene {
+namespace Engine::Scene {
     void SceneManager::Register(const std::string& sceneId, std::shared_ptr<IScene> scene) {
         scenes_[sceneId] = scene;
     }

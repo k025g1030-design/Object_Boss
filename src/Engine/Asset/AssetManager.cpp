@@ -6,7 +6,7 @@
 #include "Engine/Asset/Loader/SpriteLoader.hpp"
 #include "Engine/Asset/Loader/MapDataLoader.hpp"
 
-namespace Asset {
+namespace Engine::Asset {
     void AssetManager::Initialize(const std::string& catalogPath) {
         // ローダーの登録など初期化処理をここに書く
         catalog_.Load(catalogPath);

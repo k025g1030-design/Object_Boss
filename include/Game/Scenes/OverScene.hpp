@@ -1,8 +1,8 @@
 ﻿#pragma once
 #include "Engine/Scene/IScene.hpp"
 
-namespace Scenes {
-    class OverScene : public Scene::IScene {
+namespace Game::Scenes {
+    class OverScene : public Engine::Scene::IScene {
     public:
         void OnEnter() override;
         void OnExit() override;

@@ -4,7 +4,7 @@
 /**
 
 **/
-namespace Asset {
+namespace Engine::Asset {
     class AssetManager; // 前方宣言
 
     /** 

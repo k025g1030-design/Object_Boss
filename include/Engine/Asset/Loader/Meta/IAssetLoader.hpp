@@ -5,7 +5,7 @@
 /**
 
 **/
-namespace Asset {
+namespace Engine::Asset {
     class AssetManager; 
 
     template<typename T>

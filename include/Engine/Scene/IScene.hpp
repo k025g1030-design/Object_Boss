@@ -1,6 +1,6 @@
 ﻿#pragma once
 
-namespace Scene {
+namespace Engine::Scene {
     class IScene {
     public:
         virtual ~IScene() = default;

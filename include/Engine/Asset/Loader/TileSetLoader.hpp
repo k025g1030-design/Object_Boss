@@ -7,7 +7,7 @@
 /**
 
 **/
-namespace Asset {
+namespace Engine::Asset {
     class TileSetLoader : public IAssetLoader<TileSetData> {
     public:
         std::shared_ptr<TileSetData> LoadFromFile(const std::string& path, AssetManager& assets) override;

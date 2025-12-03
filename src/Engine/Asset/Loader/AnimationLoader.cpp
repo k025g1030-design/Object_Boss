@@ -6,7 +6,7 @@
 #include <string>
 #include "Utils/JSONParser.hpp"
 
-namespace Asset {
+namespace Engine::Asset {
     std::shared_ptr<AnimationData> AnimationLoader::LoadFromFile(const std::string& path, AssetManager& assets) {
         Utils::json json = Utils::JSONParser::Parse(path);
         auto clipData = std::make_shared<AnimationData>();

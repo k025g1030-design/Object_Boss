@@ -182,6 +182,7 @@ xcopy %KAMATA_ENGINE%\DirectXGame\Resources "$(OutDirFullPath)NoviceResources" /
     <ClInclude Include="include\Core\Backend.hpp" />
     <ClInclude Include="include\Core\Math.hpp" />
     <ClInclude Include="include\Engine\Scene\IScene.hpp" />
+    <ClInclude Include="include\Engine\Scene\MetaData\SceneMeta.hpp" />
     <ClInclude Include="include\Engine\Scene\SceneManager.hpp" />
     <ClInclude Include="include\Entity\Boss.hpp" />
     <ClInclude Include="include\Engine\EngineCore.hpp" />

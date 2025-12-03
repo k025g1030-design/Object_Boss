@@ -6,7 +6,7 @@
 #include <string>
 #include "Utils/JSONParser.hpp"
 
-namespace Asset {
+namespace Engine::Asset {
     std::shared_ptr<Sprite> SpriteLoader::LoadFromFile(const std::string& path, AssetManager& assets) {
         
         Utils::json json = Utils::JSONParser::Parse(path);

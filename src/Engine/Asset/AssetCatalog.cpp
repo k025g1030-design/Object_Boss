@@ -3,7 +3,7 @@
 
 using namespace Utils;
 
-namespace Asset {
+namespace Engine::Asset {
     void AssetCatalog::Load(const std::string& catalogPath) {
         // Implementation to load asset catalog from a file
         // This is a placeholder implementation

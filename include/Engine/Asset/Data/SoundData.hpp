@@ -4,7 +4,7 @@
 /**
 
 **/
-namespace Asset {
+namespace Engine::Asset {
     struct SoundData {
         Sound* sound{ nullptr };
         bool loop{ false };

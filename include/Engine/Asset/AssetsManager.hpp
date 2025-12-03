@@ -7,7 +7,7 @@
 #include "Engine/Asset/AssetCatalog.hpp"
 #include "Engine/Asset/ResourceHandle.hpp"
 
-namespace Asset {
+namespace Engine::Asset {
     class AssetManager {
     public:
         void Initialize(const std::string& catalogPath);

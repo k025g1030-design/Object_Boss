@@ -4,7 +4,7 @@
 #include "Engine/Asset/Loader/Meta/TextureLoader.hpp"
 #include "Core/Backend.hpp"
 
-namespace Asset {
+namespace Engine::Asset {
     std::shared_ptr<Texture> TextureLoader::LoadFromFile(const std::string& path, AssetManager&) {
         int w = 0, h = 0, comp = 0;
         unsigned char* pixels = stbi_load(path.c_str(), &w, &h, &comp, 4); // RGBA

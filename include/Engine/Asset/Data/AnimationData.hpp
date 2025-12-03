@@ -7,7 +7,7 @@
 /**
 
 **/
-namespace Asset {
+namespace Engine::Asset {
     using json = nlohmann::json;
 
     // 「どの frame index をどういう順番で使うか」という「動きレベル」

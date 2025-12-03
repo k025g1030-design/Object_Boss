@@ -6,7 +6,7 @@
 /**
 
 **/
-namespace Asset {
+namespace Engine::Asset {
     struct Frame {
         int x, y, w, h;
     };

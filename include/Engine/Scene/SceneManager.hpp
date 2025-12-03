@@ -4,7 +4,7 @@
 #include <memory>
 #include "Engine/Scene/IScene.hpp"
 
-namespace Scene {
+namespace Engine::Scene {
     /**
      シーン管理クラス
      - シーンの切り替えや管理を担当

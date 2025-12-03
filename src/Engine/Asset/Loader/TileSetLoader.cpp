@@ -6,7 +6,7 @@
 #include <string>
 #include "Utils/JSONParser.hpp"
 
-namespace Asset {
+namespace Engine::Asset {
     std::shared_ptr<TileSetData> TileSetLoader::LoadFromFile(const std::string& path, AssetManager& assets) {
         // 1. json / csv を読み
         Utils::json json = Utils::JSONParser::Parse(path);

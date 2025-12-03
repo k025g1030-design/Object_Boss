@@ -92,6 +92,9 @@
     <Filter Include="src\Game\Scenes">
       <UniqueIdentifier>{29ae08de-a0c3-4c53-9e96-b419d04f98e5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="include\Engine\Scene\MetaData">
+      <UniqueIdentifier>{7d5eb4e4-6c5f-49a7-aac4-6260c36741d0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
@@ -139,9 +142,6 @@
     </ClCompile>
     <ClCompile Include="src\Engine\Asset\Loader\SpriteLoader.cpp">
       <Filter>src\Engine\Asset\Loader</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Engine\Scene\IScene.cpp">
-      <Filter>src\Engine\Scene</Filter>
     </ClCompile>
     <ClCompile Include="src\Engine\Scene\SceneManager.cpp">
       <Filter>src\Engine\Scene</Filter>
@@ -345,6 +345,9 @@
     </ClInclude>
     <ClInclude Include="include\Game\Scenes\OverScene.hpp">
       <Filter>include\Game\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Engine\Scene\MetaData\SceneMeta.hpp">
+      <Filter>include\Engine\Scene\MetaData</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

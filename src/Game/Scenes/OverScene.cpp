@@ -1,6 +1,6 @@
 ﻿#include "Game/Scenes/OverScene.hpp"
 
-namespace Scenes {
+namespace Game::Scenes {
     void OverScene::OnEnter() {
         // シーンに入ったときの初期化処理をここに追加
     }
