@@ -8,22 +8,13 @@
 
 namespace Asset {
     std::shared_ptr<TileSetData> TileSetLoader::LoadFromFile(const std::string& path, AssetManager& assets) {
-        path;
-        assets;
-        // 1. 讀 json / csv：這裡用 pseudo-code
-        /*ParsedAnimMeta meta = ParseAnimMeta(path);
-         meta.textureId = "tex.player";
-         meta.frames = {...};
-         meta.clips  = {...};*/
-
+        // 1. json / csv を読み
+        Utils::json json = Utils::JSONParser::Parse(path);
         auto tileSet = std::make_shared<TileSetData>();
 
-        // 2. 透過 AssetManager 再去 load 對應的 Texture
-        /*Texture* tex = assets.Load<Texture>(meta.textureId);
-        anim->sheet.texture = tex;
-        anim->sheet.frames = meta.frames;
-        anim->clips = meta.clips;*/
-
+        *tileSet = json.get<TileSetData>();
+        // 2. AssetManager を介して対応する Texture をロードする
+        tileSet->texture = assets.Load<Texture>(tileSet->textureId);
         return tileSet;
     }
 }

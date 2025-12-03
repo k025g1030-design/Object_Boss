@@ -4,8 +4,8 @@
 
 namespace Engine {
     void Initialize(const std::string& assetCatalogPath) {
-        gEngine.Init(assetCatalogPath);
         Engine::Backend::Initialize(Core::kWindowTitle, Core::kWindowWidth, Core::kWindowHeight);
+        gEngine.Init(assetCatalogPath);
     }
 
     void RenderSprite(const Core::Vector2 position, const Asset::Sprite& sprite) {

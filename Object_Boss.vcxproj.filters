@@ -59,9 +59,6 @@
     <Filter Include="include\Engine\Asset\Data">
       <UniqueIdentifier>{324b0d19-f6d6-4ea1-88d0-f49400598b71}</UniqueIdentifier>
     </Filter>
-    <Filter Include="include\Engine\Asset\Data\Graphics">
-      <UniqueIdentifier>{764e964f-e597-4e1a-9224-cc4c7ea5d3d3}</UniqueIdentifier>
-    </Filter>
     <Filter Include="include\Engine\Asset\Loader">
       <UniqueIdentifier>{519cd982-693c-4346-b65b-ff97e7ffdfe6}</UniqueIdentifier>
     </Filter>
@@ -83,6 +80,18 @@
     <Filter Include="src\Engine\Asset\Loader\Meta">
       <UniqueIdentifier>{55d3fe0c-7860-49dd-9701-87d7840ce0ce}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Engine\Framework">
+      <UniqueIdentifier>{e3caa993-bf7b-480c-a7ab-cf6e98a4d07f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Engine\Framework\Scene">
+      <UniqueIdentifier>{3b0947b3-1565-43d8-bb54-ddddf13b09de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\Engine\Framework">
+      <UniqueIdentifier>{023865fa-bc29-4bb4-8b21-08ed0f814eab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\Engine\Framework\Scene">
+      <UniqueIdentifier>{75c5ff49-6bea-4cf6-8312-17a86e090a11}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
@@ -95,7 +104,6 @@
     <ClCompile Include="src\Core\Backend.cpp">
       <Filter>src\Core</Filter>
     </ClCompile>
-   
     <ClCompile Include="src\Game\GameApp.cpp">
       <Filter>src\Game</Filter>
     </ClCompile>
@@ -103,9 +111,6 @@
       <Filter>src\Entity</Filter>
     </ClCompile>
     <ClCompile Include="src\Entity\Player.cpp">
-      <Filter>src\Entity</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Entity\Boss.cpp">
       <Filter>src\Entity</Filter>
     </ClCompile>
     <ClCompile Include="src\Engine\Asset\Loader\Meta\SoundLoader.cpp">
@@ -123,11 +128,29 @@
     <ClCompile Include="src\Engine\Asset\Loader\TileSetLoader.cpp">
       <Filter>src\Engine\Asset\Loader</Filter>
     </ClCompile>
-     <ClCompile Include="src\Engine\EngineCore.cpp">
+    <ClCompile Include="src\Engine\EngineCore.cpp">
       <Filter>src\Engine</Filter>
     </ClCompile>
     <ClCompile Include="src\Engine\Asset\AssetManager.cpp">
       <Filter>src\Engine\Asset</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engine\Asset\Loader\MapDataLoader.cpp">
+      <Filter>src\Engine\Asset\Loader</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engine\Asset\Loader\SpriteLoader.cpp">
+      <Filter>src\Engine\Asset\Loader</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engine\Framework\Scene\SceneManager.cpp">
+      <Filter>src\Engine\Framework\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engine\Framework\Scene\GameScene.cpp">
+      <Filter>src\Engine\Framework\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engine\Framework\Scene\MenuScene.cpp">
+      <Filter>src\Engine\Framework\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engine\Framework\Scene\OverScene.cpp">
+      <Filter>src\Engine\Framework\Scene</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -224,7 +247,7 @@
     <ClInclude Include="include\Core\Math.hpp">
       <Filter>include\Core</Filter>
     </ClInclude>
-     <ClInclude Include="include\Core\EngineAPI.hpp">
+    <ClInclude Include="include\Core\EngineAPI.hpp">
       <Filter>include\Core</Filter>
     </ClInclude>
     <ClInclude Include="include\Core\Backend.hpp">
@@ -284,7 +307,6 @@
     <ClInclude Include="include\Utils\JSONParser.hpp">
       <Filter>include\Utils</Filter>
     </ClInclude>
-   
     <ClInclude Include="include\Engine\Asset\Data\SoundData.hpp">
       <Filter>include\Engine\Asset\Data</Filter>
     </ClInclude>
@@ -294,10 +316,32 @@
     <ClInclude Include="include\Entity\Enemy.hpp">
       <Filter>include\Entity</Filter>
     </ClInclude>
-    
-    <ClInclude Include="include\Engine\Asset\Data\Graphics\Sprite.hpp">
-      <Filter>include\Engine\Asset\Data\Graphics</Filter>
+    <ClInclude Include="include\Engine\Asset\Loader\MapDataLoader.hpp">
+      <Filter>include\Engine\Asset\Loader</Filter>
     </ClInclude>
-    
+    <ClInclude Include="include\Engine\Asset\Loader\SpriteLoader.hpp">
+      <Filter>include\Engine\Asset\Loader</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Engine\Asset\Data\Sprite.hpp">
+      <Filter>include\Engine\Asset\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Engine\Asset\Data\MapData.hpp">
+      <Filter>include\Engine\Asset\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Engine\Framework\Scene\SceneManager.hpp">
+      <Filter>include\Engine\Framework\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Engine\Framework\Scene\IScene.hpp">
+      <Filter>include\Engine\Framework\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Engine\Framework\Scene\GameScene.hpp">
+      <Filter>include\Engine\Framework\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Engine\Framework\Scene\MenuScene.hpp">
+      <Filter>include\Engine\Framework\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Engine\Framework\Scene\OverScene.hpp">
+      <Filter>include\Engine\Framework\Scene</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
