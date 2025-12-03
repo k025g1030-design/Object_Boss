@@ -18,6 +18,7 @@ namespace Asset {
         RegisterLoader<MapData>(AssetType::MapSourceData, std::make_shared<MapDataLoader>());
 
 
+
     }
 
     void AssetManager::Unload(const std::string& assetId) {

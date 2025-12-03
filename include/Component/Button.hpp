@@ -94,6 +94,13 @@ namespace Component {
             return value_;
         }
 
+        void SetName(char* name) {
+            name_ = name;
+        }
+
+        void SetName(char* name) {
+            name_ = name;
+        }
 
         void Render() const {
             if (!isVisible_) return;

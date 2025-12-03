@@ -119,15 +119,15 @@ xcopy %KAMATA_ENGINE%\DirectXGame\Resources "$(OutDirFullPath)NoviceResources" /
     <ClCompile Include="src\Engine\Asset\Loader\SpriteLoader.cpp" />
     <ClCompile Include="src\Engine\Asset\Loader\TileSetLoader.cpp" />
     <ClCompile Include="src\Engine\EngineCore.cpp" />
-    <ClCompile Include="src\Engine\Framework\Scene\GameScene.cpp" />
-    <ClCompile Include="src\Engine\Framework\Scene\MenuScene.cpp" />
-    <ClCompile Include="src\Engine\Framework\Scene\OverScene.cpp" />
-    <ClCompile Include="src\Engine\Framework\Scene\SceneManager.cpp" />
+    <ClCompile Include="src\Engine\Scene\SceneManager.cpp" />
     <ClCompile Include="src\Entity\Enemy.cpp" />
     <ClCompile Include="src\Entity\Player.cpp" />
     <ClCompile Include="src\Game\GameApp.cpp" />
     <ClCompile Include="src\Core\Backend.cpp" />
     <ClCompile Include="src\Core\EngineAPI.cpp" />
+    <ClCompile Include="src\Game\Scenes\GameScene.cpp" />
+    <ClCompile Include="src\Game\Scenes\MenuScene.cpp" />
+    <ClCompile Include="src\Game\Scenes\OverScene.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\DirectXGame\3d\Camera.h" />
@@ -181,16 +181,16 @@ xcopy %KAMATA_ENGINE%\DirectXGame\Resources "$(OutDirFullPath)NoviceResources" /
     <ClInclude Include="include\Core\EngineAPI.hpp" />
     <ClInclude Include="include\Core\Backend.hpp" />
     <ClInclude Include="include\Core\Math.hpp" />
-    <ClInclude Include="include\Engine\Framework\Scene\GameScene.hpp" />
-    <ClInclude Include="include\Engine\Framework\Scene\IScene.hpp" />
-    <ClInclude Include="include\Engine\Framework\Scene\MenuScene.hpp" />
-    <ClInclude Include="include\Engine\Framework\Scene\OverScene.hpp" />
-    <ClInclude Include="include\Engine\Framework\Scene\SceneManager.hpp" />
+    <ClInclude Include="include\Engine\Scene\IScene.hpp" />
+    <ClInclude Include="include\Engine\Scene\SceneManager.hpp" />
     <ClInclude Include="include\Entity\Boss.hpp" />
     <ClInclude Include="include\Engine\EngineCore.hpp" />
     <ClInclude Include="include\Entity\Enemy.hpp" />
     <ClInclude Include="include\Entity\Player.hpp" />
     <ClInclude Include="include\Game\GameApp.hpp" />
+    <ClInclude Include="include\Game\Scenes\GameScene.hpp" />
+    <ClInclude Include="include\Game\Scenes\MenuScene.hpp" />
+    <ClInclude Include="include\Game\Scenes\OverScene.hpp" />
     <ClInclude Include="include\Utils\CSVParser.hpp" />
     <ClInclude Include="include\Utils\JSONParser.hpp" />
   </ItemGroup>
