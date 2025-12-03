@@ -2,7 +2,7 @@
 #include <string>
 #include <unordered_map>
 #include <memory>
-#include "Engine/Framework/Scene/IScene.hpp"
+#include "Engine/Scene/IScene.hpp"
 
 namespace Scene {
     /**
@@ -14,6 +14,8 @@ namespace Scene {
         explicit SceneManager() = default;
         ~SceneManager() = default;
 
+        void Register(const std::string& sceneId, std::shared_ptr<IScene> scene);
+
         void ChangeScene(const std::string& sceneId);
 
         void Update(float dt);
@@ -21,7 +23,7 @@ namespace Scene {
 
     private:
         // id : Scene
-        std::unordered_map<std::string, std::shared_ptr<IScene>> scenes;
-        IScene* current = nullptr;
+        std::unordered_map<std::string, std::shared_ptr<IScene>> scenes_;
+        IScene* current_ = nullptr;
     };
 } // namespace Engine

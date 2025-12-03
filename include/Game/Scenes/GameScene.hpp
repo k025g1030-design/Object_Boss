@@ -1,5 +1,5 @@
 ﻿#pragma once
-#include "Engine/Framework/Scene/IScene.hpp"
+#include "Engine/Scene/IScene.hpp"
 
 namespace Scene {
     class GameScene : public IScene {

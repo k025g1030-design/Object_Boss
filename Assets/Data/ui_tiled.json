@@ -1,0 +1,148 @@
+{
+    "assetId":"data.tileset.ui",
+    "textureId": "tex.tileset.ui",
+    "remark" : "",
+
+    "scale": {
+        "pixelsPerUnit": 64
+    },
+
+    "tiles": {
+        "boss.hp": {
+            "rect": {
+                "x":0, 
+                "y":0, 
+                "w":640, 
+                "h":64
+            },
+            "name": "boss.hp"
+        },
+        "player.hp": {
+            "rect": {
+                "x":0, 
+                "y":128, 
+                "w":256, 
+                "h":64
+            },
+            "name": "player.hp"
+        },
+        "menu.bg": {
+            "rect": {
+                "x":192, 
+                "y":128, 
+                "w":832, 
+                "h":768
+            },
+            "name": "menu.bg"
+        },
+        "menu.opt.start": {
+            "rect": {
+                "x":0, 
+                "y":960, 
+                "w":160, 
+                "h":32
+            },
+            "name": "menu.opt.start"
+        },
+        "menu.opt.continue": {
+            "rect": {
+                "x":0, 
+                "y":992, 
+                "w":160, 
+                "h":32
+            },
+            "name": "menu.opt.continue"
+        },
+        "menu.opt.readme": {
+            "rect": {
+                "x":0, 
+                "y":1024, 
+                "w":160, 
+                "h":32
+            },
+            "name": "menu.opt.readme"
+        },
+        "menu.opt.exit": {
+            "rect": {
+                "x":0, 
+                "y":1056, 
+                "w":160, 
+                "h":32
+            },
+            "name": "menu.opt.exit"
+        },
+        "menu.title.text": {
+            "rect": {
+                "x":192, 
+                "y":960, 
+                "w":256, 
+                "h":128
+            },
+            "name": "menu.title.text"
+        },
+        
+        "skill.rin": {
+            "gridIndex": {
+                "row":1,
+                "col":0
+            },
+            "name":"skill.rin"
+        },
+        "skill.pyo": {
+            "gridIndex": {
+                "row":1,
+                "col":1
+            },
+            "name":"skill.pyo"
+        },
+        "skill.to": {
+            "gridIndex": {
+                "row":1,
+                "col":2
+            },
+            "name":"skill.to"
+        },
+        "skill.sha": {
+            "gridIndex": {
+                "row":1,
+                "col":3
+            },
+            "name":"skill.sha"
+        },
+        "skill.kai": {
+            "gridIndex": {
+                "row":1,
+                "col":4
+            },
+            "name":"skill.kai"
+        },
+        "skill.jin": {
+            "gridIndex": {
+                "row":1,
+                "col":5
+            },
+            "name":"skill.jin"
+        },
+        "skill.retsu": {
+            "gridIndex": {
+                "row":1,
+                "col":6
+            },
+            "name":"skill.retsu"
+        },
+        "skill.zai": {
+            "gridIndex": {
+                "row":1,
+                "col":7
+            },
+            "name":"skill.zai"
+        },
+        "skill.zen": {
+            "gridIndex": {
+                "row":1,
+                "col":8
+            },
+            "name":"skill.zen"
+        }
+    }
+}
