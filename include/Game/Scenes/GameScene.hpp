@@ -2,7 +2,7 @@
 #include "Engine/Scene/IScene.hpp"
 
 namespace Scenes {
-    class GameScene : public IScene {
+    class GameScene : public Scene::IScene {
     public:
         void OnEnter() override;
         void OnExit() override;

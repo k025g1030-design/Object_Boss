@@ -7,9 +7,9 @@
 
 namespace Scenes {
 
-    class MenuScene : public IScene {
+    class MenuScene : public Scene::IScene {
     public:
-        explicit MenuScene(SceneManager& scenes, Asset::AssetManager& assets) : scenes_(scenes), assets_(assets) {};
+        explicit MenuScene(Scene::SceneManager& scenes, Asset::AssetManager& assets) : scenes_(scenes), assets_(assets) {};
         ~MenuScene() override = default;
 
         void OnEnter() override;
@@ -17,8 +17,8 @@ namespace Scenes {
         void Update() override;
         void Render() override;
     private:
-        SceneManager& scenes_;
-        Asset::AssetManager& assets_
+        Scene::SceneManager& scenes_;
+        Asset::AssetManager& assets_;
         //InputSystem& inputSystem_;
     };
 }

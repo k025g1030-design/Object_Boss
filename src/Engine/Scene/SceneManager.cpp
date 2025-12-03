@@ -27,6 +27,7 @@ namespace Scene {
         }
     }
     void SceneManager::Update(float dt) {
+        dt;
         if (current_) {
             current_->Update();
         }

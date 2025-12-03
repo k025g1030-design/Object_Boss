@@ -1,7 +1,7 @@
 ﻿#pragma once
 #include <string>
 #include "Engine/Asset/AssetsManager.hpp"
-#include "Engine/Framework/Scene/SceneManager.hpp"
+#include "Engine/Scene/SceneManager.hpp"
 
 /**
   [内部]エンジンのコア機能をまとめたクラス
