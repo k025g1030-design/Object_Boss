@@ -5,7 +5,7 @@
 
 
 
-namespace Scene {
+namespace Scenes {
 
     class MenuScene : public IScene {
     public:

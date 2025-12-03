@@ -1,7 +1,7 @@
 ﻿#pragma once
 #include "Engine/Scene/IScene.hpp"
 
-namespace Scene {
+namespace Scenes {
     class GameScene : public IScene {
     public:
         void OnEnter() override;

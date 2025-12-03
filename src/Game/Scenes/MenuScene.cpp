@@ -1,6 +1,6 @@
-﻿#include "Engine/Scene/MenuScene.hpp"
+﻿#include "Game/Scenes/MenuScene.hpp"
 
-namespace Scene {
+namespace Scenes {
     void MenuScene::OnEnter() {
         // シーンに入ったときの初期化処理をここに追加
     }

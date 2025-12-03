@@ -1,6 +1,6 @@
-﻿#include "Engine/Scene/GameScene.hpp"
+﻿#include "Game/Scenes/GameScene.hpp"
 
-namespace Scene {
+namespace Scenes {
     void GameScene::OnEnter() {
         // シーンに入ったときの初期化処理をここに追加
     }
