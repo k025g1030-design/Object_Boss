@@ -9,7 +9,7 @@
 namespace Engine {
     class EngineCore {
     public:
-        void Init(const std::string& catalogPath);
+        void Init(const std::string& catalogPath, const std::string& scenesCatalogPath);
 
         Asset::AssetManager& GetAssetManager() { return assets_; }
         Scene::SceneManager& GetSceneManager() { return scenes_; }

@@ -67,7 +67,7 @@ namespace Engine {
     const Asset::Sprite* GetSprite(TextureHandle handle);
 
     // --- エンジン初期化 ---
-    void Initialize(const std::string& assetCatalogPath);
+    void Initialize(const std::string& assetCatalogPath, const std::string& scenesCatalogPath);
 
 
     // --- 描画用の高階 API ---

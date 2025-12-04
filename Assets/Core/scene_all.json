@@ -3,12 +3,10 @@
   "remark":"",
   "scenes": [
     {
-      "id": "ui.menu",
-      "class": "MenuScene",
-      "type": "ui",
+      "sceneId": "ui.menu",
+      "className": "MenuScene",
+      "sceneType": "gui",
 
-      "defaultLevelId": null,
-      "overlay": false,          
       "supportsPause": false,
 
       "usesSystems": [
@@ -24,18 +22,17 @@
       }, 
 
       "transitions": [
-        { "event": "start", "targetScene": "game.main", "levelId": "level_00" },
-        { "event": "continue", "targetScene": "game.main", "levelId": "level_01"},
-        { "event": "readme", "targetScene": "ui.readme" },
-        { "event": "exit", "targetScene": null }
+        { "eventId": "start", "targetSceneId": "game.main", "levelId": "level_00" },
+        { "eventId": "continue", "targetSceneId": "game.main", "levelId": "level_01"},
+        { "eventId": "readme", "targetSceneId": "ui.readme" },
+        { "eventId": "exit", "targetSceneId": null }
       ]
     },
     {
-      "id": "ui.pause",
-      "class": "PauseScene",
-      "type": "ui",
+      "sceneId": "ui.pause",
+      "className": "PauseScene",
+      "sceneType": "ui",
 
-      "defaultLevelId": null,
       "supportsPause": false,
 
       "usesSystems": [
@@ -51,18 +48,16 @@
       }, 
 
       "transitions": [
-        { "event": "resume",    "targetScene": "@pop" },       
-        { "event": "toMenu",   "targetScene": "ui.menu" }
+        { "eventId": "resume",    "targetSceneId": "@pop" },       
+        { "eventId": "toMenu",   "targetSceneId": "ui.menu" }
       ]
     },
 
     {
-      "id": "ui.over",
-      "class": "OverScene",
-      "type": "ui",
+      "sceneId": "ui.over",
+      "className": "OverScene",
+      "sceneType": "ui",
 
-      "defaultLevelId": null,
-      "overlay": false,   
       "supportsPause": false,
 
       "usesSystems": [
@@ -78,15 +73,15 @@
       }, 
 
       "transitions": [
-        { "event": "retry",     "targetScene": "game.main", "levelId": "level_01" },
-        { "event": "toMenu",   "targetScene": "ui.menu" }
+        { "eventId": "retry",     "targetSceneId": "game.main", "levelId": "level_01" },
+        { "eventId": "toMenu",   "targetSceneId": "ui.menu" }
       ]
     },
 
     {
-      "id": "game.main",
-      "class": "GameScene",
-      "type": "gameplay",
+      "sceneId": "game.main",
+      "className": "GameScene",
+      "sceneType": "gameplay",
 
       "defaultLevelId": "level_00",   
       "supportsPause": true,
@@ -111,9 +106,9 @@
       "timeScale": 1.0,
 
       "transitions": [
-        { "event": "gameOver",   "targetScene": "ui.over" },
-        { "event": "toMenu",    "targetScene": "ui.menu" },
-        { "event": "nextScene",  "targetScene": "game.main" }  
+        { "eventId": "gameOver",   "targetSceneId": "ui.over" },
+        { "eventId": "toMenu",    "targetSceneId": "ui.menu" },
+        { "eventId": "nextScene",  "targetSceneId": "game.main" }  
       ]
     }
   ]

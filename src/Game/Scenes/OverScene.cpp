@@ -7,6 +7,12 @@ namespace Game::Scenes {
     void OverScene::OnExit() {
         // シーンを出るときのクリーンアップ処理をここに追加
     }
+    void OverScene::OnPause() {
+
+    }
+    void OverScene::OnResume() {
+
+    }
     void OverScene::Update() {
         // メニューシーンの更新処理をここに追加
     }
