@@ -16,11 +16,15 @@ namespace Entity {
 		void SetVelocity(const Core::Vector2& velocity) { vel_ = velocity; }
 		void SetSize(const Core::Vector2& size) { size_ = size; }
 	
+		
 		void SetD(const Core::Vector2& d) { d_ = d; }
 
 		void SetTrack(const Core::Vector2& track) { track_ = track; }
 		void GetTrack(Core::Vector2& track) { track = track_; }
-		
+		void SetHP(int hp) { hp_ = hp; }
+		const int GetHP() const { return hp_; }
+		void SetDamage(int attack){ attack_ = attack; }
+
 
 	private:
 
@@ -30,7 +34,9 @@ namespace Entity {
 		Core::Vector2 vel_; 
 		Core::Vector2 t_;
 		Core::Vector2 size_;  
-
+		
 		Core::Vector2 track_;
+		int hp_ = 500;
+		int attack_ = 25;
 	};
 }

@@ -19,6 +19,11 @@ namespace Entity {
 	void Enemy::Update() {
 
 		
+		if (hp_<=0)
+		{
+			return;
+		}
+
 		d_ = track_ - position_;
 
 		float length = sqrtf(d_.x * d_.x + d_.y * d_.y);
