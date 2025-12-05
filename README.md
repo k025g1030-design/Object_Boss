@@ -88,11 +88,16 @@
 ### ボスのHP
 ![ボスのHP](./Doc/Images/HP_Boss.jpg)
 
+
 ### プレイヤーのアニメーション「Sheet」
 ![プレイヤーのアニメーション01](./Doc/Images/Player_Anime_01.jpg)
 ![プレイヤーのアニメーション02](./Doc/Images/Player_Anime_02.jpg)
 ![プレイヤーのアニメーション03](./Doc/Images/Player_Anime_03.jpg)
 ![プレイヤーのアニメーション04](./Doc/Images/Player_Anime_04.jpg)
+![プレイヤーのアニメーション05](./Doc/Images/Player_Anime_05.jpg)
+
+### ボス
+![ボスのアニメーション01](./Doc/Images/Boss.jpg)
 
 ### スキル
 ![スキル01](./Doc/Images/Skill_Icon_01.jpg)

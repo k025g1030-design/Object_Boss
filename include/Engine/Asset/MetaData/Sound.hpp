@@ -4,7 +4,7 @@
 /**
 
 **/
-namespace Asset {
+namespace Engine::Asset {
     class Sound {
     public:
         explicit Sound() = default;

@@ -6,7 +6,7 @@
 /**
 
 **/
-namespace Asset {
+namespace Engine::Asset {
     class SpriteLoader : public IAssetLoader<Sprite> {
     public:
         std::shared_ptr<Sprite> LoadFromFile(const std::string& path, AssetManager& assets) override;

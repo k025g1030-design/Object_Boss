@@ -3,13 +3,13 @@
 #include <unordered_map>
 
 
-namespace Asset {
+namespace Engine::Asset {
     enum class AssetType {
         Texture,      // PNG, JPG などの画像 (PNG,JPG) (RenderSystem)
         Sound,        // WAV, OGG などの音声 (MP3,WAV) (AudioSystem)
-        SpriteSheet,       // 絵の切り取り (JSON) (UI / Item)
+        SpriteSheet,       // 絵の切り取り (JSON) (BG)
         MapSourceData,     // マップデータ (CSV/JSON) (MapSystem)
-        TileSetData,      // Tiled で作成したマップデータ (JSON) (Map / Collsion / Event)
+        TileSetData,      //  絵の切り取り (JSON) (UI / Item / Map)
         AnimClipData,     // アニメーションと絵の切り取りデータ (JSON) (AnimationSystem)
         TextData,     // 文字表示用のフォントデータ (JSON)
         Unknown

@@ -6,7 +6,7 @@
 #include <string>
 #include "Utils/JSONParser.hpp"
 
-namespace Asset {
+namespace Engine::Asset {
     std::shared_ptr<MapData> MapDataLoader::LoadFromFile(const std::string& path, AssetManager& assets) {
         Utils::json json = Utils::JSONParser::Parse(path);
         auto data = std::make_shared<MapData>();

@@ -7,6 +7,5 @@ tex.tileset.ui,Texture,UI,Assets/Images/ui_tiled.png
 data.tileset.ui,MapTiledData,UI,Assets/Data/ui_tiled.json
 data.sheet.player,ClipData,PLAYER,Assets/Data/player_sheet.json
 tex.sheet.player,Texture,PLAYER,Assets/Images/player_sheet.png
-data.scene.all,SceneData,SYSTEM,Assets/Data/scene_all.json
 level0,LevelData,LEVEL,Assets/Data/level_00.json
 level1,LevelData,LEVEL,Assets/Data/level_01.json

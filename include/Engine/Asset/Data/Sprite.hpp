@@ -5,7 +5,7 @@
 /**
 
 **/
-namespace Asset {
+namespace Engine::Asset {
 
     using json = nlohmann::json;
 

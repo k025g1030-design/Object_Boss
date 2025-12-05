@@ -11,7 +11,10 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 
     // ライブラリの初期化
     //Novice::Initialize(kWindowTitle, kWindowWidth, kWindowHeight);
-    Engine::Initialize("./Assets/Data/catalog.csv");
+    Engine::Initialize(
+    "./Assets/Data/catalog.csv",
+    "./Assets/Core/scene_all.json"
+    );
 
     // キー入力結果を受け取る箱
     char keys[256] = {0};
@@ -24,9 +27,6 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 
     // ウィンドウの×ボタンが押されるまでループ
     while (Engine::Backend::ProcessStatus() == 0) {
-        // フレームの開始
-        Engine::Backend::StartFrame();
-
         
         // キー入力を受け取る
         memcpy(preKeys, keys, 256);
@@ -37,9 +37,12 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 		gameApp.Input();
 
 		gameApp.Update();
+
+
+        // フレームの開始
+        Engine::Backend::StartFrame();
 		
         gameApp.Render();
-
 
         // フレームの終了
         Engine::Backend::EndFrame();

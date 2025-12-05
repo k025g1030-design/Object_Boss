@@ -3,9 +3,9 @@
 #include "Core/Config.hpp"
 
 namespace Engine {
-    void Initialize(const std::string& assetCatalogPath) {
+    void Initialize(const std::string& assetCatalogPath, const std::string& scenesCatalogPath) {
         Engine::Backend::Initialize(Core::kWindowTitle, Core::kWindowWidth, Core::kWindowHeight);
-        gEngine.Init(assetCatalogPath);
+        gEngine.Init(assetCatalogPath, scenesCatalogPath);
     }
 
     void RenderSprite(const Core::Vector2 position, const Asset::Sprite& sprite) {

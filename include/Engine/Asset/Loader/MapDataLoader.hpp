@@ -6,7 +6,7 @@
 /**
 
 **/
-namespace Asset {
+namespace Engine::Asset {
     class MapDataLoader : public IAssetLoader<MapData> {
     public:
         std::shared_ptr<MapData> LoadFromFile(const std::string& path, AssetManager& assets) override;

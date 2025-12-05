@@ -1,11 +1,14 @@
 ﻿#pragma once
 #include "Engine/Scene/IScene.hpp"
 
-namespace Scenes {
-    class OverScene : public Scene::IScene {
+namespace Game::Scenes {
+    class OverScene : public Engine::Scene::IScene {
     public:
+        ~OverScene() = default;
         void OnEnter() override;
         void OnExit() override;
+        void OnPause() override;
+        void OnResume() override;
         void Update() override;
         void Render() override;
     private:

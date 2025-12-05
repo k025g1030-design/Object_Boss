@@ -5,20 +5,22 @@
 
 
 
-namespace Scenes {
+namespace Game::Scenes {
 
-    class MenuScene : public Scene::IScene {
+    class MenuScene : public Engine::Scene::IScene {
     public:
-        explicit MenuScene(Scene::SceneManager& scenes, Asset::AssetManager& assets) : scenes_(scenes), assets_(assets) {};
-        ~MenuScene() override = default;
+        //explicit MenuScene(Engine::Scene::SceneManager& scenes, Engine::Asset::AssetManager& assets) : scenes_(scenes), assets_(assets) {};
+        ~MenuScene() = default;
 
         void OnEnter() override;
         void OnExit() override;
+        void OnPause() override;
+        void OnResume() override;
         void Update() override;
         void Render() override;
     private:
-        Scene::SceneManager& scenes_;
-        Asset::AssetManager& assets_;
+        //Engine::Scene::SceneManager& scenes_;
+        //Engine::Asset::AssetManager& assets_;
         //InputSystem& inputSystem_;
     };
 }
