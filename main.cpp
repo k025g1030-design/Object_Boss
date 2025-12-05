@@ -41,9 +41,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 
         // フレームの開始
         Engine::Backend::StartFrame();
-		
         gameApp.Render();
-
         // フレームの終了
         Engine::Backend::EndFrame();
 
