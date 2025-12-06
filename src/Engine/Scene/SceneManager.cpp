@@ -103,5 +103,21 @@ namespace Engine::Scene {
           SceneDef.renderUnderlay に従って下層描画を制御する場合、
           上から逆順に走査し、最初に renderUnderlay == false のシーンに到達した時点で描画を止める
         */
+        /*
+        int startIndex = static_cast<int>(sceneStack_.size()) - 1;
+        for (int i = startIndex; i >= 0; --i) {
+            const Scene* s = sceneStack_[i].get();
+            const SceneDef* def = GetSceneDef(s->GetId());
+            if (!def || !def->stackBehavior.renderUnderlay) {
+                startIndex = i;
+                break;
+            }
+        }
+
+        // startIndex から頂点まで順にレンダー(Render)する
+        for (int i = startIndex; i < static_cast<int>(sceneStack_.size()); ++i) {
+            sceneStack_[i]->Render();
+        }
+        */
     }
 } // namespace Engine::Scene
