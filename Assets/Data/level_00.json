@@ -1,20 +1,22 @@
 {
-  "id": "level_00",
+  "assetId": "data.level.00",
   "type": "gameplay", 
-  "mapId": "map.otera.tutorial",
-  "bgm": "bgm.otera.theme",
+  "mapAssetId": "data.map.shrine.tutorial",
+  "audioAssetId": "bgm.shrine.theme",
 
   "player": {
-    "spawn": [3, 5]
+    "spawn": {
+      "x": 3, "y": 5
+    }
   },
 
   "actors": [
-    { "id": "npc_guide", "type": "npc", "spawn": [8, 5], "facing": "left" },
-    { "id": "boss_001",  "type": "boss", "spawn": [20, 8], "enabled": false }
+    { "id": "world_guide", "type": "npc", "spawn": { "x": 8, "y": 5 }, "show": false, "enabled": false  },
+    { "id": "player", "type": "npc", "spawn": { "x": 8, "y": 5 }, "facing": "left" }
   ],
 
   "tutorial": {
-    "id": "tutorial_move",
+    "assetId": "story_comic",
     "enabled": false
   },
 

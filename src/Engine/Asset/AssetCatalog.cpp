@@ -26,6 +26,8 @@ namespace Engine::Asset {
                     else if (row[1] == "MapTiledData") type = AssetType::TileSetData;
                     else if (row[1] == "ClipData") type = AssetType::AnimClipData;
                     else if (row[1] == "TextData") type = AssetType::TextData;
+                    else if (row[1] == "LevelData") type = AssetType::LevelData;
+
                 }
                 group = row.size() > 2 ? row[2] : "";
                 path = row.size() > 3 ? row[3] : "";

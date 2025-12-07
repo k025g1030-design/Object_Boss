@@ -1,52 +1,17 @@
 {
-  "id": "level_01",
+  "assetId": "data.level.01",
   "type": "gameplay", 
-  "mapId": "map.shrine.boss_room",
-  "bgm": "bgm.shrine.theme",
+  "mapAssetId": "data.map.shrine.boss_room",
+  "audioAssetId": "bgm.shrine.theme",
 
   "player": {
-    "spawn": [3, 5]
+    "spawn": {
+      "x": 3, "y": 5
+    }
   },
 
   "actors": [
-    { "id": "boss_001",  "type": "boss", "spawn": [20, 8], "enabled": false }
-  ],
-
-  "tutorial": {
-    "id": "tutorial_move",
-    "enabled": false
-  },
-
-  "script": [
-    { "type": "lockPlayerControl", "value": true },
-
-    { "type": "cameraSetTarget", "actor": "player" },
-
-    { "type": "playAnim", "actor": "player", "anim": "walk" },
-    { "type": "moveTo", "actor": "player", "x": 6, "y": 5, "speed": 2 },
-    { "type": "waitUntilReached", "actor": "player", "x": 6, "y": 5 },
-
-    { "type": "playAnim", "actor": "player", "anim": "idle" },
-
-    { "type": "showDialog", "id": "dlg_intro_01" },
-    { "type": "waitDialogClosed" },
-
-    { "type": "moveTo", "actor": "npc_guide", "x": 7, "y": 5, "speed": 1.5 },
-    { "type": "waitUntilReached", "actor": "npc_guide", "x": 7, "y": 5 },
-    { "type": "showDialog", "id": "dlg_intro_02" },
-
-    { "type": "lockPlayerControl", "value": false },
-    { "type": "enableTutorial", "id": "tutorial_move" },
-
-    { "type": "waitUntil", "condition": "player_reach", "x": 15, "y": 6 },
-
-    { "type": "showDialog", "id": "dlg_boss_intro" },
-    { "type": "enableActor", "actor": "boss_001", "value": true },
-
-    { "type": "waitUntil", "condition": "boss_defeated", "actor": "boss_001" },
-
-    { "type": "showDialog", "id": "dlg_boss_after" },
-
-    { "type": "endScene", "next": "scene_intro_02" }
+    { "id": "world_guide", "type": "npc", "spawn": { "x": 8, "y": 5 }, "show": false, "enabled": false  },
+    { "id": "boss_001",  "type": "boss", "spawn": { "x": 20, "y": 8 }, "facing":"down", "enabled": false }
   ]
 }

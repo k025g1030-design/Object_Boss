@@ -113,6 +113,7 @@ xcopy %KAMATA_ENGINE%\DirectXGame\Resources "$(OutDirFullPath)NoviceResources" /
     <ClCompile Include="src\Engine\Asset\AssetCatalog.cpp" />
     <ClCompile Include="src\Engine\Asset\AssetManager.cpp" />
     <ClCompile Include="src\Engine\Asset\Loader\AnimationLoader.cpp" />
+    <ClCompile Include="src\Engine\Asset\Loader\LevelDataLoader.cpp" />
     <ClCompile Include="src\Engine\Asset\Loader\MapDataLoader.cpp" />
     <ClCompile Include="src\Engine\Asset\Loader\Meta\SoundLoader.cpp" />
     <ClCompile Include="src\Engine\Asset\Loader\Meta\TextureLoader.cpp" />
@@ -162,11 +163,13 @@ xcopy %KAMATA_ENGINE%\DirectXGame\Resources "$(OutDirFullPath)NoviceResources" /
     <ClInclude Include="include\Engine\Asset\AssetCatalog.hpp" />
     <ClInclude Include="include\Engine\Asset\AssetsManager.hpp" />
     <ClInclude Include="include\Engine\Asset\Data\AnimationData.hpp" />
+    <ClInclude Include="include\Engine\Asset\Data\LevelData.hpp" />
     <ClInclude Include="include\Engine\Asset\Data\MapData.hpp" />
     <ClInclude Include="include\Engine\Asset\Data\SoundData.hpp" />
     <ClInclude Include="include\Engine\Asset\Data\Sprite.hpp" />
     <ClInclude Include="include\Engine\Asset\Data\TileSetData.hpp" />
     <ClInclude Include="include\Engine\Asset\Loader\AnimationLoader.hpp" />
+    <ClInclude Include="include\Engine\Asset\Loader\LevelDataLoader.hpp" />
     <ClInclude Include="include\Engine\Asset\Loader\MapDataLoader.hpp" />
     <ClInclude Include="include\Engine\Asset\Loader\Meta\IAssetLoader.hpp" />
     <ClInclude Include="include\Engine\Asset\Loader\Meta\SoundLoader.hpp" />

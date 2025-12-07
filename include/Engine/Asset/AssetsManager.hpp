@@ -6,6 +6,7 @@
 #include "Engine/Asset/Loader/Meta/IAssetLoader.hpp"
 #include "Engine/Asset/AssetCatalog.hpp"
 #include "Engine/Asset/ResourceHandle.hpp"
+#include <cassert>
 
 namespace Engine::Asset {
     class AssetManager {
@@ -50,6 +51,7 @@ namespace Engine::Asset {
         if (loaders_.find(type) != loaders_.end()) {
             /*std::cerr << "[AssetManager] Loader for type '" << type
                 << "' already registered.\n";*/
+            assert(false && ("[AssetManager] Loader for type : already registered."));
             return;
         }
 
@@ -76,6 +78,7 @@ namespace Engine::Asset {
         AssetInfo info = catalog_.Get(assetId);
         auto loaderIt = loaders_.find(info.type);
         if (loaderIt == loaders_.end()) {
+            assert(false && ("[AssetManager] No loader for type"));
             /*std::cerr << "[AssetManager] No loader for type: " << info.type << "\n";*/
             return nullptr;
         }

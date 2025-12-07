@@ -3,6 +3,7 @@
 #include "Engine/Asset/Data/TileSetData.hpp"
 #include "Engine/Asset/Data/AnimationData.hpp"
 #include "Engine/Asset/Data/MapData.hpp"
+#include "Engine/Asset/Data/LevelData.hpp"
 #include "Engine/Scene/SceneRegistry.hpp" 
 #include "Engine/Scene/SceneFactory.hpp" 
 #include "Game/Scenes/GameScene.hpp"
@@ -18,6 +19,9 @@ namespace Engine {
 
         assets_.Load<Asset::MapData>("data.map.shrine.tutorial");
         assets_.Load<Asset::MapData>("data.map.shrine.boss_room");
+
+        assets_.Load<Asset::LevelData>("data.level.00");
+        assets_.Load<Asset::LevelData>("data.level.01");
 
         Engine::Scene::SceneRegistry registry;
         registry.LoadFromFile(scenesCatalogPath);

@@ -155,6 +155,15 @@
     <ClCompile Include="src\Game\Scenes\OverScene.cpp">
       <Filter>src\Game\Scenes</Filter>
     </ClCompile>
+    <ClCompile Include="src\Engine\Scene\SceneFactory.cpp">
+      <Filter>src\Engine\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engine\Scene\SceneRegistry.cpp">
+      <Filter>src\Engine\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engine\Asset\Loader\LevelDataLoader.cpp">
+      <Filter>src\Engine\Asset\Loader</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="%KAMATA_ENGINE%\DirectXGame\audio\Audio.h">
@@ -348,6 +357,18 @@
     </ClInclude>
     <ClInclude Include="include\Engine\Scene\MetaData\SceneMeta.hpp">
       <Filter>include\Engine\Scene\MetaData</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Engine\Asset\Data\LevelData.hpp">
+      <Filter>include\Engine\Asset\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Engine\Asset\Loader\LevelDataLoader.hpp">
+      <Filter>include\Engine\Asset\Loader</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Engine\Scene\SceneFactory.hpp">
+      <Filter>include\Engine\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Engine\Scene\SceneRegistry.hpp">
+      <Filter>include\Engine\Scene</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

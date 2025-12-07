@@ -5,6 +5,7 @@
 #include "Engine/Asset/Loader/TileSetLoader.hpp"
 #include "Engine/Asset/Loader/SpriteLoader.hpp"
 #include "Engine/Asset/Loader/MapDataLoader.hpp"
+#include "Engine/Asset/Loader/LevelDataLoader.hpp"
 
 namespace Engine::Asset {
     void AssetManager::Initialize(const std::string& catalogPath) {
@@ -16,9 +17,7 @@ namespace Engine::Asset {
         RegisterLoader<TileSetData>(AssetType::TileSetData, std::make_shared<TileSetLoader>());
         RegisterLoader<Sprite>(AssetType::SpriteSheet, std::make_shared<SpriteLoader>());
         RegisterLoader<MapData>(AssetType::MapSourceData, std::make_shared<MapDataLoader>());
-
-
-
+        RegisterLoader<LevelData>(AssetType::LevelData, std::make_shared<LevelDataLoader>());
     }
 
     void AssetManager::Unload(const std::string& assetId) {

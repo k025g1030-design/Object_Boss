@@ -8,9 +8,10 @@ namespace Engine::Asset {
         Texture,      // PNG, JPG などの画像 (PNG,JPG) (RenderSystem)
         Sound,        // WAV, OGG などの音声 (MP3,WAV) (AudioSystem)
         SpriteSheet,       // 絵の切り取り (JSON) (BG)
-        MapSourceData,     // マップデータ (CSV/JSON) (MapSystem)
+        MapSourceData,     // マップデータ (CSV/JSON) (SceneSystem)
         TileSetData,      //  絵の切り取り (JSON) (UI / Item / Map)
         AnimClipData,     // アニメーションと絵の切り取りデータ (JSON) (AnimationSystem)
+        LevelData,       // レベル全体のデータ (JSON) (SceneSystem)
         TextData,     // 文字表示用のフォントデータ (JSON)
         Unknown
     };
