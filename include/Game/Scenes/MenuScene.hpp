@@ -1,15 +1,12 @@
 ﻿#pragma once
 #include "Engine/Scene/IScene.hpp"
-#include "Engine/Scene/SceneManager.hpp"
-#include "Engine/Asset/AssetsManager.hpp"
-
-
+#include "Core/EngineAPI.hpp"
 
 namespace Game::Scenes {
 
     class MenuScene : public Engine::Scene::IScene {
     public:
-        //explicit MenuScene(Engine::Scene::SceneManager& scenes, Engine::Asset::AssetManager& assets) : scenes_(scenes), assets_(assets) {};
+        explicit MenuScene() = default;
         ~MenuScene() = default;
 
         void OnEnter() override;

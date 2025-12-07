@@ -8,6 +8,11 @@ namespace Engine {
         gEngine.Init(assetCatalogPath, scenesCatalogPath);
     }
 
+    void Update() {
+        
+        gEngine.Update(); // 仮にエンジンコアに Update メソッドがあるとする
+    }
+
     void RenderSprite(const Core::Vector2 position, const Asset::Sprite& sprite) {
         position;
         sprite;

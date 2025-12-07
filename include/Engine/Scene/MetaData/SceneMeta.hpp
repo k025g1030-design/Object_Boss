@@ -30,8 +30,8 @@ namespace Engine::Scene {
 
     struct TransitionDef {
         std::string eventId; // fade_in, fade_out, slide_left, slide_right, etc.
-        std::string targetSceneId;
-        std::string levelId; // optional, if the transition involves loading a new level
+        std::optional<std::string> targetSceneId;
+        std::optional<std::string> levelId; // optional, if the transition involves loading a new level
     };
 
     struct SceneDef {
@@ -56,11 +56,19 @@ namespace Engine::Scene {
         if (j.contains("eventId") && !j.at("eventId").empty()) {
             j.at("eventId").get_to(data.eventId);
         }
-        if (j.contains("targetSceneId") && !j.at("targetSceneId").empty()) {
-            j.at("targetSceneId").get_to(data.targetSceneId);
+        if (j.contains("targetSceneId")) {
+            if (j.at("targetSceneId").is_null()) {
+                data.targetSceneId = std::nullopt;
+            } else {
+                data.targetSceneId = j.at("targetSceneId").get<std::string>();
+            }
         }
         if (j.contains("levelId") && !j.at("levelId").empty()) {
-            j.at("levelId").get_to(data.levelId);
+            if (j.at("levelId").is_null()) {
+                data.levelId = std::nullopt;
+            } else {
+                data.levelId = j.at("levelId").get<std::string>();
+            }
         }
     }
 

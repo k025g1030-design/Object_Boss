@@ -100,23 +100,23 @@ namespace Engine::Asset {
         j.at("type").get_to(cmd.type);
         if (j.contains("actor")) {
             if (j.at("actor").is_null()) {
-                cmd.next = std::nullopt;
+                cmd.actor = std::nullopt;
             } else {
-                cmd.next = j.at("actor").get<std::string>();
+                cmd.actor = j.at("actor").get<std::string>();
             }
         }
         if (j.contains("id")) {
             if (j.at("id").is_null()) {
-                cmd.next = std::nullopt;
+                cmd.id = std::nullopt;
             } else {
-                cmd.next = j.at("id").get<std::string>();
+                cmd.id = j.at("id").get<std::string>();
             }
         }
         if (j.contains("condition")) {
             if (j.at("condition").is_null()) {
-                cmd.next = std::nullopt;
+                cmd.condition = std::nullopt;
             } else {
-                cmd.next = j.at("condition").get<std::string>();
+                cmd.condition = j.at("condition").get<std::string>();
             }
         }
         if (j.contains("next")) {

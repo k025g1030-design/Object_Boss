@@ -3,6 +3,7 @@
 namespace Game::Scenes {
     void MenuScene::OnEnter() {
         // シーンに入ったときの初期化処理をここに追加
+        //gEngine.GetAssetManager().Load<Engine::Asset::AnimationData>("data.sheet.ui.menu_cursor");
 
     }
     void MenuScene::OnExit() {

@@ -1,4 +1,5 @@
-﻿#pragma once
+﻿
+#pragma once
 #include <memory>
 #include <string>
 #include <vector>
@@ -23,6 +24,7 @@ namespace Engine::Scene {
 
         void Update(float dt);
         void Render();
+        void HandleEvent(const std::string& sceneId, const std::string& eventId);
 
         bool IsEmpty() const { return sceneStack_.empty(); }
 

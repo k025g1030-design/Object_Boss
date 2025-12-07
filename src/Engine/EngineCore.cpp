@@ -46,6 +46,8 @@ namespace Engine {
         scenes_.ChangeScene("ui.menu");
     }
 
-
+    void EngineCore::RequestSceneEvent(const std::string& sceneId, const std::string& eventId) {
+        scenes_.HandleEvent(sceneId, eventId);
+    }
 
 }

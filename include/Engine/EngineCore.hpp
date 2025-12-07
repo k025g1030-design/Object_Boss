@@ -11,6 +11,8 @@ namespace Engine {
     public:
         void Init(const std::string& catalogPath, const std::string& scenesCatalogPath);
 
+        void RequestSceneEvent(const std::string& sceneId, const std::string& eventId);
+
         Asset::AssetManager& GetAssetManager() { return assets_; }
         Scene::SceneManager& GetSceneManager() { return scenes_; }
 

@@ -32,6 +32,8 @@ namespace Game {
 		player_.Update();
 		enemy_.Update();
 
+        gEngine.update();
+
 	} 
 
 	void GameApp::Render() {
