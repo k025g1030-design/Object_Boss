@@ -6,9 +6,6 @@
 
 namespace Entity {
 
-	
-	
-	
 	void Enemy::Draw() {
 		Novice::DrawBox(static_cast<int>(position_.x), static_cast<int>(position_.y),
 			static_cast<int>(size_.x), static_cast<int>(size_.y),
@@ -18,7 +15,6 @@ namespace Entity {
 	}
 	void Enemy::Update() {
 
-		
 		if (hp_<=0)
 		{
 			return;
@@ -32,10 +28,8 @@ namespace Entity {
 			d_.y /= length;
 		}
 
-
 		position_.x += d_.x * vel_.x;
 		position_.y += d_.y * vel_.y;
-
 
 		//position_.x += vel_.x;
 		//position_.y += vel_.y;

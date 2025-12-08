@@ -22,9 +22,10 @@ namespace Entity {
 		}
 	}
 	void Player::Update() {
+		
 		if (hp_ <= 0)
 		{
-			return ;
+			return;
 		}
 		position_.x += vel_.x;
 		position_.y += vel_.y;
