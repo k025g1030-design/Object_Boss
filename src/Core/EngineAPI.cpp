@@ -2,6 +2,10 @@
 #include "Core/Backend.hpp"
 #include "Core/Config.hpp"
 
+namespace {
+    Engine::EngineCore gEngine_;
+}
+
 namespace Engine {
     void Initialize(const std::string& assetCatalogPath, const std::string& scenesCatalogPath) {
         Engine::Backend::Initialize(Core::kWindowTitle, Core::kWindowWidth, Core::kWindowHeight);
@@ -15,6 +19,10 @@ namespace Engine {
     void RenderSprite(const Core::Vector2 position, const Asset::Sprite& sprite) {
         position;
         sprite;
+    }
+
+    void RenderFullScreenQuad(unsigned int color) {
+        Engine::Backend::DrawBox(0, 0, Core::kWindowWidth, Core::kWindowHeight, 1.0, color, kFillModeSolid);
     }
 
     void RenderTile(const Core::Vector2 position, const Asset::TileSetData* tileSetData, const std::string& tileId) {

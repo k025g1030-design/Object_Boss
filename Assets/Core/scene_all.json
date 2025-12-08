@@ -21,6 +21,11 @@
         "renderUnderlay": false    
       }, 
 
+      "transitFade": {
+        "fadeOut": 0.5,
+        "fadeIn": 0.5
+      },
+
       "transitions": [
         { "eventId": "start", "targetSceneId": "game.main", "levelId": "level_00" },
         { "eventId": "continue", "targetSceneId": "game.main", "levelId": "level_01"},
@@ -72,6 +77,11 @@
         "renderUnderlay": false    
       }, 
 
+      "transitFade": {
+        "fadeOut": 0.5,
+        "fadeIn": 0.5
+      },
+
       "transitions": [
         { "eventId": "retry",     "targetSceneId": "game.main", "levelId": "level_01" },
         { "eventId": "toMenu",   "targetSceneId": "ui.menu" }
@@ -102,6 +112,11 @@
         "updateUnderlay": false,  
         "renderUnderlay": false    
       }, 
+
+      "transitFade": {
+        "fadeOut": 0.5,
+        "fadeIn": 0.5
+      },
 
       "timeScale": 1.0,
 

@@ -34,6 +34,11 @@ namespace Engine::Scene {
         std::optional<std::string> levelId; // optional, if the transition involves loading a new level
     };
 
+    struct TransitFadeDef {
+        float fadeOut = 0.5f;
+        float fadeIn = 0.5f;
+    };
+
     struct SceneDef {
         std::string sceneId;
         std::string className;
@@ -42,8 +47,11 @@ namespace Engine::Scene {
         std::string defaultLevelId;
         bool supportsPause = false;
 
+        float timeScale = 1.0f;
+
         std::vector<std::string> userSystems;
         StackBehaviorDef stackBehavior;
+        TransitFadeDef transitFade;
         std::vector<TransitionDef> transitions;
     };
 
@@ -51,6 +59,8 @@ namespace Engine::Scene {
         std::string assetId;
         std::vector<SceneDef> scenes;
     };
+
+    NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(TransitFadeDef, fadeOut, fadeIn)
 
     inline void from_json(const json& j, TransitionDef& data) {
         if (j.contains("eventId") && !j.at("eventId").empty()) {
@@ -132,6 +142,16 @@ namespace Engine::Scene {
             j.at("stackBehavior").get_to(data.stackBehavior);
         } else {
             data.stackBehavior = StackBehaviorDef{};
+        }
+        if (j.contains("transitFade")) {
+            j.at("transitFade").get_to(data.transitFade);
+        } else {
+            data.transitFade = TransitFadeDef{};
+        }
+        if (j.contains("timeScale")) {
+            j.at("timeScale").get_to(data.timeScale);
+        } else {
+            data.timeScale = 1.0f;
         }
         if (j.contains("transitions")) {
             const json& transObj = j.at("transitions");

@@ -7,7 +7,8 @@ namespace Engine::Scene {
         Utils::json json = Utils::JSONParser::Parse(path);
         SceneMeta meta = json.get<SceneMeta>();
         for (const auto& sceneDef : meta.scenes) {
-            defs_.emplace(sceneDef.sceneId, sceneDef);
+            //defs_.emplace(sceneDef.sceneId, sceneDef);
+            defs_[sceneDef.sceneId] = sceneDef;
         }
     }
     const SceneDef* SceneRegistry::Get(const std::string& sceneId) const {

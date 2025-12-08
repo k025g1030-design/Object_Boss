@@ -18,9 +18,7 @@
   - ゲーム層が使う高階 API を定義
   - 内部で EngineCore インスタンスを保持し、そこから各種サブシステムにアクセスする
 **/
-namespace {
-    Engine::EngineCore gEngine_;
-}
+
 
 namespace Engine {
     
@@ -74,6 +72,8 @@ namespace Engine {
 
     // --- 描画用の高階 API ---
     void RenderSprite(const Core::Vector2 position, const Asset::Sprite& sprite);
+
+    void RenderFullScreenQuad(unsigned int color);
 
     void RenderTile(const Core::Vector2 position, const Asset::TileSetData* tileSetData, const std::string& tileId);
     void RenderTileBtn(const Core::Vector2 position, const Asset::TileSetData* tileSetData, const std::string& tileId);

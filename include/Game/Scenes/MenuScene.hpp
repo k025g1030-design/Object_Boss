@@ -15,8 +15,12 @@ namespace Game::Scenes {
         void OnResume() override;
         void Update() override;
         void Render() override;
-    private:
-        Engine::Asset::TileSetData* guiData_;
+    public:
+        void InitializeContext(const Engine::Scene::SceneChangeParam& /*param*/) override {}
+
+    private:                                                    
+        Engine::Asset::TileSetData* guiData_ = nullptr;
         //InputSystem& inputSystem_;
     };
-}
+
+} // namespace Game::Scenes

@@ -24,20 +24,25 @@ namespace Engine {
         assets_.Load<Asset::LevelData>("data.level.00");
         assets_.Load<Asset::LevelData>("data.level.01");
 
-        Engine::Scene::SceneRegistry registry;
-        registry.LoadFromFile(scenesCatalogPath);
-        Engine::Scene::SceneFactory factory;
-        factory.Register("GameScene", [](const Engine::Scene::SceneDef& def) {
+        auto registry = std::make_shared<Scene::SceneRegistry>();
+        registry->LoadFromFile(scenesCatalogPath);
+        auto factory = std::make_shared<Scene::SceneFactory>();
+         
+        factory->Register("GameScene", [](const Engine::Scene::SceneDef& def, const Engine::Scene::SceneChangeParam param) {
+            std::string levelId = param.Get("levelId", def.defaultLevelId);
             auto it = std::make_unique<Game::Scenes::GameScene>();
+
             it->SetSceneId(def.sceneId);
             return it;
         });
-        factory.Register("MenuScene", [](const Engine::Scene::SceneDef& def) {
+        factory->Register("MenuScene", [](const Engine::Scene::SceneDef& def, const Engine::Scene::SceneChangeParam param) {
+            (void)param;
             auto it = std::make_unique<Game::Scenes::MenuScene>();
             it->SetSceneId(def.sceneId);
             return it;
         });
-        factory.Register("OverScene", [](const Engine::Scene::SceneDef& def) {
+        factory->Register("OverScene", [](const Engine::Scene::SceneDef& def, const Engine::Scene::SceneChangeParam param) {
+            std::string levelId = param.Get("result", def.defaultLevelId);
             auto it = std::make_unique<Game::Scenes::OverScene>();
             it->SetSceneId(def.sceneId);
             return it;

@@ -1,6 +1,7 @@
 ﻿#include "Game/Scenes/MenuScene.hpp"
 
 namespace Game::Scenes {
+
     void MenuScene::OnEnter() {
         // シーンに入ったときの初期化処理をここに追加
         guiData_ = Engine::GetCore().GetAssetManager().Load<Engine::Asset::TileSetData>("data.tileset.ui");

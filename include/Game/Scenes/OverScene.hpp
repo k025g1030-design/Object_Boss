@@ -2,6 +2,7 @@
 #include "Engine/Scene/IScene.hpp"
 
 namespace Game::Scenes {
+
     class OverScene : public Engine::Scene::IScene {
     public:
         ~OverScene() = default;
@@ -11,7 +12,10 @@ namespace Game::Scenes {
         void OnResume() override;
         void Update() override;
         void Render() override;
+    public:
+        void InitializeContext(const Engine::Scene::SceneChangeParam& param) override;
     private:
         // メニューシーン固有のメンバ変数をここに追加
+        std::string result_;
     };
 }

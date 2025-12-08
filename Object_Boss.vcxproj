@@ -188,6 +188,7 @@ xcopy %KAMATA_ENGINE%\DirectXGame\Resources "$(OutDirFullPath)NoviceResources" /
     <ClInclude Include="include\Core\Math.hpp" />
     <ClInclude Include="include\Engine\Scene\IScene.hpp" />
     <ClInclude Include="include\Engine\Scene\MetaData\SceneMeta.hpp" />
+    <ClInclude Include="include\Engine\Scene\SceneChangeParam.hpp" />
     <ClInclude Include="include\Engine\Scene\SceneFactory.hpp" />
     <ClInclude Include="include\Engine\Scene\SceneManager.hpp" />
     <ClInclude Include="include\Engine\Scene\SceneRegistry.hpp" />
@@ -199,6 +200,7 @@ xcopy %KAMATA_ENGINE%\DirectXGame\Resources "$(OutDirFullPath)NoviceResources" /
     <ClInclude Include="include\Game\Scenes\GameScene.hpp" />
     <ClInclude Include="include\Game\Scenes\MenuScene.hpp" />
     <ClInclude Include="include\Game\Scenes\OverScene.hpp" />
+    <ClInclude Include="include\Utils\CommonUtils.hpp" />
     <ClInclude Include="include\Utils\CSVParser.hpp" />
     <ClInclude Include="include\Utils\JSONParser.hpp" />
   </ItemGroup>
