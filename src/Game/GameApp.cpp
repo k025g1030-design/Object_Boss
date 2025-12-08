@@ -32,16 +32,19 @@ namespace Game {
 		player_.Update();
 		enemy_.Update();
 
-        gEngine.update();
+        
 
 	} 
 
 	void GameApp::Render() {
 		// 描画
-	
-		player_.Draw();
 
-		enemy_.Draw();
+        Engine::GetCore().GetSceneManager().Render();
+
+	
+		/*player_.Draw();
+
+		enemy_.Draw();*/
 	}
 	void GameApp::Shutdown() {
 		// Resource cleanup code here

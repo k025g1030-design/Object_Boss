@@ -16,8 +16,7 @@ namespace Game::Scenes {
         void Update() override;
         void Render() override;
     private:
-        //Engine::Scene::SceneManager& scenes_;
-        //Engine::Asset::AssetManager& assets_;
+        Engine::Asset::TileSetData* guiData_;
         //InputSystem& inputSystem_;
     };
 }

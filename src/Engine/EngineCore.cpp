@@ -15,6 +15,7 @@ namespace Engine {
         // Test 
         assets_.Initialize(assetCatalogPath);
         assets_.Load<Asset::TileSetData>("data.tileset.map");
+        assets_.Load<Asset::TileSetData>("data.tileset.ui");
         assets_.Load<Asset::AnimationData>("data.sheet.player");
 
         assets_.Load<Asset::MapData>("data.map.shrine.tutorial");

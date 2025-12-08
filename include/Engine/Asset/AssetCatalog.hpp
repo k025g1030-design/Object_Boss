@@ -38,7 +38,7 @@ namespace Engine::Asset {
             if (type == AssetType::Texture) result = "Texture";
             else if (type == AssetType::Sound) result = "Sound";
             else if (type == AssetType::MapSourceData) result = "MapSourceData";
-            else if (type == AssetType::TileSetData) result = "MapTiledData";
+            else if (type == AssetType::TileSetData) result = "TileSetData";
             else if (type == AssetType::AnimClipData) result = "ClipData";
             else if (type == AssetType::TextData) result = "TextData";
             return result;

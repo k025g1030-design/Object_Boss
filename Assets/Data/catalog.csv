@@ -2,9 +2,9 @@ id,type,group,path
 data.map.shrine.tutorial,MapSourceData,MAP,Assets/Data/map_data_00.json
 data.map.shrine.boss_room,MapSourceData,MAP,Assets/Data/map_data_01.json
 tex.tileset.map,Texture,MAP,Assets/Images/map_tiled.png
-data.tileset.map,MapTiledData,MAP,Assets/Data/map_tiled.json
+data.tileset.map,TileSetData,MAP,Assets/Data/map_tiled.json
 tex.tileset.ui,Texture,UI,Assets/Images/ui_tiled.png
-data.tileset.ui,MapTiledData,UI,Assets/Data/ui_tiled.json
+data.tileset.ui,TileSetData,UI,Assets/Data/ui_tiled.json
 data.sheet.player,ClipData,PLAYER,Assets/Data/player_sheet.json
 tex.sheet.player,Texture,PLAYER,Assets/Images/player_sheet.png
 data.level.00,LevelData,LEVEL,Assets/Data/level_00.json

@@ -19,7 +19,7 @@
   - 内部で EngineCore インスタンスを保持し、そこから各種サブシステムにアクセスする
 **/
 namespace {
-    Engine::EngineCore gEngine;
+    Engine::EngineCore gEngine_;
 }
 
 namespace Engine {
@@ -66,12 +66,17 @@ namespace Engine {
     const Asset::TileSetData* GetTileSetData(TileSetHandle handle);
     const Asset::Sprite* GetSprite(TextureHandle handle);
 
+    Engine::EngineCore& GetCore();
+
     // --- エンジン初期化 ---
     void Initialize(const std::string& assetCatalogPath, const std::string& scenesCatalogPath);
 
 
     // --- 描画用の高階 API ---
     void RenderSprite(const Core::Vector2 position, const Asset::Sprite& sprite);
+
+    void RenderTile(const Core::Vector2 position, const Asset::TileSetData* tileSetData, const std::string& tileId);
+    void RenderTileBtn(const Core::Vector2 position, const Asset::TileSetData* tileSetData, const std::string& tileId);
 
     void RenderAnimetion(const Core::Vector2 position, const Asset::AnimationData& animData);
 

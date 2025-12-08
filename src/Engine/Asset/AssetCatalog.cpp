@@ -23,7 +23,7 @@ namespace Engine::Asset {
                     if (row[1] == "Texture") type = AssetType::Texture;
                     else if (row[1] == "Sound") type = AssetType::Sound;
                     else if (row[1] == "MapSourceData") type = AssetType::MapSourceData;
-                    else if (row[1] == "MapTiledData") type = AssetType::TileSetData;
+                    else if (row[1] == "TileSetData") type = AssetType::TileSetData;
                     else if (row[1] == "ClipData") type = AssetType::AnimClipData;
                     else if (row[1] == "TextData") type = AssetType::TextData;
                     else if (row[1] == "LevelData") type = AssetType::LevelData;
