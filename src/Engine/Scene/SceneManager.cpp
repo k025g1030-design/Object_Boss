@@ -94,15 +94,16 @@ namespace Engine::Scene {
         if (sceneStack_.empty()) return;
 
         // 描画は下から順に行い、下層シーンが見えるようにする（例：Pause の半透明マスク）
-        /*for (auto& s : sceneStack_) {
+        for (auto& s : sceneStack_) {
             s->Render();
-        }*/
+        }
 
         /*
           SceneDef.renderUnderlay 制御
           SceneDef.renderUnderlay に従って下層描画を制御する場合、
           上から逆順に走査し、最初に renderUnderlay == false のシーンに到達した時点で描画を止める
         */
+        /*
         int startIndex = static_cast<int>(sceneStack_.size()) - 1;
         for (int i = startIndex; i >= 0; --i) {
             const IScene* s = sceneStack_[i].get();
@@ -117,6 +118,7 @@ namespace Engine::Scene {
         for (int i = startIndex; i < static_cast<int>(sceneStack_.size()); ++i) {
             sceneStack_[i]->Render();
         }
+        */
     }
 
     void SceneManager::HandleEvent(const std::string& sceneId, const std::string& eventId) {
