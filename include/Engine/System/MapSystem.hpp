@@ -11,6 +11,7 @@ namespace Engine::System {
         void Initialize(Engine::Asset::MapData* mapData);
         void Render(Camera camera);
         void RenderLayer(std::string layerName, Camera camera);
+        void RenderDecorations(Camera camera);
     private:
         Engine::Asset::MapData* currentMapData_;
         Core::Vector2 size_;

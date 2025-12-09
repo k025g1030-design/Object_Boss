@@ -1,26 +1,15 @@
-#include <Novice.h>
-#include "Entity/Player.hpp"
+﻿#include "Entity/Player.hpp"
+#include "Core/Backend.hpp"
+
+
 
 namespace Entity {
-	void Player::Draw() {
-		Novice::DrawBox(static_cast<int>(position_.x), static_cast<int>(position_.y),
+	void Player::Draw(Engine::System::Camera camera) {
+		Engine::Backend::DrawBox(static_cast<int>(position_.x - camera.x), static_cast<int>(position_.y - camera.y),
 			static_cast<int>(size_.x), static_cast<int>(size_.y),
 			0.0f, RED, kFillModeSolid);
 	}
-	void Player::Input() {
-		if (Novice::CheckHitKey(DIK_UP)||Novice::CheckHitKey(DIK_W)) {
-			vel_.y -= 5.0f;
-		}
-		if (Novice::CheckHitKey(DIK_DOWN) || Novice::CheckHitKey(DIK_S)) {
-			vel_.y += 5.0f;
-		}
-		if (Novice::CheckHitKey(DIK_LEFT) || Novice::CheckHitKey(DIK_A)) {
-			vel_.x -= 5.0f;
-		}
-		if (Novice::CheckHitKey(DIK_RIGHT) || Novice::CheckHitKey(DIK_D)) {
-			vel_.x += 5.0f;
-		}
-	}
+	
 	void Player::Update() {
 		
 		if (hp_ <= 0)

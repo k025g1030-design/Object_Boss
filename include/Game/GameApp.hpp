@@ -9,9 +9,7 @@
 #include "Engine/System/MapSystem.hpp"
 
 namespace Game {
-	struct GameSession {
-		
-    };
+	
 
 	class GameApp {
 	public:

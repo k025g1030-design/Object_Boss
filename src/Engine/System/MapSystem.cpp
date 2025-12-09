@@ -36,6 +36,7 @@ namespace Engine::System {
 
     }
     void MapSystem::RenderLayer(std::string layerName, Camera camera) {
+
         for (const auto& layer : currentMapData_->layers) {
             if (layer.name == layerName) {
                 // Render this layer
@@ -55,6 +56,17 @@ namespace Engine::System {
                     }
                 }
             }
+        }
+    }
+
+    void MapSystem::RenderDecorations(Camera camera) {
+        for (const auto& dec : currentMapData_->decorations) {
+            Core::Vector2 screenPos = {
+                static_cast<float>(dec.x * currentMapData_->tileset->scale.pixelsPerUnit - camera.x),
+                static_cast<float>(dec.y * currentMapData_->tileset->scale.pixelsPerUnit - camera.y)
+            };
+            // Render the tile
+            Engine::RenderTile(screenPos, currentMapData_->tileset, dec.tileId);
         }
 
     }

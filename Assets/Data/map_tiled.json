@@ -31,6 +31,13 @@
             },
             "name":"wall"
         },
+        "road": {
+            "gridIndex": {
+                "row":1,
+                "col":0
+            },
+            "name":"road"
+        },
         "portal": {
             "rect": {
                 "x":0, 

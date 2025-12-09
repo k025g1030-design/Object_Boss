@@ -17,17 +17,13 @@ namespace Game {
 		enemy_.SetHP(Entity::ENEMY_MAX_HP);
 		enemy_.SetD({});
 
-		player_ = Entity::Player();
-		player_.SetPosition({ 400.0f, 300.0f });
-		player_.SetSize({ 50.0f, 50.0f });
-		player_.SetVelocity({ 0.0f, 0.0f });
-		player_.SetHP(Entity::PLAYER_MAX_HP);
+		
 
 	}
 
 	void GameApp::Input() {
 		// Input handling code here
-		player_.Input();
+		/*player_.Input();
 		if (Novice::CheckHitKey(DIK_E))
 		{
 			player_.SetHP(player_.GetHP()-1);
@@ -40,12 +36,15 @@ namespace Game {
 
 		if (Novice::CheckHitKey(DIK_C)) {
 			enemy_.SetHP(enemy_.GetHP() - 1);
-		}
+		}*/
+        Engine::GetCore().GetInputSystem().Poll();
 	} 
 
 	void GameApp::Update() {
+        Engine::GetCore().GetInputSystem().Update(5.f);
 		// ゲームロジック更新コードここに
 		Engine::GetCore().GetSceneManager().Update(1.0f / 60.0f);
+
 		
 		/*enemy_.SetTrack(player_.GetPosition());
 		player_.Update();

@@ -62,6 +62,19 @@ namespace Engine {
         Novice::DrawBox(x, y, w, h, angle, color, fillMode);
     }
 
+
+    void Backend::DrawQuad(int x, int y, int w, int h, int srcX, int srcY, int srcW, int srcH, int textureHandle) {
+        int ltX = x;
+        int ltY = y;
+        int rtX = x + w;
+        int rtY = y;
+        int lbX = x;
+        int lbY = y + h;
+        int rbX = x + w;
+        int rbY = y + h;
+        Novice::DrawQuad(ltX, ltY, rtX, rtY, lbX, lbY, rbX, rbY, srcX, srcY, srcW, srcH, textureHandle, WHITE);
+    }
+
     void Backend::DrawSpriteRect(
         int destX, int destY, int srcX, int srcY, int srcW, int srcH, int textureHandle,
         float scaleX, float scaleY, float angle, unsigned int color) {

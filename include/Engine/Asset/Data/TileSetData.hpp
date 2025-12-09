@@ -21,6 +21,8 @@ namespace Engine::Asset {
         std::optional<Frame> rect;
         std::optional<GridVector> gridIndex;
         std::string name;
+        int unitW = 1;    // 1×1 tile
+        int unitH = 1;    // 1×2 unitW=1, unitH=2
     };
 
     struct TileSetData {
@@ -59,6 +61,7 @@ namespace Engine::Asset {
         if (j.contains("name")) {
             j.at("name").get_to(tile.name);
         }
+  
     }
 
     // ---- TileSetData 全体 ----
