@@ -20,6 +20,11 @@ namespace Game::Scenes {
                 (float)levelData_->actors.at(1).spawn.y * Core::PIXELS_PER_UNIT,
             });
 
+            /*session_.enemy.SetPosition({
+                (float)736,
+                (float)736,
+                });*/
+
         } else {
             session_.enemy.SetHP(0);
         }

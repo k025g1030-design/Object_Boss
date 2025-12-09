@@ -88,6 +88,8 @@ namespace Engine {
 
     void RenderFullScreenQuad(unsigned int color);
 
+    void RenderBox(const Core::Vector2 position, const Core::Vector2 size, unsigned int color, int fillMode);           
+
     void RenderAnimation(const Core::Vector2 position, Engine::Asset::Frame frame, const Asset::Texture* texture);
 
     void RenderTile(const Core::Vector2 position, const Asset::TileSetData* tileSetData, const std::string& tileId);

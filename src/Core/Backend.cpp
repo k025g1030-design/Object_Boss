@@ -58,8 +58,8 @@ namespace Engine {
         Novice::ScreenPrintf(x, y, text);
     }
 
-    void Backend::DrawBox(int x, int y, int w, int h, float angle, unsigned int color, FillMode fillMode) {
-        Novice::DrawBox(x, y, w, h, angle, color, fillMode);
+    void Backend::DrawBox(int x, int y, int w, int h, float angle, unsigned int color, int fillMode) {
+        Novice::DrawBox(x, y, w, h, angle, color, (FillMode)fillMode);
     }
 
 

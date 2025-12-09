@@ -47,6 +47,9 @@ namespace Engine::System {
 
         // 迴圈播放
         currentIndex_ = totalFrames % frameCount;
+
+        session_->enemy.SetTrack(session_->player.GetPosition());
+        session_->enemy.Update();
     }
 
     void ActorSystem::Render(Camera camera) {
@@ -66,8 +69,12 @@ namespace Engine::System {
             Engine::Asset::AnimationClip clip = bossAnime_->clips.at("down");
             int frameIdx = clip.frameIndices[currentIndex_];
             const Engine::Asset::Frame& f = bossAnime_->frames[frameIdx];
-
-            Engine::RenderAnimation(session_->enemy.GetPosition(), f, bossAnime_->texture);
+            Core::Vector2 screenPos = {
+                static_cast<float>(session_->enemy.GetPosition().x - camera.x),
+                static_cast<float>(session_->enemy.GetPosition().y - camera.y)
+            };
+            
+            Engine::RenderAnimation(screenPos, f, bossAnime_->texture);
         }
     }
 

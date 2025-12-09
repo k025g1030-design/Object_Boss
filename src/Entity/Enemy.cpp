@@ -1,4 +1,4 @@
-#include "Entity/Enemy.hpp"
+﻿#include "Entity/Enemy.hpp"
 #include "Entity/Player.hpp"
 #include "Core/Math.hpp"
 #include <Novice.h>
@@ -20,16 +20,16 @@ namespace Entity {
 			return;
 		}
 
-		d_ = track_ - position_;
+		Core::Vector2 d = track_ - position_;
 
-		float length = sqrtf(d_.x * d_.x + d_.y * d_.y);
+		float length = sqrtf(d.x * d.x + d.y * d.y);
 		if (length != 0.0f) {
-			d_.x /= length;
-			d_.y /= length;
+			d.x /= length;
+			d.y /= length;
 		}
 
-		position_.x += d_.x * vel_.x;
-		position_.y += d_.y * vel_.y;
+		position_.x += d.x * 3;
+		position_.y += d.y * 3;
 
 		//position_.x += vel_.x;
 		//position_.y += vel_.y;

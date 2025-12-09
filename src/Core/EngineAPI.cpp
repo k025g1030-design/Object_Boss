@@ -37,6 +37,16 @@ namespace Engine {
         Engine::Backend::DrawBox(0, 0, Core::kWindowWidth, Core::kWindowHeight, 0, color, kFillModeSolid);
     }
 
+    void RenderBox(const Core::Vector2 position, const Core::Vector2 size, unsigned int color, int fillMode) {
+        int x = static_cast<int>(position.x);
+        int y = static_cast<int>(position.y);
+        int w = static_cast<int>(size.x);
+        int h = static_cast<int>(size.y);
+
+        Engine::Backend::DrawBox(x, y , w, h, 0, color, fillMode);
+
+    }
+
     void RenderAnimation(const Core::Vector2 position, Engine::Asset::Frame frame, const Asset::Texture* texture) {
         int x = static_cast<int>(position.x);
         int y = static_cast<int>(position.y);

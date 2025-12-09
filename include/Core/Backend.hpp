@@ -26,7 +26,7 @@ namespace Engine {
         static void GetMousePosition(int* x, int* y);
         static int IsPressMouse(int buttonNumber);
 
-        static void DrawBox(int x, int y, int w, int h, float angle, unsigned int color, FillMode fillMode);
+        static void DrawBox(int x, int y, int w, int h, float angle, unsigned int color, int fillMode);
         static void DrawQuad(int x, int y, int w, int h, int srcX, int srcY, int srcW, int srcH, int textureHandle);
 
         static void DrawSpriteRect(

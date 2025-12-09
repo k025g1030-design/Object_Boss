@@ -12,6 +12,6 @@
 
   "actors": [
     { "id": "world_guide", "type": "npc", "spawn": { "x": 8, "y": 5 }, "show": false, "enabled": false  },
-    { "id": "boss_001",  "type": "boss", "spawn": { "x": 20, "y": 8 }, "facing":"down", "enabled": false }
+    { "id": "boss_001",  "type": "boss", "spawn": { "x": 10, "y": 10 }, "facing":"down", "enabled": false }
   ]
 }
