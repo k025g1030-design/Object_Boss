@@ -12,6 +12,17 @@ namespace Engine::System {
         bossAnime_ = Engine::GetCore().GetAssetManager().Load<Engine::Asset::AnimationData>("data.sheet.boss");
     }
 
+    void ActorSystem::MovePlayer(Core::Vector2 delta) {
+
+        Core::Vector2 newPos = session_->player.GetPosition() + delta;
+        int tx = static_cast<int>(newPos.x / Core::PIXELS_PER_UNIT);
+        int ty = static_cast<int>(newPos.y / Core::PIXELS_PER_UNIT);
+
+        if (!Engine::GetCore().GetMapSystem().GetCurrentMap()->IsSolid(tx, ty)) {
+            session_->player.SetPosition(newPos);
+        }
+    }
+
     std::string GetInputDic() {
         std::string key = "";
         Core::Vector2 inputSnapshot = Engine::GetCore().GetInputSystem().GetInputSnapshot();
@@ -29,8 +40,7 @@ namespace Engine::System {
 
         return key;
     }
-
-    void ActorSystem::Update(float dt) { 
+    void ActorSystem::PlayAnime(float dt) {
         std::string dic = GetInputDic();
         if (session_->player.GetDic() != dic && !dic.empty()) {
             session_->player.SetDic(dic);
@@ -47,9 +57,21 @@ namespace Engine::System {
 
         // 迴圈播放
         currentIndex_ = totalFrames % frameCount;
+    }
 
+    void ActorSystem::MoveEnemy() {
         session_->enemy.SetTrack(session_->player.GetPosition());
         session_->enemy.Update();
+    }
+
+    void ActorSystem::Update(float dt) { 
+        
+        this->PlayAnime(dt);
+
+        this->MoveEnemy();
+
+        Core::Vector2 velocity = Engine::GetCore().GetInputSystem().GetVelocity();
+        this->MovePlayer(velocity);
     }
 
     void ActorSystem::Render(Camera camera) {
@@ -59,8 +81,8 @@ namespace Engine::System {
             int frameIdx = clip.frameIndices[currentIndex_];
             const Engine::Asset::Frame& f = playerAnime_->frames[frameIdx];
             Core::Vector2 screenPos = {
-                static_cast<float>(session_->player.GetPosition().x - camera.x),
-                static_cast<float>(session_->player.GetPosition().y - camera.y)
+                static_cast<float>(session_->player.GetPosition().x - (f.w / 2) - camera.x),
+                static_cast<float>(session_->player.GetPosition().y - (f.h / 2) - camera.y)
             };
             Engine::RenderAnimation(screenPos, f, playerAnime_->texture);
         }
@@ -70,8 +92,8 @@ namespace Engine::System {
             int frameIdx = clip.frameIndices[currentIndex_];
             const Engine::Asset::Frame& f = bossAnime_->frames[frameIdx];
             Core::Vector2 screenPos = {
-                static_cast<float>(session_->enemy.GetPosition().x - camera.x),
-                static_cast<float>(session_->enemy.GetPosition().y - camera.y)
+                static_cast<float>(session_->enemy.GetPosition().x - (f.w / 2) - camera.x),
+                static_cast<float>(session_->enemy.GetPosition().y - (f.h / 2) - camera.y)
             };
             
             Engine::RenderAnimation(screenPos, f, bossAnime_->texture);

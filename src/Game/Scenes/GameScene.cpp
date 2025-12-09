@@ -51,9 +51,6 @@ namespace Game::Scenes {
     }
     void GameScene::Update() {
         // ゲームシーンの更新処理をここに追加
-        Core::Vector2 velocity = Engine::GetCore().GetInputSystem().GetVelocity();
-        session_.player.SetPosition(session_.player.GetPosition() + velocity);
-
         UpdateCameraWithDeadZone(session_.player, camera_);
         Engine::GetCore().GetActorSystem().Update(1.0f/60.0f);
     }

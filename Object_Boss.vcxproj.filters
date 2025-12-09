@@ -176,6 +176,9 @@
     <ClCompile Include="src\Engine\System\MapSystem.cpp">
       <Filter>src\Engine\System</Filter>
     </ClCompile>
+    <ClCompile Include="src\Engine\System\MapRuntimeBuilder.cpp">
+      <Filter>src\Engine\System</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="%KAMATA_ENGINE%\DirectXGame\audio\Audio.h">
@@ -401,6 +404,13 @@
       <Filter>include\Engine\System</Filter>
     </ClInclude>
     <ClInclude Include="include\Engine\System\Camera.hpp">
+      <Filter>include\Engine\System</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Engine\System\GameSession.hpp" />
+    <ClInclude Include="include\Engine\System\MapRuntimeData.hpp">
+      <Filter>include\Engine\System</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Engine\System\MapRuntimeBuilder.hpp">
       <Filter>include\Engine\System</Filter>
     </ClInclude>
   </ItemGroup>

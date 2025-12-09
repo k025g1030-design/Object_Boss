@@ -126,6 +126,7 @@ xcopy %KAMATA_ENGINE%\DirectXGame\Resources "$(OutDirFullPath)NoviceResources" /
     <ClCompile Include="src\Engine\System\ActorSystem.cpp" />
     <ClCompile Include="src\Engine\System\GuiSystem.cpp" />
     <ClCompile Include="src\Engine\System\InputSystem.cpp" />
+    <ClCompile Include="src\Engine\System\MapRuntimeBuilder.cpp" />
     <ClCompile Include="src\Engine\System\MapSystem.cpp" />
     <ClCompile Include="src\Entity\Enemy.cpp" />
     <ClCompile Include="src\Entity\Player.cpp" />
@@ -201,6 +202,8 @@ xcopy %KAMATA_ENGINE%\DirectXGame\Resources "$(OutDirFullPath)NoviceResources" /
     <ClInclude Include="include\Engine\System\GameSession.hpp" />
     <ClInclude Include="include\Engine\System\GuiSystem.hpp" />
     <ClInclude Include="include\Engine\System\InputSystem.hpp" />
+    <ClInclude Include="include\Engine\System\MapRuntimeBuilder.hpp" />
+    <ClInclude Include="include\Engine\System\MapRuntimeData.hpp" />
     <ClInclude Include="include\Engine\System\MapSystem.hpp" />
     <ClInclude Include="include\Entity\Boss.hpp" />
     <ClInclude Include="include\Engine\EngineCore.hpp" />

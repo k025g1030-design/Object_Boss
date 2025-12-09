@@ -9,6 +9,9 @@ namespace Engine::System {
     public:
         void Initialize(Engine::System::GameSession* session);
         void Update(float dt);
+        void MovePlayer(Core::Vector2 delta);
+        void MoveEnemy();
+        void PlayAnime(float dt);
         void Render(Camera camera);
 
     private:
