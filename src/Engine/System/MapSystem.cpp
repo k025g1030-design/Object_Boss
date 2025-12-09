@@ -70,4 +70,34 @@ namespace Engine::System {
         }
 
     }
+
+    void MapSystem::RenderDecorationsNotKey(std::string tileId, Camera camera) {
+        for (const auto& dec : currentMapData_->decorations) {
+            if (dec.tileId == tileId) {
+                continue; // Skip decorations with the specified tileId
+            }
+            Core::Vector2 screenPos = {
+                static_cast<float>(dec.x * currentMapData_->tileset->scale.pixelsPerUnit - camera.x),
+                static_cast<float>(dec.y * currentMapData_->tileset->scale.pixelsPerUnit - camera.y)
+            };
+            // Render the tile
+            Engine::RenderTile(screenPos, currentMapData_->tileset, dec.tileId);
+        }
+
+    }
+
+    void MapSystem::RenderDecorationsInKey(std::string tileId, Camera camera) {
+        for (const auto& dec : currentMapData_->decorations) {
+            if (dec.tileId != tileId) {
+                continue; // Skip decorations without the specified tileId
+            }
+            Core::Vector2 screenPos = {
+                static_cast<float>(dec.x * currentMapData_->tileset->scale.pixelsPerUnit - camera.x),
+                static_cast<float>(dec.y * currentMapData_->tileset->scale.pixelsPerUnit - camera.y)
+            };
+            // Render the tile
+            Engine::RenderTile(screenPos, currentMapData_->tileset, dec.tileId);
+        }
+
+    }
 }

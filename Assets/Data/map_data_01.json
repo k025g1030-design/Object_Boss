@@ -165,7 +165,7 @@
             "id": "portal.region",
             "tileId": "portal",
             "x": 10,
-            "y": 21,
+            "y": 20,
             "size": { "w": 4, "h": 3  },
             "flags": []
         },

@@ -46,10 +46,14 @@ namespace Game::Scenes {
         //Engine::GetCore().GetMapSystem().RenderLayer("trigger", camera_);
         //Engine::GetCore().GetMapSystem().RenderLayer("wall", camera_);
 
+        
+        Engine::GetCore().GetMapSystem().RenderDecorationsNotKey("portal", session_.camera);
+
         //// Render player and actors here
         session_.player.Draw(session_.camera);
+        Engine::GetCore().GetMapSystem().RenderDecorationsInKey("portal", session_.camera);
 
-        Engine::GetCore().GetMapSystem().RenderDecorations(session_.camera);
+        
 
         //// Render UI elements here
         
