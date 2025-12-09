@@ -7,6 +7,6 @@ namespace Engine::System {
     struct GameSession {
         Entity::Player player;
         Entity::Enemy enemy;
-        Engine::System::Camera camera;
+        
     };
 }

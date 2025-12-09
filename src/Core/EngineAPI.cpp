@@ -37,24 +37,17 @@ namespace Engine {
         Engine::Backend::DrawBox(0, 0, Core::kWindowWidth, Core::kWindowHeight, 0, color, kFillModeSolid);
     }
 
-   /* void RenderDecoration(const Core::Vector2 position , const Engine::Asset::Frame rect, const Asset::TileSetData* tileSetData, const std::string& tileId) {
-        auto bgIt = tileSetData->tiles.find(tileId);
-        int fullHeight = tileSetData->texture->GetHeight();
-        int fullWitdth = tileSetData->texture->GetWidth();
-        const Engine::Asset::TileDef& bg = bgIt->second;
-        int unit = tileSetData->scale.pixelsPerUnit;
-        int x = static_cast<int>(position.x) + (int)src.x * unit;
-        int y = static_cast<int>(position.y) + (int)src.y * unit;
-
-        Engine::Backend::DrawSpriteRect(
-            x, y, bg.rect->x, bg.rect->y, size.x * unit, size.y * unit,
-            tileSetData->texture->GetHandle(),
-            (size.x * unit / (float)fullWitdth),
-            (size.y * unit / (float)fullHeight),
-            0.0f,
-            WHITE
+    void RenderAnimation(const Core::Vector2 position, Engine::Asset::Frame frame, const Asset::Texture* texture) {
+        int x = static_cast<int>(position.x);
+        int y = static_cast<int>(position.y);
+        
+        Engine::Backend::DrawQuad(
+            x, y, frame.w, frame.h,
+            frame.x, frame.y, frame.w, frame.h,
+            texture->GetHandle()
         );
-    }*/
+        
+    }
 
     void RenderTile(const Core::Vector2 position, const Asset::TileSetData* tileSetData, const std::string& tileId) {
         auto bgIt = tileSetData->tiles.find(tileId);
@@ -63,7 +56,7 @@ namespace Engine {
             int fullWitdth = tileSetData->texture->GetWidth();*/
             const Engine::Asset::TileDef& bg = bgIt->second;
             int unit = tileSetData->scale.pixelsPerUnit;
-            
+
             int x = static_cast<int>(position.x);
             int y = static_cast<int>(position.y);
             int w, h, srcX, srcY = 0;
@@ -86,16 +79,6 @@ namespace Engine {
                 tileSetData->texture->GetHandle()
             );
 
-            /*Engine::Backend::DrawSpriteRect(
-                x, y, srcX, srcY, w, h,
-                tileSetData->texture->GetHandle(),
-                (w / (float)fullWitdth),
-                (h / (float)fullHeight),
-                0.0f,
-                WHITE
-            );*/
-
-            
         }
     }
 

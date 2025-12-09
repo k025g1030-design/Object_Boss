@@ -6,16 +6,15 @@
 namespace Engine::System {
     class MapSystem {
     public:
-        MapSystem() = default;
-        ~MapSystem() = default;
         void Initialize(Engine::Asset::MapData* mapData);
         void Render(Camera camera);
         void RenderLayer(std::string layerName, Camera camera);
         void RenderDecorations(Camera camera);
         void RenderDecorationsNotKey(std::string tileId, Camera camera);
         void RenderDecorationsInKey(std::string tileId, Camera camera);
+
     private:
-        Engine::Asset::MapData* currentMapData_;
+        Engine::Asset::MapData* currentMapData_ = nullptr;
         Core::Vector2 size_;
         Core::Vector2 sizeInTiles_;
     };

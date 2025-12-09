@@ -6,9 +6,24 @@ namespace Game::Scenes {
     void GameScene::InitializeContext(const Engine::Scene::SceneChangeContext& ctx) {
         currentLevelId_ = ctx.Get("levelId", "data.level.00");
 
+        // map
         levelData_ = Engine::GetCore().GetAssetManager().Load<Engine::Asset::LevelData>(currentLevelId_);
         mapData_ = Engine::GetCore().GetAssetManager().Load<Engine::Asset::MapData>(levelData_->mapAssetId);
         Engine::GetCore().GetMapSystem().Initialize(mapData_);
+
+        session_.player.SetHP(Entity::PLAYER_MAX_HP);
+        // player
+        if (currentLevelId_ == "data.level.01") {
+            session_.enemy.SetHP(Entity::ENEMY_MAX_HP);
+            session_.enemy.SetPosition({ 
+                (float)levelData_->actors.at(1).spawn.x * Core::PIXELS_PER_UNIT,
+                (float)levelData_->actors.at(1).spawn.y * Core::PIXELS_PER_UNIT,
+            });
+
+        } else {
+            session_.enemy.SetHP(0);
+        }
+
 
         Engine::GetCore().GetActorSystem().Initialize(&session_);
         Engine::GetCore().GetGuiSystem().Initialize(&session_);
@@ -18,7 +33,7 @@ namespace Game::Scenes {
         // シーンに入ったときの初期化処理をここに追加
         int unit = mapData_->tileset->scale.pixelsPerUnit;
         session_.player.SetPosition({ (float)(levelData_->player.spawn.x * unit + unit / 2), (float)(levelData_->player.spawn.y * unit) });
-        session_.camera.x = (int)session_.player.GetPosition().x - Core::kWindowWidth / 2;
+        camera_.x = (int)session_.player.GetPosition().x - Core::kWindowWidth / 2;
     }
     void GameScene::OnExit() {
         // シーンを出るときのクリーンアップ処理をここに追加
@@ -34,29 +49,31 @@ namespace Game::Scenes {
         Core::Vector2 velocity = Engine::GetCore().GetInputSystem().GetVelocity();
         session_.player.SetPosition(session_.player.GetPosition() + velocity);
 
-        UpdateCameraWithDeadZone(session_.player, session_.camera);
-        session_.camera;
+        UpdateCameraWithDeadZone(session_.player, camera_);
+        Engine::GetCore().GetActorSystem().Update(1.0f/60.0f);
     }
     void GameScene::Render() {
         // ゲームシーンの描画処理をここに追加
         //Engine::RenderText({ 50, 50 }, "Game Scene: " + currentLevelId_);
         
         
-        Engine::GetCore().GetMapSystem().RenderLayer("floor", session_.camera);
-        Engine::GetCore().GetMapSystem().RenderLayer("wall", session_.camera);
-        Engine::GetCore().GetMapSystem().RenderLayer("road", session_.camera);
+        Engine::GetCore().GetMapSystem().RenderLayer("floor", camera_);
+        Engine::GetCore().GetMapSystem().RenderLayer("wall", camera_);
+        Engine::GetCore().GetMapSystem().RenderLayer("road", camera_);
         //Engine::GetCore().GetMapSystem().RenderLayer("trigger", camera_);
         //Engine::GetCore().GetMapSystem().RenderLayer("wall", camera_);
 
         
-        Engine::GetCore().GetMapSystem().RenderDecorationsNotKey("portal", session_.camera);
+        Engine::GetCore().GetMapSystem().RenderDecorationsNotKey("portal", camera_);
 
         //// Render player and actors here
-        session_.player.Draw(session_.camera);
+        Engine::GetCore().GetActorSystem().Render(camera_);
 
-        Engine::GetCore().GetMapSystem().RenderDecorationsInKey("portal", session_.camera);
+        Engine::GetCore().GetMapSystem().RenderDecorationsInKey("portal", camera_);
+       
         //// Render UI elements here
-        
+        Engine::GetCore().GetGuiSystem().Render();
+
 
 
     }

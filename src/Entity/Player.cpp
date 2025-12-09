@@ -4,12 +4,12 @@
 
 
 namespace Entity {
-	void Player::Draw(Engine::System::Camera camera) {
-		Engine::Backend::DrawBox(static_cast<int>(position_.x - camera.x), static_cast<int>(position_.y - camera.y),
-			static_cast<int>(size_.x), static_cast<int>(size_.y),
-			0.0f, RED, kFillModeSolid);
-	}
-	
+	//void Player::Draw(Engine::System::Camera camera) {
+	//	Engine::Backend::DrawBox(static_cast<int>(position_.x - camera.x), static_cast<int>(position_.y - camera.y),
+	//		static_cast<int>(size_.x), static_cast<int>(size_.y),
+	//		0.0f, RED, kFillModeSolid);
+	//}
+	//
 	void Player::Update() {
 		
 		if (hp_ <= 0)

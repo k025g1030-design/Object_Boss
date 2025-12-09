@@ -4,8 +4,6 @@
 namespace Engine::System {
     class InputSystem {
     public:
-        InputSystem() = default;
-        ~InputSystem() = default;
         void Poll();
         void Update(float speed);
         Core::Vector2 GetInputSnapshot() const { return inputSnapshot_; }

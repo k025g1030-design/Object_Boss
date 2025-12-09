@@ -1,0 +1,36 @@
+{
+    "assetId":"data.sheet.boss",
+    "textureId": "tex.sheet.boss",
+    "remark" : "",
+
+    "scale": {
+        "pixelsPerUnit": 192
+    },
+
+    "grid": {
+        "cellW":192,
+        "cellH":192,
+        "marginX":0,
+        "marginY":0,
+        "spacingX":0,
+        "spacingY":0,
+        "count": {
+            "row":4,
+            "col":1
+        }
+    },
+
+    "frames" : [
+        { "x":0, "y":0, "w": 192, "h":192 },
+        { "x":192, "y":0, "w": 192, "h":192 },
+        { "x":384, "y":0, "w": 192, "h":192 },
+        { "x":576, "y":0, "w": 192, "h":192 }
+    ],
+    "clips":{
+        "down": { 
+            "frameIndices": [0,1,2,3], 
+            "fps": 10,
+            "speed": 5
+        }
+    }
+}

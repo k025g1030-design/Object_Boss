@@ -25,6 +25,7 @@
 
 
 namespace Engine {
+
     
     //========================
     struct TextureHandle {
@@ -87,13 +88,12 @@ namespace Engine {
 
     void RenderFullScreenQuad(unsigned int color);
 
+    void RenderAnimation(const Core::Vector2 position, Engine::Asset::Frame frame, const Asset::Texture* texture);
+
     void RenderTile(const Core::Vector2 position, const Asset::TileSetData* tileSetData, const std::string& tileId);
 
     void RenderAnimetion(const Core::Vector2 position, const Asset::AnimationData& animData);
 
-    //void RenderTile
-    // もしくは:
-    // void DrawFrame(TextureHandle tex, const Frame& src, float x, float y);
 
     // --- サウンド再生 ---
     void PlaySound(const Asset::SoundData& soundData);

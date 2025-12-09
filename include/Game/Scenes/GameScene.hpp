@@ -26,6 +26,7 @@ namespace Game::Scenes {
         Engine::Asset::MapData* mapData_ = nullptr;
         
         Engine::System::GameSession session_;
+        Engine::System::Camera camera_;
         
     };
 }

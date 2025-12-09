@@ -13,7 +13,7 @@ namespace Entity {
 		~Player() {}
 
 		// 描画
-		void Draw(Engine::System::Camera camera);
+		// void Draw(Engine::System::Camera camera);
 
 
 		// 更新
@@ -23,6 +23,12 @@ namespace Entity {
 		void SetPosition(const Core::Vector2& position) { position_ = position; }
 		void SetVelocity(const Core::Vector2& velocity) { vel_ = velocity; }
 		void SetSize(const Core::Vector2& size) { size_ = size; }
+		void SetDic(std::string dic) {
+			dic_ = dic;
+		}
+		const std::string GetDic() const {
+			return dic_;
+		}
 	
 		void SetHP(int hp) { hp_ = hp; }
 		const int GetHP() { 
@@ -44,6 +50,8 @@ namespace Entity {
 		Core::Vector2 vel_;      // 速度
 		Core::Vector2 size_;     // 大きさ
 		int hp_ = PLAYER_MAX_HP;
+
+		std::string dic_ = "down";
 	
 
 	};

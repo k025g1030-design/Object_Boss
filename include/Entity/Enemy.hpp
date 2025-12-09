@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include "Core/Math.hpp"
 #include "Entity/Player.hpp"
 
@@ -16,6 +16,7 @@ namespace Entity {
 		
 
 		void SetPosition(const Core::Vector2& position) { position_ = position; }
+		const Core::Vector2 GetPosition() const { return position_; }
 		void SetVelocity(const Core::Vector2& velocity) { vel_ = velocity; }
 		void SetSize(const Core::Vector2& size) { size_ = size; }	
 		void SetD(const Core::Vector2& d) { d_ = d; }
