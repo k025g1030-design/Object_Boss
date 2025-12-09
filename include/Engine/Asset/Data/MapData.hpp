@@ -99,6 +99,7 @@ namespace Engine::Asset {
         int width = 0;
         int height = 0;
 
+        // TODO: layers を map<string, MapLayer> にする？
         std::vector<MapLayer> layers;
         std::vector<MapTrigger> triggers;
 

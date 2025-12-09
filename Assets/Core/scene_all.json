@@ -27,8 +27,8 @@
       },
 
       "transitions": [
-        { "eventId": "start", "targetSceneId": "game.main", "levelId": "level_00" },
-        { "eventId": "continue", "targetSceneId": "game.main", "levelId": "level_01"},
+        { "eventId": "start", "targetSceneId": "game.main", "levelId": "data.level.00" },
+        { "eventId": "continue", "targetSceneId": "game.main", "levelId": "data.level.01"},
         { "eventId": "readme", "targetSceneId": "ui.readme" },
         { "eventId": "exit", "targetSceneId": null }
       ]
@@ -83,7 +83,7 @@
       },
 
       "transitions": [
-        { "eventId": "retry",     "targetSceneId": "game.main", "levelId": "level_01" },
+        { "eventId": "retry",     "targetSceneId": "game.main", "levelId": "data.level.01" },
         { "eventId": "toMenu",   "targetSceneId": "ui.menu" }
       ]
     },
@@ -93,7 +93,7 @@
       "className": "GameScene",
       "sceneType": "gameplay",
 
-      "defaultLevelId": "level_00",   
+      "defaultLevelId": "data.level.00",   
       "supportsPause": true,
       "pauseSceneId": "ui.pause",
 

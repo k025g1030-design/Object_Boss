@@ -1,6 +1,7 @@
 ﻿#pragma once
 #include "Engine/Scene/IScene.hpp"
 #include "Core/EngineAPI.hpp"
+#include "Component/Button.hpp"
 
 namespace Game::Scenes {
 
@@ -16,11 +17,17 @@ namespace Game::Scenes {
         void Update() override;
         void Render() override;
     public:
-        void InitializeContext(const Engine::Scene::SceneChangeParam& /*param*/) override {}
+        void InitializeContext(const Engine::Scene::SceneChangeContext& /*ctx*/) override {}
 
     private:                                                    
         Engine::Asset::TileSetData* guiData_ = nullptr;
-        //InputSystem& inputSystem_;
+        bool prevMouseDown_{ false };
+
+    private:
+        Component::Button startButton_;
+        Component::Button continueButton_;
+        Component::Button readmeButton_;
+        Component::Button exitButton_;
     };
 
 } // namespace Game::Scenes

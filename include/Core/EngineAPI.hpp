@@ -9,6 +9,10 @@
 #include "Engine/Asset/Data/TileSetData.hpp"
 #include "Engine/Asset/Data/Sprite.hpp"
 #include "Engine/Asset/Data/SoundData.hpp"
+#include <Engine/Asset/Data/LevelData.hpp>
+#include "Engine/Asset/Data/MapData.hpp"
+
+
 #include <memory>
 
 
@@ -66,6 +70,14 @@ namespace Engine {
 
     Engine::EngineCore& GetCore();
 
+    bool MouseLeftClicked();
+
+    void GetMousePosition(int* x, int* y);
+
+    void RenderText(const Core::Vector2 position, const std::string& text);
+
+
+
     // --- エンジン初期化 ---
     void Initialize(const std::string& assetCatalogPath, const std::string& scenesCatalogPath);
 
@@ -76,7 +88,6 @@ namespace Engine {
     void RenderFullScreenQuad(unsigned int color);
 
     void RenderTile(const Core::Vector2 position, const Asset::TileSetData* tileSetData, const std::string& tileId);
-    void RenderTileBtn(const Core::Vector2 position, const Asset::TileSetData* tileSetData, const std::string& tileId);
 
     void RenderAnimetion(const Core::Vector2 position, const Asset::AnimationData& animData);
 

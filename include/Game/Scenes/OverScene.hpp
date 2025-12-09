@@ -13,7 +13,7 @@ namespace Game::Scenes {
         void Update() override;
         void Render() override;
     public:
-        void InitializeContext(const Engine::Scene::SceneChangeParam& param) override;
+        void InitializeContext(const Engine::Scene::SceneChangeContext& ctx) override;
     private:
         // メニューシーン固有のメンバ変数をここに追加
         std::string result_;

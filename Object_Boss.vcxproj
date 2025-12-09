@@ -123,6 +123,10 @@ xcopy %KAMATA_ENGINE%\DirectXGame\Resources "$(OutDirFullPath)NoviceResources" /
     <ClCompile Include="src\Engine\Scene\SceneFactory.cpp" />
     <ClCompile Include="src\Engine\Scene\SceneManager.cpp" />
     <ClCompile Include="src\Engine\Scene\SceneRegistry.cpp" />
+    <ClCompile Include="src\Engine\System\ActorSystem.cpp" />
+    <ClCompile Include="src\Engine\System\GuiSystem.cpp" />
+    <ClCompile Include="src\Engine\System\InputSystem.cpp" />
+    <ClCompile Include="src\Engine\System\MapSystem.cpp" />
     <ClCompile Include="src\Entity\Enemy.cpp" />
     <ClCompile Include="src\Entity\Player.cpp" />
     <ClCompile Include="src\Game\GameApp.cpp" />
@@ -188,10 +192,15 @@ xcopy %KAMATA_ENGINE%\DirectXGame\Resources "$(OutDirFullPath)NoviceResources" /
     <ClInclude Include="include\Core\Math.hpp" />
     <ClInclude Include="include\Engine\Scene\IScene.hpp" />
     <ClInclude Include="include\Engine\Scene\MetaData\SceneMeta.hpp" />
-    <ClInclude Include="include\Engine\Scene\SceneChangeParam.hpp" />
+    <ClInclude Include="include\Engine\Scene\SceneChangeContext.hpp" />
     <ClInclude Include="include\Engine\Scene\SceneFactory.hpp" />
     <ClInclude Include="include\Engine\Scene\SceneManager.hpp" />
     <ClInclude Include="include\Engine\Scene\SceneRegistry.hpp" />
+    <ClInclude Include="include\Engine\System\ActorSystem.hpp" />
+    <ClInclude Include="include\Engine\System\Camera.hpp" />
+    <ClInclude Include="include\Engine\System\GuiSystem.hpp" />
+    <ClInclude Include="include\Engine\System\InputSystem.hpp" />
+    <ClInclude Include="include\Engine\System\MapSystem.hpp" />
     <ClInclude Include="include\Entity\Boss.hpp" />
     <ClInclude Include="include\Engine\EngineCore.hpp" />
     <ClInclude Include="include\Entity\Enemy.hpp" />

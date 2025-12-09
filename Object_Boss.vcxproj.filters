@@ -89,6 +89,12 @@
     <Filter Include="include\Engine\Scene\MetaData">
       <UniqueIdentifier>{7d5eb4e4-6c5f-49a7-aac4-6260c36741d0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="include\Engine\System">
+      <UniqueIdentifier>{236f439b-94bf-44ca-997b-e356dbcbcb51}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Engine\System">
+      <UniqueIdentifier>{ddaf0396-ecd4-484e-b711-a2e2b0c3841f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
@@ -157,6 +163,18 @@
     </ClCompile>
     <ClCompile Include="src\Engine\Asset\Loader\LevelDataLoader.cpp">
       <Filter>src\Engine\Asset\Loader</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engine\System\ActorSystem.cpp">
+      <Filter>src\Engine\System</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engine\System\GuiSystem.cpp">
+      <Filter>src\Engine\System</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engine\System\InputSystem.cpp">
+      <Filter>src\Engine\System</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engine\System\MapSystem.cpp">
+      <Filter>src\Engine\System</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -364,11 +382,26 @@
     <ClInclude Include="include\Engine\Scene\SceneRegistry.hpp">
       <Filter>include\Engine\Scene</Filter>
     </ClInclude>
-    <ClInclude Include="include\Engine\Scene\SceneChangeParam.hpp">
+    <ClInclude Include="include\Engine\Scene\SceneChangeContext.hpp">
       <Filter>include\Engine\Scene</Filter>
     </ClInclude>
     <ClInclude Include="include\Utils\CommonUtils.hpp">
       <Filter>include\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Engine\System\ActorSystem.hpp">
+      <Filter>include\Engine\System</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Engine\System\GuiSystem.hpp">
+      <Filter>include\Engine\System</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Engine\System\InputSystem.hpp">
+      <Filter>include\Engine\System</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Engine\System\MapSystem.hpp">
+      <Filter>include\Engine\System</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Engine\System\Camera.hpp">
+      <Filter>include\Engine\System</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

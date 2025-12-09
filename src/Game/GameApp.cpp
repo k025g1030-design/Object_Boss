@@ -45,26 +45,27 @@ namespace Game {
 
 	void GameApp::Update() {
 		// ゲームロジック更新コードここに
+		Engine::GetCore().GetSceneManager().Update(1.0f / 60.0f);
 		
-		enemy_.SetTrack(player_.GetPosition());
+		/*enemy_.SetTrack(player_.GetPosition());
 		player_.Update();
-		enemy_.Update();
+		enemy_.Update();*/
 
 	} 
 
 	void GameApp::Render() {
 		// 描画
 
-        //Engine::GetCore().GetSceneManager().Render();
+        Engine::GetCore().GetSceneManager().Render();
 		
-		player_.Draw();
+		/*player_.Draw();
 
 		enemy_.Draw();
 
 		Engine::Backend::DrawBox(10, 40, Entity::PLAYER_MAX_HP*2, 20, 0, BLACK, kFillModeWireFrame);
 		Engine::Backend::DrawBox(10, 40, player_.GetHP()*2, 20, 0, BLUE, kFillModeSolid);
 		Engine::Backend::DrawBox(10,10, Entity::ENEMY_MAX_HP*2,20,0,BLACK, kFillModeWireFrame);
-		Engine::Backend::DrawBox(10,10, enemy_.GetHP()*2, 20, 0, RED, kFillModeSolid);
+		Engine::Backend::DrawBox(10,10, enemy_.GetHP()*2, 20, 0, RED, kFillModeSolid);*/
 
 
 	}

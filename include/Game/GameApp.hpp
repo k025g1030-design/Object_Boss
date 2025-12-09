@@ -3,7 +3,15 @@
 #include "Entity/Enemy.hpp"
 #include "Core/EngineAPI.hpp"
 
+#include "Engine/System/InputSystem.hpp"
+#include "Engine/System/ActorSystem.hpp"
+#include "Engine/System/GuiSystem.hpp"
+#include "Engine/System/MapSystem.hpp"
+
 namespace Game {
+	struct GameSession {
+		
+    };
 
 	class GameApp {
 	public:
@@ -29,6 +37,9 @@ namespace Game {
 		// Private members and methods
 		Entity::Player player_;
 		Entity::Enemy enemy_;
+
+
+
 	};
 
 }

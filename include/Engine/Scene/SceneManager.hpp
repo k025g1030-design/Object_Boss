@@ -5,7 +5,7 @@
 #include <vector>
 #include "Engine/Scene/MetaData/SceneMeta.hpp"
 #include "Engine/Scene/IScene.hpp"
-#include "Engine/Scene/SceneChangeParam.hpp"
+#include "Engine/Scene/SceneChangeContext.hpp"
 
 namespace Engine::Scene {
 
@@ -20,7 +20,7 @@ namespace Engine::Scene {
         SceneTransitPhase phase = SceneTransitPhase::None;
 
         std::string targetSceneId;
-        SceneChangeParam param;   
+        SceneChangeContext ctx;   
 
         float timer = 0.0f;
         float fadeOutDuration = 0.5f;
@@ -41,13 +41,13 @@ namespace Engine::Scene {
         
     public:
         // シーン切り替え API , スタックをクリアして、新しいシーンを読み込む
-        void ChangeScene(const std::string& sceneId, const SceneChangeParam& param = {}); // 
+        void ChangeScene(const std::string& sceneId, const SceneChangeContext& ctx = {}); // 
         // シーン切り替え API , フェードアウト・フェードイン付き
-        void ChangeSceneWithFade(const std::string& sceneId, const SceneChangeParam& param = {}, 
+        void ChangeSceneWithFade(const std::string& sceneId, const SceneChangeContext& ctx = {}, 
             float fadeOut = 0.5f,
             float fadeIn = 0.5f
         );
-        void PushScene(const std::string& sceneId, const SceneChangeParam& param = {});   // シーンを上に重ねる（overlay）
+        void PushScene(const std::string& sceneId, const SceneChangeContext& ctx = {});   // シーンを上に重ねる（overlay）
         void PopScene();                              // 最上位（トップ）のシーンを取り除く
         void Update(float dt);
         void Render();
@@ -55,7 +55,7 @@ namespace Engine::Scene {
     private:
         // 内部ツール
         void ClearStack_();
-        std::unique_ptr<IScene> CreateSceneById_(const std::string& sceneId, SceneChangeParam param);
+        std::unique_ptr<IScene> CreateSceneById_(const std::string& sceneId, SceneChangeContext ctx);
         const SceneDef* GetSceneDef_(const std::string& sceneId) const;
 
     private:

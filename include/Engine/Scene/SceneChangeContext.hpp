@@ -3,7 +3,7 @@
 #include <unordered_map>
 
 namespace Engine::Scene {
-    class SceneChangeParam {
+    class SceneChangeContext {
     public:
         std::unordered_map<std::string, std::string> values;
 

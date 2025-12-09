@@ -1,7 +1,11 @@
 ﻿#pragma once
 #include "Engine/Scene/IScene.hpp"
+#include "Core/EngineAPI.hpp"
+#include "Engine/System/Camera.hpp"
 
 namespace Game::Scenes {
+
+    
 
     class GameScene : public Engine::Scene::IScene {
     public:
@@ -14,11 +18,14 @@ namespace Game::Scenes {
         void Render() override;
 
     public:
-        void InitializeContext(const Engine::Scene::SceneChangeParam& param) override;
+        void InitializeContext(const Engine::Scene::SceneChangeContext& ctx) override;
 
     private:
         // メニューシーン固有のメンバ変数をここに追加
         std::string currentLevelId_;
+        Engine::Asset::LevelData* levelData_ = nullptr;
+        Engine::Asset::MapData* mapData_ = nullptr;
+        Engine::System::Camera camera_;
         
     };
 }

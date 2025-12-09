@@ -1,10 +1,10 @@
 ﻿#include "Game/Scenes/OverScene.hpp"
-#include "Engine/Scene/SceneChangeParam.hpp"
+#include "Engine/Scene/SceneChangeContext.hpp"
 
 
 namespace Game::Scenes {
-    void OverScene::InitializeContext(const Engine::Scene::SceneChangeParam& param) {
-        result_ = param.Get("result", "win");
+    void OverScene::InitializeContext(const Engine::Scene::SceneChangeContext& ctx) {
+        result_ = ctx.Get("result", "win");
     }
     void OverScene::OnEnter() {
         // シーンに入ったときの初期化処理をここに追加

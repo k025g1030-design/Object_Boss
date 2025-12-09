@@ -94,8 +94,8 @@ namespace Component {
             return value_;
         }
 
-        void SetName(char* name) {
-            name_ = name;
+        std::string GetName() const {
+            return name_;
         }
 
         void SetName(char* name) {
@@ -109,19 +109,25 @@ namespace Component {
             int w = static_cast<int>(size_.x);
             int h = static_cast<int>(size_.y);
 
+            if (pressed) {
+                x += static_cast<int>(pushOffset_.x);
+                y += static_cast<int>(pushOffset_.y);
+            }
             Novice::DrawBox(x, y, w, h, 0, 0x404040FF, kFillModeSolid);
             Novice::DrawBox(x, y, w, h, 0, 0xFFFFFFFF, kFillModeWireFrame);
-            Novice::ScreenPrintf(x + 10, y + h / 2 - 8, "%s", name_.c_str());
-            if (isSelected_) {
-                Novice::DrawBox(x, y, w, h, 0, RED, kFillModeWireFrame);
+            if (name_.size() != 0) {
+                Novice::ScreenPrintf(x + 10, y + h / 2 - 8, "%s", name_.c_str());
             }
-           
+            /*if (isSelected_) {
+                Novice::DrawBox(x, y, w, h, 0, BLACK, kFillModeWireFrame);
+            }*/
 
         }
 
     private:
         Core::Vector2 size_;
         Core::Vector2 position_;
+        Core::Vector2 pushOffset_{ 1.0f, 1.0f };
         bool isEnabled_{ true };
         bool isVisible_{ true };
         bool isSelected_{ false };

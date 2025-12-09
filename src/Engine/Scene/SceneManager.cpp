@@ -21,14 +21,14 @@ namespace Engine::Scene {
         return registry_->Get(sceneId);   
     }
 
-    std::unique_ptr<IScene> SceneManager::CreateSceneById_(const std::string& sceneId, SceneChangeParam param) {
+    std::unique_ptr<IScene> SceneManager::CreateSceneById_(const std::string& sceneId, SceneChangeContext ctx) {
         const SceneDef* def = GetSceneDef_(sceneId);
         if (!def) {
             assert(false && "SceneManager: sceneId not found in registry");
             return nullptr;
         }
         assert(factory_ && "SceneManager not initialized: factory is null");
-        return factory_->Create(*def, param);
+        return factory_->Create(*def, ctx);
     }
 
     void SceneManager::ClearStack_() {
@@ -42,8 +42,8 @@ namespace Engine::Scene {
     // ---------------- 重要：ChangeScene 行為 ----------------
     // ChangeScene = 「旧シーンをクリアし、新しいシーンに切り替える」
     // 元のスタックを保持せず、排他的（exclusive）な切り替えを行う。
-    void SceneManager::ChangeScene(const std::string& sceneId, const SceneChangeParam& param) {
-        auto newScene = CreateSceneById_(sceneId, param);
+    void SceneManager::ChangeScene(const std::string& sceneId, const SceneChangeContext& ctx) {
+        auto newScene = CreateSceneById_(sceneId, ctx);
         if (!newScene) return;
 
         ClearStack_();
@@ -53,13 +53,14 @@ namespace Engine::Scene {
     }
 
     void SceneManager::ChangeSceneWithFade(const std::string& sceneId,
-        const SceneChangeParam& param,
+        const SceneChangeContext& ctx,
         float fadeOut,
         float fadeIn) {
         sceneTransit_.phase = SceneTransitPhase::FadeOut;
         sceneTransit_.targetSceneId = sceneId;
-        sceneTransit_.param = param;
+        sceneTransit_.ctx = ctx;
         sceneTransit_.timer = 0.0f;
+        // TODO: JSON からデフォルト値を取得するように変更
         sceneTransit_.fadeOutDuration = fadeOut;
         sceneTransit_.fadeInDuration = fadeIn;
     }
@@ -67,8 +68,8 @@ namespace Engine::Scene {
 
     // PushScene = 「既存のシーンの上にさらに重ねる」
     // 例：GameScene の上に PauseScene を重ねる
-    void SceneManager::PushScene(const std::string& sceneId, const SceneChangeParam& param) {
-        auto newScene = CreateSceneById_(sceneId, param);
+    void SceneManager::PushScene(const std::string& sceneId, const SceneChangeContext& ctx) {
+        auto newScene = CreateSceneById_(sceneId, ctx);
         if (!newScene) return;
 
         if (!sceneStack_.empty()) {
@@ -133,7 +134,7 @@ namespace Engine::Scene {
         {
             auto newScene = CreateSceneById_(
                 sceneTransit_.targetSceneId,
-                sceneTransit_.param
+                sceneTransit_.ctx
             );
             if (newScene) {
                 ClearStack_();
@@ -243,10 +244,14 @@ namespace Engine::Scene {
 
             if (targetDef->stackBehavior.mode == StackBehaviorMode::Exclusive) {
                 // go to 新しいシーンへ完全切り替え
-                ChangeScene(targetDef->sceneId);
+                //ChangeScene(targetDef->sceneId);
                 // TODO: levelId が指定されていればレベルをセット
                 // GameScene.SetStartLevel(trans->levelId);
-
+                SceneChangeContext ctx;
+                if (trans->levelId.has_value()) {
+                    ctx.Set("levelId", trans->levelId.value());
+                }
+                ChangeSceneWithFade(targetDef->sceneId, ctx);
             } else {
                 // overlay でシーンを重ねる
                 PushScene(targetDef->sceneId);

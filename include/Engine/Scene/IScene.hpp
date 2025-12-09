@@ -2,12 +2,12 @@
 #include <string>
 
 namespace Engine::Scene {
-    class SceneChangeParam;
+    class SceneChangeContext;
     class IScene {
     public:
         virtual ~IScene() = default;
 
-        virtual void InitializeContext(const SceneChangeParam& param) = 0;
+        virtual void InitializeContext(const SceneChangeContext& ctx) = 0;
 
         // ライフサイクル 
         // ・スタックに追加されたときに呼び出される

@@ -22,6 +22,8 @@ namespace Engine {
 
         static void GetHitKeyStateAll(char* keyStateBuf);
         static int CheckHitKey(int keyCode);
+
+        static void GetMousePosition(int* x, int* y);
         static int IsPressMouse(int buttonNumber);
 
         static void DrawBox(int x, int y, int w, int h, float angle, unsigned int color, FillMode fillMode);
@@ -29,6 +31,8 @@ namespace Engine {
         static void DrawSpriteRect(
             int destX, int destY, int srcX, int srcY, int srcW, int srcH, int textureHandle,
             float scaleX, float scaleY, float angle, unsigned int color);
+
+        static void RenderText(int x, int y, const char* text);
 
         static void PlayAudio(int audioHandle, int loop, float volume);
         static void StopAudio(int audioHandle);

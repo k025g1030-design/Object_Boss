@@ -50,6 +50,14 @@ namespace Engine {
         return Novice::IsPressMouse(buttonNumber);
     }
 
+    void Backend::GetMousePosition(int* x, int* y) {
+        Novice::GetMousePosition(x, y);
+    }
+
+    void Backend::RenderText(int x, int y, const char* text) {
+        Novice::ScreenPrintf(x, y, text);
+    }
+
     void Backend::DrawBox(int x, int y, int w, int h, float angle, unsigned int color, FillMode fillMode) {
         Novice::DrawBox(x, y, w, h, angle, color, fillMode);
     }
