@@ -3,10 +3,7 @@
 #include "Entity/Enemy.hpp"
 #include "Core/EngineAPI.hpp"
 
-#include "Engine/System/InputSystem.hpp"
-#include "Engine/System/ActorSystem.hpp"
-#include "Engine/System/GuiSystem.hpp"
-#include "Engine/System/MapSystem.hpp"
+#include "Engine/System/GameSession.hpp"
 
 namespace Game {
 	
@@ -32,11 +29,7 @@ namespace Game {
 		void Shutdown();
 
 	private:
-		// Private members and methods
-		Entity::Player player_;
-		Entity::Enemy enemy_;
-
-
+		
 
 	};
 

@@ -2,17 +2,9 @@
 #include "Engine/Scene/IScene.hpp"
 #include "Core/EngineAPI.hpp"
 #include "Engine/System/Camera.hpp"
-#include <Entity/Player.hpp>
-#include <Entity/Enemy.hpp>
+#include "Engine/System/GameSession.hpp"
 
 namespace Game::Scenes {
-    struct GameSession {
-        Entity::Player player;
-        Entity::Enemy enemy;
-        Engine::System::Camera camera;
-    };
-    
-
     class GameScene : public Engine::Scene::IScene {
     public:
         ~GameScene() = default;
@@ -33,7 +25,7 @@ namespace Game::Scenes {
         Engine::Asset::LevelData* levelData_ = nullptr;
         Engine::Asset::MapData* mapData_ = nullptr;
         
-        GameSession session_;
+        Engine::System::GameSession session_;
         
     };
 }

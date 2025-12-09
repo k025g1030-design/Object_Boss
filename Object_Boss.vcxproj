@@ -198,6 +198,7 @@ xcopy %KAMATA_ENGINE%\DirectXGame\Resources "$(OutDirFullPath)NoviceResources" /
     <ClInclude Include="include\Engine\Scene\SceneRegistry.hpp" />
     <ClInclude Include="include\Engine\System\ActorSystem.hpp" />
     <ClInclude Include="include\Engine\System\Camera.hpp" />
+    <ClInclude Include="include\Engine\System\GameSession.hpp" />
     <ClInclude Include="include\Engine\System\GuiSystem.hpp" />
     <ClInclude Include="include\Engine\System\InputSystem.hpp" />
     <ClInclude Include="include\Engine\System\MapSystem.hpp" />

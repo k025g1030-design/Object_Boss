@@ -9,14 +9,16 @@ namespace Game::Scenes {
         levelData_ = Engine::GetCore().GetAssetManager().Load<Engine::Asset::LevelData>(currentLevelId_);
         mapData_ = Engine::GetCore().GetAssetManager().Load<Engine::Asset::MapData>(levelData_->mapAssetId);
         Engine::GetCore().GetMapSystem().Initialize(mapData_);
+
+        Engine::GetCore().GetActorSystem().Initialize(&session_);
+        Engine::GetCore().GetGuiSystem().Initialize(&session_);
     }
 
     void GameScene::OnEnter() {
         // シーンに入ったときの初期化処理をここに追加
         int unit = mapData_->tileset->scale.pixelsPerUnit;
-        session_.player.SetPosition({ (float)(levelData_->player.spawn.x * unit), (float)(levelData_->player.spawn.y * unit) });
-        session_.player.SetSize({ 50.0f, 50.0f });
-        session_.player.SetHP(Entity::PLAYER_MAX_HP);
+        session_.player.SetPosition({ (float)(levelData_->player.spawn.x * unit + unit / 2), (float)(levelData_->player.spawn.y * unit) });
+        session_.camera.x = (int)session_.player.GetPosition().x - Core::kWindowWidth / 2;
     }
     void GameScene::OnExit() {
         // シーンを出るときのクリーンアップ処理をここに追加
@@ -51,10 +53,8 @@ namespace Game::Scenes {
 
         //// Render player and actors here
         session_.player.Draw(session_.camera);
+
         Engine::GetCore().GetMapSystem().RenderDecorationsInKey("portal", session_.camera);
-
-        
-
         //// Render UI elements here
         
 
