@@ -62,6 +62,10 @@ namespace Engine {
         Novice::DrawBox(x, y, w, h, angle, color, (FillMode)fillMode);
     }
 
+    void Backend::DrawLine(int x1, int y1, int x2, int y2, unsigned int color) {
+        Novice::DrawLine(x1, y1, x2, y2, color);
+    }
+
 
     void Backend::DrawQuad(int x, int y, int w, int h, int srcX, int srcY, int srcW, int srcH, int textureHandle) {
         int ltX = x;

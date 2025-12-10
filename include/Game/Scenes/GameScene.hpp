@@ -3,6 +3,7 @@
 #include "Core/EngineAPI.hpp"
 #include "Engine/System/Camera.hpp"
 #include "Engine/System/GameSession.hpp"
+#include "Engine/System/TriggerPool.hpp"
 
 namespace Game::Scenes {
     class GameScene : public Engine::Scene::IScene {
@@ -18,6 +19,7 @@ namespace Game::Scenes {
     public:
         void InitializeContext(const Engine::Scene::SceneChangeContext& ctx) override;
         void UpdateCameraWithDeadZone(const Entity::Player& player, Engine::System::Camera& camera);
+        void HandleTrigger(const Engine::System::TriggerHit& hit);
 
     private:
         // メニューシーン固有のメンバ変数をここに追加

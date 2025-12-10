@@ -87,6 +87,7 @@ namespace Engine {
     void RenderSprite(const Core::Vector2 position, const Asset::Sprite& sprite);
 
     void RenderFullScreenQuad(unsigned int color);
+    void RenderLine(const Core::VectorInt2 start, const Core::VectorInt2 end);
 
     void RenderBox(const Core::Vector2 position, const Core::Vector2 size, unsigned int color, int fillMode);           
 

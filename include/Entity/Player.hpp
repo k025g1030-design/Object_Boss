@@ -1,6 +1,7 @@
 ﻿#pragma once
 #include "Core/Math.hpp" 
 #include "Engine/System/Camera.hpp"
+#include <vector>
 
 namespace Entity {
 	const int PLAYER_MAX_HP = 100;
@@ -29,6 +30,20 @@ namespace Entity {
 		const std::string GetDic() const {
 			return dic_;
 		}
+		void SetPrePos(Core::VectorInt2 prePos) {
+			prePos_ = prePos;
+		}
+		const Core::VectorInt2 GetPrePos() {
+			return prePos_;
+		}
+		void PopSkill() {
+			if (skillPool_.size() < 3) {
+				skillPool_.push_back({ (int)position_.x, (int)position_.y });
+			}
+		}
+		std::vector<Core::VectorInt2>& GetSkillPool() {
+			return skillPool_;
+		}
 	
 		void SetHP(int hp) { hp_ = hp; }
 		const int GetHP() { 
@@ -52,6 +67,8 @@ namespace Entity {
 		int hp_ = PLAYER_MAX_HP;
 
 		std::string dic_ = "down";
+		Core::VectorInt2 prePos_ = { -9999, -9999 };
+		std::vector<Core::VectorInt2> skillPool_;
 	
 
 	};

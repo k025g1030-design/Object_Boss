@@ -265,9 +265,41 @@
         {
             "x": 5,
             "y": 0,
-            "size": { "w": 2, "h": 1  },
+            "size": { "w": 2, "h": 2  },
             "triggerId": "portal.to_boss_room",
             "once": true
+        },
+        {
+            "triggerId": "skill.to_pyo",
+
+            "x": 3,
+            "y": 13,
+            "size": { "w": 2, "h": 2 }
+            
+        },
+        {
+            "triggerId": "skill.to_to",
+
+            "x": 3,
+            "y": 9,
+            "size": { "w": 2, "h": 2 }
+            
+        },
+        {
+            "triggerId": "skill.to_sha",
+
+            "x": 6,
+            "y": 5,
+            "size": { "w": 2, "h": 2 }
+            
+        },
+        {
+            "triggerId": "skill.to_kai",
+            
+            "x": 11,
+            "y": 3,
+            "size": { "w": 2, "h": 2 }
+            
         }
     ]
 }

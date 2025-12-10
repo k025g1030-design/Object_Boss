@@ -9,7 +9,7 @@ namespace Engine::System {
         Engine::Asset::MapData* mapData = Engine::GetCore().GetAssetManager().Load<Engine::Asset::MapData>(assetId);
         if (!mapData) return nullptr;
 
-        this->LoadMap(mapData);
+        return LoadMap(mapData);
     }
 
     MapRuntimeData* MapSystem::LoadMap(Engine::Asset::MapData* mapData) {
@@ -37,7 +37,7 @@ namespace Engine::System {
     }
 
     void MapSystem::Initialize(Engine::Asset::MapData* mapData) {
-        this->LoadMap(mapData);
+        LoadMap(mapData);
     }
 
     void MapSystem::Render(Camera camera) {

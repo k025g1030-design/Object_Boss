@@ -17,6 +17,19 @@ namespace Core {
         Vector2& operator+=(const Vector2& o) { x += o.x; y += o.y; return *this; }
         Vector2& operator-=(const Vector2& o) { x -= o.x; y -= o.y; return *this; }
     };
+    class VectorInt2 {
+    public:
+        int x{ 0 };
+        int y{ 0 };
+
+        VectorInt2() = default;
+        VectorInt2(int _x, int _y) : x(_x), y(_y) {}
+
+        VectorInt2 operator+(const VectorInt2& o) const { return { x + o.x, y + o.y }; }
+        VectorInt2 operator-(const VectorInt2& o) const { return { x - o.x, y - o.y }; }
+        VectorInt2& operator+=(const VectorInt2& o) { x += o.x; y += o.y; return *this; }
+        VectorInt2& operator-=(const VectorInt2& o) { x -= o.x; y -= o.y; return *this; }
+    };
 
     class Matrix2x2 {
     public:

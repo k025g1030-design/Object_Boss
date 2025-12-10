@@ -53,6 +53,46 @@ namespace Game::Scenes {
         // ゲームシーンの更新処理をここに追加
         UpdateCameraWithDeadZone(session_.player, camera_);
         Engine::GetCore().GetActorSystem().Update(1.0f/60.0f);
+        auto hits = Engine::GetCore().GetActorSystem().ConsumeTriggerHits();
+        for (const auto& h : hits) {
+            HandleTrigger(h);
+        }
+    }
+    void GameScene::HandleTrigger(const Engine::System::TriggerHit& hit) {
+        const std::string& id = hit.triggerId;
+
+        if (id == "skill.to_rin") {
+            //UnlockSkill("sui");
+            session_.player.PopSkill();
+        } else if (id == "skill.to_pyo") {
+            //UnlockSkill("sui");
+            session_.player.PopSkill();
+        } else if (id == "skill.to_to") {
+            //UnlockSkill("sui");
+            session_.player.PopSkill();
+        } else if (id == "skill.to_sha") {
+            //UnlockSkill("sui");
+            session_.player.PopSkill();
+        } else if (id == "skill.to_kai") {
+            //UnlockSkill("sui");
+            session_.player.PopSkill();
+        } else if (id == "skill.to_jin") {
+            //UnlockSkill("sui");
+            session_.player.PopSkill();
+        } else if (id == "skill.to_retsu") {
+            //UnlockSkill("sui");
+            session_.player.PopSkill();
+        } else if (id == "skill.to_zai") {
+            //UnlockSkill("sui");
+            session_.player.PopSkill();
+        } else if (id == "skill.to_zen") {
+            //UnlockSkill("sui");
+            session_.player.PopSkill();
+        } else if (id == "portal.to_boss_room") {
+            Engine::Scene::SceneChangeContext ctx;
+            ctx.Set("levelId", "data.level.01");
+            Engine::GetCore().GetSceneManager().ChangeSceneWithFade("game.main", ctx);
+        } 
     }
     void GameScene::Render() {
         // ゲームシーンの描画処理をここに追加

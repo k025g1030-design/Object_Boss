@@ -2,6 +2,7 @@
 #include "Engine/System/GameSession.hpp"
 #include "Engine/System/Camera.hpp"
 #include "Engine/Asset/Data/AnimationData.hpp"
+#include "TriggerPool.hpp"
 
 namespace Engine::System {
 
@@ -13,9 +14,18 @@ namespace Engine::System {
         void MoveEnemy();
         void PlayAnime(float dt);
         void Render(Camera camera);
+        void ReadTriggerHits();
+        void FlashSkill();
+
+        std::vector<TriggerHit> ConsumeTriggerHits() {
+            std::vector<TriggerHit> out;
+            out.swap(triggerHits_);   // O(1) swap
+            return out;
+        }
 
     private:
         Engine::System::GameSession* session_ = nullptr;
+        std::vector<TriggerHit> triggerHits_;
 
     private:
         Engine::Asset::AnimationData* playerAnime_ = nullptr;

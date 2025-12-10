@@ -12,6 +12,14 @@ namespace Engine::System {
         bossAnime_ = Engine::GetCore().GetAssetManager().Load<Engine::Asset::AnimationData>("data.sheet.boss");
     }
 
+    void ActorSystem::FlashSkill() {
+        if (session_->player.GetSkillPool().size() == 3 && currentIndex_ == 4) {
+            session_->player.GetSkillPool().clear();
+            
+        } 
+        
+    }
+
     void ActorSystem::MovePlayer(Core::Vector2 delta) {
 
         Core::Vector2 newPos = session_->player.GetPosition() + delta;
@@ -21,6 +29,36 @@ namespace Engine::System {
         if (!Engine::GetCore().GetMapSystem().GetCurrentMap()->IsSolid(tx, ty)) {
             session_->player.SetPosition(newPos);
         }
+    }
+
+    void ActorSystem::ReadTriggerHits() {
+        MapRuntimeData* map = Engine::GetCore().GetMapSystem().GetCurrentMap();
+        int tx = static_cast<int>(session_->player.GetPosition().x / map->tileWidth);
+        int ty = static_cast<int>(session_->player.GetPosition().y / map->tileHeight);
+
+        bool movedToNewTile = (tx != session_->player.GetPrePos().x || ty != session_->player.GetPrePos().y);
+
+        if (movedToNewTile) {
+            // 單格 trigger
+            if (const auto* t = map->GetTileTrigger(tx, ty)) {
+                triggerHits_.push_back(TriggerHit{
+                    .actorId = 0,
+                    .triggerId = t->triggerId
+                    });
+            }
+
+            // 區域 trigger
+            auto indices = map->GetRectTriggerIndicesAt(tx, ty);
+            for (int idx : indices) {
+                const auto& rt = map->rectTriggers[idx];
+                triggerHits_.push_back(TriggerHit{
+                    .actorId = 0,
+                    .triggerId = rt.triggerId
+                    });
+                map->ConsumeRectTrigger(idx);
+            }
+        }
+        session_->player.SetPrePos({ tx, ty });
     }
 
     std::string GetInputDic() {
@@ -66,12 +104,16 @@ namespace Engine::System {
 
     void ActorSystem::Update(float dt) { 
         
-        this->PlayAnime(dt);
+        PlayAnime(dt);
 
-        this->MoveEnemy();
+        MoveEnemy();
 
         Core::Vector2 velocity = Engine::GetCore().GetInputSystem().GetVelocity();
-        this->MovePlayer(velocity);
+        MovePlayer(velocity);
+
+        ReadTriggerHits();
+
+        FlashSkill();
     }
 
     void ActorSystem::Render(Camera camera) {
@@ -97,6 +139,18 @@ namespace Engine::System {
             };
             
             Engine::RenderAnimation(screenPos, f, bossAnime_->texture);
+        }
+
+        for (int i = 0; i < session_->player.GetSkillPool().size(); ++i) {
+            Core::VectorInt2 start = session_->player.GetSkillPool().at(i);
+            start.x -= camera.x;
+            start.y -= camera.y;
+            if (i + 1 < session_->player.GetSkillPool().size()) {
+                Core::VectorInt2 end = session_->player.GetSkillPool().at(i + 1);
+                end.x -= camera.x;
+                end.y -= camera.y;
+                Engine::RenderLine(start, end);
+            }
         }
     }
 

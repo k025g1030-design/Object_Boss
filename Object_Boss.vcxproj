@@ -66,6 +66,7 @@
       <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
       <TreatWarningAsError>true</TreatWarningAsError>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -88,7 +89,7 @@ xcopy %KAMATA_ENGINE%\DirectXGame\Resources "$(OutDirFullPath)NoviceResources" /
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(ProjectDir)third_party\stb;$(ProjectDir)include;$(ProjectDir)third_party\nlohmann_json-3.12.0\single_include;%KAMATA_ENGINE%\Adapter;%KAMATA_ENGINE%\External\KamataEngine\include;%KAMATA_ENGINE%\External\DirectXTex\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
-      <Optimization>MinSpace</Optimization>
+      <Optimization>Disabled</Optimization>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
       <TreatWarningAsError>true</TreatWarningAsError>
@@ -205,6 +206,7 @@ xcopy %KAMATA_ENGINE%\DirectXGame\Resources "$(OutDirFullPath)NoviceResources" /
     <ClInclude Include="include\Engine\System\MapRuntimeBuilder.hpp" />
     <ClInclude Include="include\Engine\System\MapRuntimeData.hpp" />
     <ClInclude Include="include\Engine\System\MapSystem.hpp" />
+    <ClInclude Include="include\Engine\System\TriggerPool.hpp" />
     <ClInclude Include="include\Entity\Boss.hpp" />
     <ClInclude Include="include\Engine\EngineCore.hpp" />
     <ClInclude Include="include\Entity\Enemy.hpp" />

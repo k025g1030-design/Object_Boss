@@ -413,5 +413,8 @@
     <ClInclude Include="include\Engine\System\MapRuntimeBuilder.hpp">
       <Filter>include\Engine\System</Filter>
     </ClInclude>
+    <ClInclude Include="include\Engine\System\TriggerPool.hpp">
+      <Filter>include\Engine\System</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

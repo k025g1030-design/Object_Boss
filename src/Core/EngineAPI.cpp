@@ -36,6 +36,9 @@ namespace Engine {
     void RenderFullScreenQuad(unsigned int color) {
         Engine::Backend::DrawBox(0, 0, Core::kWindowWidth, Core::kWindowHeight, 0, color, kFillModeSolid);
     }
+    void RenderLine(const Core::VectorInt2 start, const Core::VectorInt2 end) {
+        Engine::Backend::DrawLine(start.x, start.y, end.x, end.y, RED);
+    }
 
     void RenderBox(const Core::Vector2 position, const Core::Vector2 size, unsigned int color, int fillMode) {
         int x = static_cast<int>(position.x);
