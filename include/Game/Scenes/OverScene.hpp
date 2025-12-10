@@ -1,6 +1,7 @@
 ﻿#pragma once
 #include "Engine/Scene/IScene.hpp"
 #include "Core/EngineAPI.hpp"
+#include "Component/Button.hpp"
 
 namespace Game::Scenes {
 
@@ -15,8 +16,15 @@ namespace Game::Scenes {
         void Render() override;
     public:
         void InitializeContext(const Engine::Scene::SceneChangeContext& ctx) override;
+
+    private:
+        Component::Button enterButton_;
+        bool prevMouseDown_;
+
     private:
         // メニューシーン固有のメンバ変数をここに追加
         std::string result_;
+        Engine::Asset::TileSetData* guiData_ = nullptr;
+
     };
 }

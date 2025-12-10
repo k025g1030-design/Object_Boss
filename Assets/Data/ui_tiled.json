@@ -26,6 +26,24 @@
             },
             "name": "player.hp"
         },
+        "over.win": {
+            "rect": {
+                "x":0, 
+                "y":1856, 
+                "w":832, 
+                "h":768
+            },
+            "name": "over.win"
+        },
+        "over.lose": {
+            "rect": {
+                "x":0, 
+                "y":1088, 
+                "w":832, 
+                "h":768
+            },
+            "name": "over.lose"
+        },
         "menu.bg": {
             "rect": {
                 "x":0, 

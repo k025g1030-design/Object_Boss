@@ -1,4 +1,5 @@
 ﻿#include "Game/Scenes/MenuScene.hpp"
+#include <cstdlib>
 
 
 namespace Game::Scenes {
@@ -39,6 +40,7 @@ namespace Game::Scenes {
             // Engine::GetCore().GetSceneManager().ChangeSceneWithFade("ui.over");
         } else if (exitButton_.HandleMouse(moX, moY, mouseDown, prevMouseDown_)) {
             // Exit
+            std::exit(0);
         }
         prevMouseDown_ = mouseDown;
 
