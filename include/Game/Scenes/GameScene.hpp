@@ -20,6 +20,13 @@ namespace Game::Scenes {
         void InitializeContext(const Engine::Scene::SceneChangeContext& ctx) override;
         void UpdateCameraWithDeadZone(const Entity::Player& player, Engine::System::Camera& camera);
         void HandleTrigger(const Engine::System::TriggerHit& hit);
+        bool CheckAABB(Core::Vector2 posA, Core::Vector2 sizeA, Core::Vector2 posB, Core::Vector2 sizeB) {
+            return (posA.x < posB.x + sizeB.x &&
+                posA.x + sizeA.x > posB.x &&
+                posA.y < posB.y + sizeB.y &&
+                posA.y + sizeA.y > posB.y);
+        };  
+        bool IsGameClear();
 
     private:
         // メニューシーン固有のメンバ変数をここに追加

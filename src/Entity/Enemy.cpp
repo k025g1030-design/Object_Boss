@@ -11,8 +11,9 @@ namespace Entity {
 			static_cast<int>(size_.x), static_cast<int>(size_.y),
 			0.0f, WHITE, kFillModeSolid);
 	}
-	void Enemy::Input() {
-	}
+
+	
+	
 	void Enemy::Update() {
 
 		if (hp_<=0)

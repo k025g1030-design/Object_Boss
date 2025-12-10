@@ -19,6 +19,10 @@ namespace Engine::System {
         } else {
             inputSnapshot_.x = 0.0f;
         }
+
+        if (Engine::Backend::CheckHitKey(DIK_SPACE)) {
+            shoot_ = true;
+        }
     }
     void InputSystem::Update(float speed) {
         // フレームごとの入力状態更新処理があればここに記述

@@ -1,5 +1,6 @@
 ﻿#pragma once
 #include "Engine/Scene/IScene.hpp"
+#include "Core/EngineAPI.hpp"
 
 namespace Game::Scenes {
 

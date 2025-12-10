@@ -2,6 +2,7 @@
 #include "Engine/System/GameSession.hpp"
 #include "Engine/System/Camera.hpp"
 #include "Engine/Asset/Data/AnimationData.hpp"
+#include "Engine/Asset/Data/TileSetData.hpp"
 #include "TriggerPool.hpp"
 
 namespace Engine::System {
@@ -15,7 +16,7 @@ namespace Engine::System {
         void PlayAnime(float dt);
         void Render(Camera camera);
         void ReadTriggerHits();
-        void FlashSkill();
+        void Shoot();
 
         std::vector<TriggerHit> ConsumeTriggerHits() {
             std::vector<TriggerHit> out;
@@ -30,6 +31,7 @@ namespace Engine::System {
     private:
         Engine::Asset::AnimationData* playerAnime_ = nullptr;
         Engine::Asset::AnimationData* bossAnime_ = nullptr;
+        Engine::Asset::TileSetData* tileset_ = nullptr;
         float animTime_ = 0;
         int currentIndex_ = 0;
 

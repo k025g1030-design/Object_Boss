@@ -10,15 +10,14 @@ namespace Engine::System {
         playerAnime_ = Engine::GetCore().GetAssetManager().Load<Engine::Asset::AnimationData>("data.sheet.player");
 
         bossAnime_ = Engine::GetCore().GetAssetManager().Load<Engine::Asset::AnimationData>("data.sheet.boss");
+
+        tileset_ = Engine::GetCore().GetAssetManager().Load<Engine::Asset::TileSetData>("data.tileset.map");
     }
 
-    void ActorSystem::FlashSkill() {
-        if (session_->player.GetSkillPool().size() == 3 && currentIndex_ == 4) {
-            session_->player.GetSkillPool().clear();
-            
-        } 
-        
+    void ActorSystem::Shoot() {
+
     }
+
 
     void ActorSystem::MovePlayer(Core::Vector2 delta) {
 
@@ -109,11 +108,22 @@ namespace Engine::System {
         MoveEnemy();
 
         Core::Vector2 velocity = Engine::GetCore().GetInputSystem().GetVelocity();
+        
         MovePlayer(velocity);
 
         ReadTriggerHits();
 
-        FlashSkill();
+        bool shoot = Engine::GetCore().GetInputSystem().GetShoot();
+        bool isAlive = session_->player.GetBullet()->IsAlive();
+        if (shoot && !isAlive && !session_->player.GetBullet()->GetKey().empty()) {
+            session_->player.GetBullet()->SetPosition(session_->player.GetPosition());
+            session_->player.GetBullet()->SetVel(velocity);
+            session_->player.GetBullet()->SetAlive(true);
+            
+        } 
+        Engine::GetCore().GetInputSystem().SetShoot(false);
+
+        session_->player.GetBullet()->Update();
     }
 
     void ActorSystem::Render(Camera camera) {
@@ -141,17 +151,19 @@ namespace Engine::System {
             Engine::RenderAnimation(screenPos, f, bossAnime_->texture);
         }
 
-        for (int i = 0; i < session_->player.GetSkillPool().size(); ++i) {
-            Core::VectorInt2 start = session_->player.GetSkillPool().at(i);
-            start.x -= camera.x;
-            start.y -= camera.y;
-            if (i + 1 < session_->player.GetSkillPool().size()) {
-                Core::VectorInt2 end = session_->player.GetSkillPool().at(i + 1);
-                end.x -= camera.x;
-                end.y -= camera.y;
-                Engine::RenderLine(start, end);
-            }
+        // 弾
+        Entity::Bullet* bullet = session_->player.GetBullet();
+        if (bullet->IsAlive()) {
+            Core::Vector2 screenPos = {
+                static_cast<float>(bullet->GetPosition().x - (128 / 2) - camera.x),
+                static_cast<float>(bullet->GetPosition().y - (128 / 2) - camera.y)
+            };
+            //Engine::RenderBox(screenPos, {192,192}, 0x000000FF, 0);
+            Engine::RenderTile(screenPos, tileset_, bullet->GetKey());
         }
+        
+        
+
     }
 
 }

@@ -2,12 +2,14 @@
 #include "Engine/Scene/SceneChangeContext.hpp"
 
 
+
 namespace Game::Scenes {
     void OverScene::InitializeContext(const Engine::Scene::SceneChangeContext& ctx) {
         result_ = ctx.Get("result", "win");
     }
     void OverScene::OnEnter() {
         // シーンに入ったときの初期化処理をここに追加
+        1 / 1;
     }
     void OverScene::OnExit() {
         // シーンを出るときのクリーンアップ処理をここに追加
@@ -23,6 +25,7 @@ namespace Game::Scenes {
     }
     void OverScene::Render() {
         // メニューシーンの描画処理をここに追加
+        Engine::RenderText({100,100}, result_);
     }
 } // namespace Scene
 

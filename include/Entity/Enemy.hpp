@@ -1,6 +1,5 @@
 ﻿#pragma once
 #include "Core/Math.hpp"
-#include "Entity/Player.hpp"
 
 namespace Entity {
 
@@ -11,10 +10,9 @@ namespace Entity {
 		explicit Enemy() {}
 		~Enemy() {}
 		void Draw();
-		void Input();
 		void Update();
 		
-
+		int GetAttack() { return attack_; }
 		void SetPosition(const Core::Vector2& position) { position_ = position; }
 		const Core::Vector2 GetPosition() const { return position_; }
 		void SetVelocity(const Core::Vector2& velocity) { vel_ = velocity; }
@@ -30,10 +28,16 @@ namespace Entity {
 			return hp_; 
 		}
 		void SetDamage(int attack){ attack_ = attack; }
+		void SetAlive(bool isAlive) {
+			isAlive_ = isAlive;
+		}
+
+		bool IsAlive() {
+			return isAlive_;
+		}
 
 
 	private:
-
 		Core::Vector2 d_;
 		Core::Vector2 position_; 
 		Core::Point point_;      
@@ -44,7 +48,8 @@ namespace Entity {
 		Core::Vector2 track_;
 
 		int hp_ = ENEMY_MAX_HP;
-		
-		int attack_ = 25;
+		int attack_ = 1;
+
+		bool isAlive_ = false;
 	};
 }

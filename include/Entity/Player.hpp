@@ -1,6 +1,7 @@
 ﻿#pragma once
 #include "Core/Math.hpp" 
 #include "Engine/System/Camera.hpp"
+#include "Entity/Bullet.hpp"
 #include <vector>
 
 namespace Entity {
@@ -36,14 +37,16 @@ namespace Entity {
 		const Core::VectorInt2 GetPrePos() {
 			return prePos_;
 		}
-		void PopSkill() {
-			if (skillPool_.size() < 3) {
-				skillPool_.push_back({ (int)position_.x, (int)position_.y });
+		void PopSkill(std::string tileId) {
+			if (!bullet_.IsAlive()) {
+				bullet_.SetKey(tileId);
 			}
 		}
-		std::vector<Core::VectorInt2>& GetSkillPool() {
-			return skillPool_;
+
+		Entity::Bullet* GetBullet() {
+			return &bullet_;
 		}
+
 	
 		void SetHP(int hp) { hp_ = hp; }
 		const int GetHP() { 
@@ -57,6 +60,13 @@ namespace Entity {
 			}
 			return hp_; 
 		}
+		void SetAlive(bool isAlive) {
+			isAlive_ = isAlive;
+		}
+
+		bool IsAlive() {
+			return isAlive_;
+		}
 		
 
 	private:
@@ -68,8 +78,10 @@ namespace Entity {
 
 		std::string dic_ = "down";
 		Core::VectorInt2 prePos_ = { -9999, -9999 };
-		std::vector<Core::VectorInt2> skillPool_;
-	
+		
+		Entity::Bullet bullet_;
+
+		bool isAlive_ = true;
 
 	};
 

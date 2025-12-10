@@ -7,6 +7,8 @@ namespace Engine::System {
     struct GameSession {
         Entity::Player player;
         Entity::Enemy enemy;
+        bool isGameClear = false;
+        bool isExit = false;
         
     };
 }

@@ -1,5 +1,6 @@
 ﻿#include "Game/Scenes/MenuScene.hpp"
 
+
 namespace Game::Scenes {
 
     void MenuScene::OnEnter() {

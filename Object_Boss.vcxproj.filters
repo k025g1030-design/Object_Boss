@@ -179,6 +179,9 @@
     <ClCompile Include="src\Engine\System\MapRuntimeBuilder.cpp">
       <Filter>src\Engine\System</Filter>
     </ClCompile>
+    <ClCompile Include="src\Entity\Bullet.cpp">
+      <Filter>src\Entity</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="%KAMATA_ENGINE%\DirectXGame\audio\Audio.h">
@@ -284,9 +287,6 @@
       <Filter>include\Core</Filter>
     </ClInclude>
     <ClInclude Include="include\Entity\Player.hpp">
-      <Filter>include\Entity</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Entity\Boss.hpp">
       <Filter>include\Entity</Filter>
     </ClInclude>
     <ClInclude Include="include\Engine\Asset\AssetCatalog.hpp">
@@ -406,7 +406,9 @@
     <ClInclude Include="include\Engine\System\Camera.hpp">
       <Filter>include\Engine\System</Filter>
     </ClInclude>
-    <ClInclude Include="include\Engine\System\GameSession.hpp" />
+    <ClInclude Include="include\Engine\System\GameSession.hpp">
+      <Filter>include\Engine\System</Filter>
+    </ClInclude>
     <ClInclude Include="include\Engine\System\MapRuntimeData.hpp">
       <Filter>include\Engine\System</Filter>
     </ClInclude>
@@ -415,6 +417,9 @@
     </ClInclude>
     <ClInclude Include="include\Engine\System\TriggerPool.hpp">
       <Filter>include\Engine\System</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Entity\Bullet.hpp">
+      <Filter>include\Entity</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

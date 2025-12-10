@@ -15,18 +15,14 @@ namespace Game::Scenes {
         // player
         if (currentLevelId_ == "data.level.01") {
             session_.enemy.SetHP(Entity::ENEMY_MAX_HP);
+            session_.enemy.SetAlive(true);
             session_.enemy.SetPosition({ 
                 (float)levelData_->actors.at(1).spawn.x * Core::PIXELS_PER_UNIT,
                 (float)levelData_->actors.at(1).spawn.y * Core::PIXELS_PER_UNIT,
             });
-
-            /*session_.enemy.SetPosition({
-                (float)736,
-                (float)736,
-                });*/
-
         } else {
             session_.enemy.SetHP(0);
+            session_.enemy.SetAlive(false);
         }
 
 
@@ -50,6 +46,37 @@ namespace Game::Scenes {
 
     }
     void GameScene::Update() {
+        auto& player = session_.player;
+        auto& enemy = session_.enemy;
+        auto bullet = player.GetBullet();
+
+        //  enemy vs player
+        if (player.IsAlive() && enemy.IsAlive()){
+            if (CheckAABB(player.GetPosition() - Core::Vector2({ 64.f / 2, 64.f / 2 }), { 64.f, 64.f }, enemy.GetPosition() - Core::Vector2({ 192.f / 2, 192.f / 2 }), {192.f,192.f})) {
+                player.SetHP(player.GetHP() - enemy.GetAttack());
+                if (player.GetHP() <= 0) {
+                    player.SetAlive(false);
+                    session_.isGameClear = true;
+                }
+            }
+        }
+
+        //  bullet vs enemy
+        if (bullet->IsAlive()){
+            if (CheckAABB(bullet->GetPosition() - Core::Vector2({ 128.f / 2, 128.f / 2}), { 128.f, 128.f }, enemy.GetPosition()- Core::Vector2({ 192.f / 2.f, 192.f / 2.f }), { 192.f, 192.f })) {
+                enemy.SetHP(enemy.GetHP() - bullet->GetAttack());
+                if (enemy.GetHP() <= 0) {
+                    enemy.SetAlive(false);
+                    session_.isGameClear = true;
+                }
+                bullet->SetAlive(false);
+                bullet->ResetCoolDown();
+                bullet->SetKey("");
+            }
+        }
+
+        bullet->RefreshCoolDown();
+
         // ゲームシーンの更新処理をここに追加
         UpdateCameraWithDeadZone(session_.player, camera_);
         Engine::GetCore().GetActorSystem().Update(1.0f/60.0f);
@@ -57,37 +84,36 @@ namespace Game::Scenes {
         for (const auto& h : hits) {
             HandleTrigger(h);
         }
+
+        if (IsGameClear()) {
+            Engine::Scene::SceneChangeContext ctx;
+            std::string result = enemy.IsAlive() ? "lose": "win";
+            ctx.Set("result", result);
+            session_.isGameClear = false;
+            Engine::GetCore().GetSceneManager().ChangeSceneWithFade("ui.over", ctx);
+        }
     }
     void GameScene::HandleTrigger(const Engine::System::TriggerHit& hit) {
         const std::string& id = hit.triggerId;
 
         if (id == "skill.to_rin") {
-            //UnlockSkill("sui");
-            session_.player.PopSkill();
+            session_.player.PopSkill("skill.tile.rin");
         } else if (id == "skill.to_pyo") {
-            //UnlockSkill("sui");
-            session_.player.PopSkill();
+            session_.player.PopSkill("skill.tile.pyo");
         } else if (id == "skill.to_to") {
-            //UnlockSkill("sui");
-            session_.player.PopSkill();
+            session_.player.PopSkill("skill.tile.to");
         } else if (id == "skill.to_sha") {
-            //UnlockSkill("sui");
-            session_.player.PopSkill();
+            session_.player.PopSkill("skill.tile.sha");
         } else if (id == "skill.to_kai") {
-            //UnlockSkill("sui");
-            session_.player.PopSkill();
+            session_.player.PopSkill("skill.tile.kai");
         } else if (id == "skill.to_jin") {
-            //UnlockSkill("sui");
-            session_.player.PopSkill();
+            session_.player.PopSkill("skill.tile.jin");
         } else if (id == "skill.to_retsu") {
-            //UnlockSkill("sui");
-            session_.player.PopSkill();
+            session_.player.PopSkill("skill.tile.retsu");
         } else if (id == "skill.to_zai") {
-            //UnlockSkill("sui");
-            session_.player.PopSkill();
+            session_.player.PopSkill("skill.tile.zai");
         } else if (id == "skill.to_zen") {
-            //UnlockSkill("sui");
-            session_.player.PopSkill();
+            session_.player.PopSkill("skill.tile.zen");
         } else if (id == "portal.to_boss_room") {
             Engine::Scene::SceneChangeContext ctx;
             ctx.Set("levelId", "data.level.01");
@@ -97,8 +123,6 @@ namespace Game::Scenes {
     void GameScene::Render() {
         // ゲームシーンの描画処理をここに追加
         //Engine::RenderText({ 50, 50 }, "Game Scene: " + currentLevelId_);
-        
-        
         Engine::GetCore().GetMapSystem().RenderLayer("floor", camera_);
         Engine::GetCore().GetMapSystem().RenderLayer("wall", camera_);
         Engine::GetCore().GetMapSystem().RenderLayer("road", camera_);
@@ -118,6 +142,9 @@ namespace Game::Scenes {
 
 
 
+    }
+    bool GameScene::IsGameClear() {
+        return session_.isGameClear;
     }
 
 
